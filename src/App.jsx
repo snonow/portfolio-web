@@ -1,5 +1,7 @@
+import Hero from "./sections/Hero";
 import GitHubSignals from "./sections/GitHubSignals";
 import PipelineProof from "./sections/PipelineProof";
+import ProjectsGallery from "./sections/ProjectsGallery";
 import LiveFilteringDemo from "./sections/LiveFilteringDemo";
 
 import { filteringData, pipelineStages } from "./data/pipeline";
@@ -25,22 +27,17 @@ const App = () => {
       {/* MAIN */}
       <main className="pt-24 max-w-7xl mx-auto px-6">
         {/* HERO */}
-        <section className="mb-20 max-w-3xl">
-          <span className="inline-block mb-4 px-3 py-1 text-xs font-semibold bg-blue-100 text-blue-800 rounded-full">
-            DATA / BI ENGINEER — FREELANCE
-          </span>
-          <h1 className="text-4xl font-extrabold leading-tight mb-4">
-            I design production-grade data pipelines and decision-ready dashboards.
-          </h1>
-          <p className="text-slate-600 text-lg">
-            Background in BI consulting, academic ML pipelines, and client-facing delivery.
-            Focus on correctness, explainability, and real constraints — not demos.
-          </p>
+        <section id="hero">
+          <Hero />
         </section>
 
         {/* DASHBOARD SECTIONS */}
         <section id="github">
           <GitHubSignals />
+        </section>
+
+        <section id="project">
+          <ProjectsGallery />
         </section>
 
         <section id="pipeline">
