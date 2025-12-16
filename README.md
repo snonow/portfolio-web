@@ -5,8 +5,8 @@ The site presents my technical skills, projects, and professional background in 
 
 ## Live Demo
 
-Deployed on Netlify:  
-https://your-netlify-url.netlify.app
+Deployed on Github Pages:  
+[https://your-netlify-url.netlify.app](https://snonow.github.io/portfolio-web/)
 
 ## Tech Stack
 
@@ -59,7 +59,7 @@ npm run preview
 
 ## Deployment
 
-The project is deployed using **Netlify** with continuous deployment enabled.
+The project is deployed using **Github Pages** with continuous deployment enabled.
 Every push to the `main` branch triggers an automatic rebuild and deployment.
 
 Build configuration:
