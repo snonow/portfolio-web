@@ -1,0 +1,100 @@
+{
+  "generated_at": "2025-12-16T01:56:42.066478Z",
+  "projects": [
+    {
+      "name": "earthquake-realestate-viz",
+      "description": "Analysis of the impact of earthquakes on real estate prices (AK vs. CA, 1999-2022). Conclusion: economics takes precedence over geophysics.",
+      "url": "https://github.com/snonow/earthquake-realestate-viz",
+      "stars": 0,
+      "language": "Jupyter Notebook",
+      "topics": [
+        "data-science",
+        "data-visualisation",
+        "data-visualization",
+        "earthquakes",
+        "economic-analysis",
+        "real-estate",
+        "time-series",
+        "tsm-infvis"
+      ],
+      "readme_images": [
+        "https://img.shields.io/badge/Python-3.13.2-blue",
+        "https://img.shields.io/badge/Topic-Data%20Visualization-green",
+        "https://img.shields.io/badge/Status-Completed-success",
+        "visualisations/B1/v1_b1_report_usa_map_state_county.png",
+        "visualisations/B1/v2_b1_AK_CA_WY_NJ_eq_vs_re_v2.png",
+        "visualisations/B1/v3_b1_re_across_eq_zone_v2.png",
+        "visualisations/B2/v2_b2_earthquake_influence_housing.png"
+      ],
+      "releases": [
+        {
+          "tag": "v1.0.0",
+          "date": "2025-12-07T19:57:51Z",
+          "notes": "This PDF document compiles the exploration (B.1) and communication (B.2) phases of the TSM InfVis project. It demonstrates that macroeconomic factors (2008 crisis, urbanization) are the sole determinants of real estate prices in areas of high seismic risk, contradicting the hypothesis of a seismic influence.",
+          "assets": [
+            "https://github.com/snonow/earthquake-realestate-viz/releases/download/v1.0.0/B1_B2_TSM_InfVis_Module_Task.pdf"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "INFO641-Messagerie",
+      "description": "Projet Java en INFO641 afin de cr\u00e9er une messagerie instantan\u00e9e.",
+      "url": "https://github.com/snonow/INFO641-Messagerie",
+      "stars": 0,
+      "language": "Java",
+      "topics": [],
+      "readme_images": [
+        "img-readme-rapport/Welcome.png",
+        "img-readme-rapport/Inscription.png",
+        "img-readme-rapport/Login.png",
+        "img-readme-rapport/Connect\u00e9.png",
+        "img-readme-rapport/Connexion_concierge.png",
+        "img-readme-rapport/Messages_envoy\u00e9s_recu.png",
+        "img-readme-rapport/messages_pop-up.png",
+        "img-readme-rapport/Utilisateurs_connectes.png"
+      ],
+      "releases": []
+    },
+    {
+      "name": "Proj_APP_Solaire",
+      "description": null,
+      "url": "https://github.com/lloxy9l/Proj_APP_Solaire",
+      "stars": 1,
+      "language": "Python",
+      "topics": [],
+      "readme_images": [],
+      "releases": []
+    },
+    {
+      "name": "Projet631_APP_Livres",
+      "description": "Il s'agit du projet en groupe du module Projet631 Algorithimique. ce mini-projet est ax\u00e9 sur la conception et r\u00e9alisation d\u2019un syst\u00e8me informatique avec l\u2019utilisation de langages objet et de technologies web.",
+      "url": "https://github.com/skiiing73/Projet631_APP_Livres",
+      "stars": 0,
+      "language": "PHP",
+      "topics": [],
+      "readme_images": [],
+      "releases": []
+    },
+    {
+      "name": "Projet_FullStack_Restaurant",
+      "description": null,
+      "url": "https://github.com/skiiing73/Projet_FullStack_Restaurant",
+      "stars": 0,
+      "language": "TypeScript",
+      "topics": [],
+      "readme_images": [],
+      "releases": []
+    },
+    {
+      "name": "portfolio-web",
+      "description": null,
+      "url": "https://github.com/snonow/portfolio-web",
+      "stars": 0,
+      "language": "JavaScript",
+      "topics": [],
+      "readme_images": [],
+      "releases": []
+    }
+  ]
+}
