@@ -1,7 +1,26 @@
 import React, { useState } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, ScatterChart, Scatter, ZAxis } from 'recharts';
-import { Briefcase, Database, Globe, Award, ChevronDown, Github, Linkedin, Mail, ExternalLink } from 'lucide-react';
+// On garde Lucide pour les icônes d'interface (Mail, Globe, etc.)
+import { Briefcase, Database, Globe, Award, Mail } from 'lucide-react';
+// On importe les icônes de marque depuis simple-icons
+import { siGithub, siLinkedin } from 'simple-icons/icons';
 import { motion } from 'framer-motion';
+
+// --- COMPOSANT UTILITAIRE POUR SIMPLE ICONS ---
+// Ce composant transforme les données brutes de simple-icons en SVG React
+const BrandIcon = ({ icon, size = 24, className = "" }) => (
+  <svg 
+    role="img" 
+    viewBox="0 0 24 24" 
+    width={size} 
+    height={size} 
+    className={`fill-current ${className}`} // fill-current permet d'utiliser la couleur du texte parent (Tailwind)
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <title>{icon.title}</title>
+    <path d={icon.path} />
+  </svg>
+);
 
 // --- DONNÉES SIMULÉES (EARTHQUAKES) ---
 const earthquakeData = [
@@ -49,23 +68,16 @@ const projects = [
 ];
 
 const Portfolio = () => {
-  const [activeSection, setActiveSection] = useState('dashboard');
-
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
   };
   
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: { y: 0, opacity: 1 }
-  };
-
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800 font-sans selection:bg-blue-200">
       
-      {/* NAVBAR STYLE "APP" */}
+      {/* NAVBAR */}
       <nav className="fixed top-0 w-full bg-white/90 backdrop-blur-md border-b border-slate-200 z-50 h-16 flex items-center justify-between px-6 lg:px-12">
         <div className="font-bold text-xl tracking-tight text-slate-900 flex items-center gap-2">
           <div className="w-8 h-8 bg-blue-900 rounded flex items-center justify-center text-white font-mono text-sm">AW</div>
@@ -83,7 +95,7 @@ const Portfolio = () => {
 
       <main className="pt-24 px-6 lg:px-12 max-w-7xl mx-auto pb-20">
         
-        {/* HERO / INTRO */}
+        {/* HERO */}
         <motion.div 
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -169,13 +181,26 @@ const Portfolio = () => {
 
       </main>
 
-      {/* FOOTER SIMPLE */}
+      {/* FOOTER MODIFIÉ AVEC SIMPLE ICONS */}
       <footer className="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <div className="flex justify-center gap-6 mb-8">
-            <Github className="hover:text-white cursor-pointer transition-colors" />
-            <Linkedin className="hover:text-white cursor-pointer transition-colors" />
-            <Mail className="hover:text-white cursor-pointer transition-colors" />
+            
+            {/* Github via Simple Icons */}
+            <a href="https://github.com/TonUser" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">
+              <BrandIcon icon={siGithub} size={24} />
+            </a>
+
+            {/* LinkedIn via Simple Icons */}
+            <a href="https://linkedin.com/in/TonUser" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">
+              <BrandIcon icon={siLinkedin} size={24} />
+            </a>
+
+            {/* Mail via Lucide (Car "Email" n'est pas une marque, c'est mieux d'utiliser un icône générique) */}
+            <a href="mailto:arnowilhelm3@icloud.com" className="hover:text-white transition-colors">
+              <Mail size={24} />
+            </a>
+
           </div>
           <p className="text-sm">
             © 2025 Arno Wilhelm. Conçu comme un Dashboard React.
