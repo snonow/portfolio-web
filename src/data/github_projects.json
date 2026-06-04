@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-03T02:29:40.040883Z",
+  "generated_at": "2026-06-04T02:26:33.874028Z",
   "projects": [
     {
       "name": "earthquake-realestate-viz",
@@ -77,9 +77,9 @@
       "releases": []
     },
     {
-      "name": "Projet_FullStack_Restaurant",
-      "description": null,
-      "url": "https://github.com/skiiing73/Projet_FullStack_Restaurant",
+      "name": "fudami",
+      "description": "\u3075\u3060\u307f \u2014 Japanese SRS app that fixes Anki's motivation problem",
+      "url": "https://github.com/snonow/fudami",
       "stars": 0,
       "language": "TypeScript",
       "topics": [],
@@ -87,13 +87,28 @@
       "releases": []
     },
     {
-      "name": "portfolio-web",
-      "description": null,
-      "url": "https://github.com/snonow/portfolio-web",
+      "name": "homeserver",
+      "description": "Production-grade homeserver IaC: Proxmox, LXC, and GPU-accelerated AI/Media/NVR services via Ansible.",
+      "url": "https://github.com/snonow/homeserver",
       "stars": 0,
-      "language": "JavaScript",
-      "topics": [],
-      "readme_images": [],
+      "language": "Python",
+      "topics": [
+        "ansible",
+        "docker-compose",
+        "frigate",
+        "homeserver",
+        "iac",
+        "immich",
+        "infrastructure-as-code",
+        "jellyfin",
+        "ollama",
+        "proxmox"
+      ],
+      "readme_images": [
+        "https://img.shields.io/badge/License-MIT-blue.svg",
+        "https://img.shields.io/badge/IaC-Ansible-red.svg",
+        "https://img.shields.io/badge/PRs-welcome-brightgreen.svg"
+      ],
       "releases": []
     }
   ]
