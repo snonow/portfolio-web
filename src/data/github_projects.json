@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-06T01:52:48.255293Z",
+  "generated_at": "2026-06-07T02:07:22.986282Z",
   "projects": [
     {
       "name": "earthquake-realestate-viz",
@@ -77,9 +77,9 @@
       "releases": []
     },
     {
-      "name": "fudami",
+      "name": "fudami-front",
       "description": "\u3075\u3060\u307f \u2014 Japanese SRS app that fixes Anki's motivation problem",
-      "url": "https://github.com/snonow/fudami",
+      "url": "https://github.com/snonow/fudami-front",
       "stars": 0,
       "language": "TypeScript",
       "topics": [],
