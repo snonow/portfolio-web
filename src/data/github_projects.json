@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-09T01:50:04.157622Z",
+  "generated_at": "2026-06-10T02:01:00.901823Z",
   "projects": [
     {
       "name": "earthquake-realestate-viz",
@@ -67,16 +67,6 @@
       "releases": []
     },
     {
-      "name": "Projet631_APP_Livres",
-      "description": "Il s'agit du projet en groupe du module Projet631 Algorithimique. ce mini-projet est ax\u00e9 sur la conception et r\u00e9alisation d\u2019un syst\u00e8me informatique avec l\u2019utilisation de langages objet et de technologies web.",
-      "url": "https://github.com/skiiing73/Projet631_APP_Livres",
-      "stars": 0,
-      "language": "PHP",
-      "topics": [],
-      "readme_images": [],
-      "releases": []
-    },
-    {
       "name": "fudami-front",
       "description": "\u3075\u3060\u307f \u2014 Japanese SRS app that fixes Anki's motivation problem",
       "url": "https://github.com/snonow/fudami-front",
@@ -109,6 +99,16 @@
         "https://img.shields.io/badge/IaC-Ansible-red.svg",
         "https://img.shields.io/badge/PRs-welcome-brightgreen.svg"
       ],
+      "releases": []
+    },
+    {
+      "name": "fudami-landing",
+      "description": null,
+      "url": "https://github.com/snonow/fudami-landing",
+      "stars": 0,
+      "language": "HTML",
+      "topics": [],
+      "readme_images": [],
       "releases": []
     }
   ]
