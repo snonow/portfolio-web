@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-16T02:30:06.245270Z",
+  "generated_at": "2026-06-17T02:14:38.021790Z",
   "projects": [
     {
       "name": "earthquake-realestate-viz",
@@ -62,16 +62,6 @@
       "url": "https://github.com/lloxy9l/Proj_APP_Solaire",
       "stars": 2,
       "language": "Python",
-      "topics": [],
-      "readme_images": [],
-      "releases": []
-    },
-    {
-      "name": "fudami-front",
-      "description": "\u3075\u3060\u307f \u2014 Japanese SRS app that fixes Anki's motivation problem",
-      "url": "https://github.com/snonow/fudami-front",
-      "stars": 0,
-      "language": "TypeScript",
       "topics": [],
       "readme_images": [],
       "releases": []
