@@ -1,0 +1,6 @@
+{
+  "name": "fr-onepage",
+  "locale": "fr",
+  "template": "onepage",
+  "output": "cv_fr_onepage.tex"
+}

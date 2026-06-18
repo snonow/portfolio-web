@@ -11,6 +11,11 @@ node_modules
 dist
 dist-ssr
 *.local
+*.local.json
+
+# Private resume overrides (contact info, etc.) and generated artifacts
+resume/master.local.json
+resume/build/
 
 # Editor directories and files
 .vscode/*

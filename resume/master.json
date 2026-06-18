@@ -1,0 +1,163 @@
+{
+  "$comment": "Single source of truth for resume content. Edit this; LaTeX + web are generated. Private contact info lives in resume/master.local.json (gitignored).",
+  "identity": {
+    "fullName": "Arno Wilhelm",
+    "subtitle": {
+      "en": "Data & MLOps Engineer",
+      "fr": "Ingénieur Data & MLOps"
+    },
+    "photo": "profile.jpg",
+    "links": {
+      "linkedin": { "href": "https://www.linkedin.com/in/arno-wilhelm/", "text": "/arno-wilhelm" },
+      "github":   { "href": "https://github.com/snonow",                 "text": "/snonow" },
+      "phone":    { "href": "tel:REDACTED",                              "text": "+## # ## ## ## ##" },
+      "email":    { "href": "mailto:contact@example.com",                "text": "contact@example.com" }
+    }
+  },
+
+  "sectionOrder": ["experience", "projects", "education", "skills"],
+
+  "experience": [
+    {
+      "id": "pwc-2026",
+      "company": { "en": "PwC Luxembourg", "fr": "PwC Luxembourg" },
+      "role": { "en": "Business Intelligence Intern -- Data Science Team", "fr": "Stagiaire Business Intelligence - Équipe Data Science" },
+      "dates": { "en": "Feb. 2026 -- Aug. 2026", "fr": "Fév. 2026 -- Août 2026" },
+      "location": { "en": "Luxembourg", "fr": "Luxembourg" },
+      "tags": ["cloud", "ai", "current"],
+      "bullets": [
+        { "id": "pwc-migration", "text": {
+          "en": "Led a cloud-to-cloud Azure migration, re-codifying the full infrastructure as Terraform (IaC): 3 Function Apps, Azure Data Factory, SQL Server (>500 GB), Cosmos DB and an on-premise database",
+          "fr": "Pilotage d'une migration cloud-to-cloud Azure, recodification complète de l'infrastructure en Terraform (IaC) : 3 Function Apps, Azure Data Factory, SQL Server (>500 Go), Cosmos DB et une base on-premise"
+        }, "tags": ["cloud", "iac"] },
+        { "id": "pwc-adf", "text": {
+          "en": "Re-architected and redeployed 80+ ADF pipelines in clean YAML, rewiring 200+ data sources with end-to-end quality checks to ensure system reliability",
+          "fr": "Ré-architecture et redéploiement de plus de 80 pipelines ADF en YAML, recâblage de 200+ sources de données avec contrôles qualité de bout en bout pour garantir la fiabilité du système"
+        }, "tags": ["data", "cloud"] },
+        { "id": "pwc-rag", "text": {
+          "en": "Built the full back-end and front-end infrastructure for an internal RAG / agentic AI solution for process automation",
+          "fr": "Construction complète de l'infrastructure back-end et front-end d'une solution interne RAG / IA agentique pour l'automatisation de processus"
+        }, "tags": ["ai", "llm"] }
+      ]
+    },
+    {
+      "id": "kagawa-mlops",
+      "company": { "en": "Kagawa University -- Machine Learning Laboratory", "fr": "Université de Kagawa -- Laboratoire ML" },
+      "role": { "en": "MLOps Technician Intern", "fr": "Stagiaire Technicien MLOps" },
+      "dates": { "en": "Feb. 2025 -- Apr. 2025", "fr": "Fév. 2025 -- Avr. 2025" },
+      "location": { "en": "Takamatsu, Japan", "fr": "Takamatsu, Japon" },
+      "tags": ["ml", "cloud", "research"],
+      "bullets": [
+        { "id": "kagawa-paper", "text": { "en": "Co-authored a published research paper on hybrid MLOps practices for SMEs",                                                                            "fr": "Co-rédaction d'un papier de recherche publié sur les pratiques MLOps hybrides pour les PME" }, "tags": ["research"] },
+        { "id": "kagawa-cicd",  "text": { "en": "Deployed a hybrid CI/CD infrastructure (GitLab, Docker) and ETL pipelines for training Machine Learning models on the cloud", "fr": "Déploiement d'une infrastructure CI/CD hybride (GitLab, Docker) et de pipelines ETL pour l'entraînement de modèles Machine Learning sur le cloud" }, "tags": ["cloud", "ml"] }
+      ]
+    },
+    {
+      "id": "junior-pac",
+      "company": { "en": "Junior Enterprise (Junior PAC)", "fr": "Junior Entreprise (Junior PAC)" },
+      "role": { "en": "Association President", "fr": "Président d'Association" },
+      "dates": { "en": "Sep. 2024 -- Present", "fr": "Sep. 2024 -- Présent" },
+      "location": { "en": "Annecy, France", "fr": "Annecy, France" },
+      "tags": ["leadership", "current"],
+      "bullets": [
+        { "id": "jpac-team",   "text": { "en": "Managing a team of 6 engineers within a small-scale consulting structure",                              "fr": "Management d'une équipe de 6 ingénieurs pour une structure à taille humaine" },                              "tags": ["leadership"] },
+        { "id": "jpac-client", "text": { "en": "Client relationship management, meeting facilitation, and oversight of consulting projects (Data & Software)", "fr": "Gestion de la relation client, animation de réunions et pilotage de projets de conseil (Data & Logiciel)" }, "tags": ["leadership", "client"] }
+      ]
+    },
+    {
+      "id": "edf",
+      "style": "compact",
+      "company": { "en": "EDF -- Saint-Alban Nuclear Power Plant", "fr": "EDF -- Centrale Nucléaire Saint-Alban" },
+      "role": { "en": "Intern", "fr": "Stagiaire" },
+      "dates": { "en": "Aug. 2024", "fr": "Août 2024" },
+      "tags": ["industry"],
+      "bullets": [
+        { "id": "edf-1", "text": { "en": "Technical inspections of safety equipment (SCBA) and maintenance of regulatory documentation", "fr": "Inspections techniques d'équipements de sécurité (SCBA) et maintien de la documentation réglementaire" }, "tags": [] }
+      ]
+    }
+  ],
+
+  "projects": [
+    {
+      "id": "bfh-curation",
+      "title": { "en": "Data Curation Pipeline & Web Crawling Project", "fr": "Projet Pipeline de Curation de Données et Web Crawling" },
+      "org": { "en": "GenAI Laboratory -- BFH", "fr": "Laboratoire GenAI -- BFH" },
+      "dates": { "en": "Sep. 2025 -- Feb. 2026", "fr": "Sep. 2025 -- Fév. 2026" },
+      "location": { "en": "Bern, Switzerland", "fr": "Berne, Suisse" },
+      "tags": ["ml", "ai", "data", "current"],
+      "bullets": [
+        { "id": "bfh-llm",   "text": { "en": "Developed an automated system (Python, MongoDB) integrating LLM-calibrated heuristic filtering to extract health-related data from 5 Swiss media sources", "fr": "Développement d'un système automatisé (Python, MongoDB) intégrant un filtrage heuristique calibré par LLM pour isoler des données santé issues de 5 médias suisses" }, "tags": ["ai", "llm"] },
+        { "id": "bfh-corpus","text": { "en": "Processed and cleaned over 900,000 URLs to build a structured corpus for Topic Modeling",                                                                   "fr": "Traitement et nettoyage de plus de 900 000 URLs pour constituer un corpus structuré dédié au Topic Modeling" },                                                  "tags": ["data"] }
+      ]
+    }
+  ],
+
+  "education": [
+    {
+      "id": "polytech-annecy",
+      "school": { "en": "Polytech Annecy", "fr": "Polytech Annecy" },
+      "degree": { "en": "Master of Engineering in CS & Data Analytics", "fr": "Diplôme d'Ingénieur Informatique & Data Analytics" },
+      "details": { "en": "Specialization: Computer Science, Data & Applications", "fr": "Spécialité : Informatique Données Usages" },
+      "dates": { "en": "Sep. 2023 -- Sep. 2026", "fr": "Sep. 2023 -- Sep. 2026" },
+      "location": { "en": "Annecy, France", "fr": "Annecy, France" },
+      "tags": ["core"]
+    },
+    {
+      "id": "bfh",
+      "school": { "en": "Bern University of Applied Sciences (BFH)", "fr": "Haute École Spécialisée Bernoise (BFH)" },
+      "degree": { "en": "MSc Engineering (Exchange)", "fr": "MSc Ingénierie (Échange)" },
+      "details": { "en": "Transformers, Self-Supervised Learning, Cloud Systems", "fr": "Transformers, Self-Supervised Learning, Cloud Systems" },
+      "dates": { "en": "Sep. 2025 -- Feb. 2026", "fr": "Sep. 2025 -- Fév. 2026" },
+      "location": { "en": "Bern, Switzerland", "fr": "Berne, Suisse" },
+      "tags": ["exchange", "ml", "cloud"]
+    },
+    {
+      "id": "kagawa",
+      "school": { "en": "Kagawa University", "fr": "Université de Kagawa" },
+      "degree": { "en": "Master's in Data Science (Exchange)", "fr": "Master Data Science (Échange)" },
+      "details": { "en": "Blockchain, Cryptography, Mathematics & Data Science", "fr": "Blockchain, Cryptographie, Mathématiques & Data Science" },
+      "dates": { "en": "Apr. 2025 -- Aug. 2025", "fr": "Avr. 2025 -- Août 2025" },
+      "location": { "en": "Takamatsu, Japan", "fr": "Takamatsu, Japon" },
+      "tags": ["exchange"]
+    },
+    {
+      "id": "cpge",
+      "style": "compact",
+      "school": { "en": "Lycée Claude Gellé", "fr": "Lycée Claude Gellé" },
+      "degree": { "en": "Classe Préparatoire aux Grandes Écoles (MP)", "fr": "Classe Préparatoire aux Grandes Écoles (MP)" },
+      "dates": { "en": "Sep. 2021 -- Sep. 2023", "fr": "Sep. 2021 -- Sep. 2023" },
+      "tags": []
+    },
+    {
+      "id": "bac",
+      "style": "compact",
+      "school": { "en": "Lycée La Malgrange", "fr": "Lycée La Malgrange" },
+      "degree": { "en": "Baccalauréat with Honours (Maths, Physics, CS)", "fr": "Baccalauréat avec mention (Maths, Physique, Info)" },
+      "dates": { "en": "Sep. 2018 -- Sep. 2021", "fr": "Sep. 2018 -- Sep. 2021" },
+      "tags": []
+    }
+  ],
+
+  "skills": [
+    { "category": { "en": "Cloud & DevOps:", "fr": "Cloud & DevOps :" },"items": { "en": "Microsoft Azure (ADF, Functions, Cosmos DB), AWS, Terraform (IaC), Docker, CI/CD", "fr": "Microsoft Azure (ADF, Functions, Cosmos DB), AWS, Terraform (IaC), Docker, CI/CD" } },
+    { "category": { "en": "Programming:",    "fr": "Programmation :" }, "items": { "en": "Python (advanced -- since 2021), SQL (PostgreSQL, MySQL), Java, C#, .NET",         "fr": "Python (avancé - depuis 2021), SQL (PostgreSQL, MySQL), Java, C#, .NET" } },
+    { "category": { "en": "Data & ML:",      "fr": "Data & ML :" },     "items": { "en": "PyTorch, TensorFlow, MLOps (CI/CD, monitoring), ETL pipelines",                    "fr": "PyTorch, TensorFlow, MLOps (CI/CD, monitoring), pipelines ETL" } },
+    { "category": { "en": "Visualization:",  "fr": "Visualisation :" }, "items": { "en": "Power BI, Tableau, Python visualization libraries",                                 "fr": "Power BI, Tableau, librairies de visualisation Python" } },
+    { "category": { "en": "Languages:",      "fr": "Langues :" },       "items": { "en": "French (Native), English (Fluent -- TOEIC 920/990), Japanese (N3/B1)",             "fr": "Français (Natif), Anglais (Courant -- TOEIC 920/990), Japonais (N3/B1)" } },
+    { "category": { "en": "Interests:",      "fr": "Passions :" },      "items": { "en": "Endurance sports (running, cycling, skiing) | Japanese culture & language",       "fr": "Sports d'endurance (course, cyclisme, ski) | Culture & langue japonaises" } }
+  ],
+
+  "sectionTitles": {
+    "education":  { "en": "Education",               "fr": "Formation" },
+    "experience": { "en": "Professional Experience", "fr": "Expérience Professionnelle" },
+    "projects":   { "en": "Projects",                "fr": "Projets" },
+    "skills":     { "en": "Skills",                  "fr": "Compétences" }
+  },
+
+  "sectionIcons": {
+    "education":  "\\faGraduationCap",
+    "experience": "\\faPieChart",
+    "projects":   "\\faFlask",
+    "skills":     "\\faGears"
+  }
+}

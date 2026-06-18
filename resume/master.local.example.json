@@ -1,0 +1,9 @@
+{
+  "$comment": "Copy to resume/master.local.json (gitignored) and fill with your real contact info. Build script deep-merges this on top of master.json so private fields never enter the public repo.",
+  "identity": {
+    "links": {
+      "phone": { "href": "tel:+33 6 70 36 80 39", "text": "+33 6 70 36 80 39" },
+      "email": { "href": "mailto:arnowilhelm3@icloud.com", "text": "arnowilhelm3@icloud.com" }
+    }
+  }
+}
