@@ -1,72 +1,118 @@
-# Arno – Portfolio
+# Arno Wilhelm — Portfolio
 
-Personal portfolio website built with modern frontend technologies.  
-The site presents my technical skills, projects, and professional background in a clean, responsive, and performant interface.
+Personal portfolio + résumé pipeline. One JSON file is the single source of truth; it
+generates both the LaTeX résumés (EN/FR) and the React site you see at
+**[snonow.github.io/portfolio-web](https://snonow.github.io/portfolio-web/)**.
 
-## Live Demo
+## Why this exists
 
-Deployed on Github Pages:  
-[https://your-netlify-url.netlify.app](https://snonow.github.io/portfolio-web/)
+The site and the LaTeX résumé used to drift apart. Now editing
+`resume/master.json` updates both.
 
-## Tech Stack
+```
+resume/master.json   ──► resume/build/cv_en_onepage.tex   (LaTeX → PDF)
+                    └──► resume/build/cv_fr_onepage.tex
+                    └──► src/data/resume.json             (React app, PII-stripped)
+```
 
-- React
-- Vite
-- Tailwind CSS
-- Framer Motion
-- Recharts
-- Lucide React
+## Tech stack
 
-## Project Structure
+- React 19 + Vite 7
+- Tailwind CSS 3
+- Framer Motion (subtle animations)
+- Lucide + react-icons
+- LaTeX templating in plain Node (`scripts/build-resume.mjs`, zero runtime deps)
 
-```text
+## Repo layout
+
+```
+resume/
+  master.json              # single source of truth (bilingual EN/FR, no PII)
+  master.local.json        # GITIGNORED — real phone/email overrides
+  master.local.example.json
+  variants/                # one config per output variant
+    en-onepage.json
+    fr-onepage.json
+  templates/
+    onepage.tex.tmpl       # shared LaTeX skeleton
+  assets/profile.jpg
+  build/                   # generated .tex + photo, gitignored
+
+scripts/
+  build-resume.mjs         # master + local + variant → .tex and web JSON
+  generate_github_projects.py  # daily-refreshed projects feed
+
 src/
-├── components/        # Reusable UI components
-├── sections/          # Page sections (Hero, About, Projects, Contact)
-├── assets/            # Images and static assets
-├── styles/            # Global styles (Tailwind)
-├── App.jsx
-└── main.jsx
-````
+  data/resume.json         # GENERATED — PII-stripped, committed
+  data/github_projects.json
+  sections/                # Hero, Experience, ProjectsGallery, GitHubSignals, PipelineProof
+  components/
+```
 
-## Getting Started
+## Getting started
 
-### Prerequisites
-
-* Node.js >= 18
-* npm
-
-### Installation
+Requires Node ≥ 20.
 
 ```bash
-git clone https://github.com/your-username/portfolio.git
-cd portfolio
+git clone https://github.com/snonow/portfolio-web.git
+cd portfolio-web
 npm install
+
+# (Optional, private) copy the example to inject your real contact info into the .tex builds
+cp resume/master.local.example.json resume/master.local.json
+# edit resume/master.local.json with your phone/email
+
+npm run dev          # http://localhost:5173 — predev regenerates resume.json
 ```
 
-### Development
+## Scripts
 
-```bash
-npm run dev
-```
+| Command | What it does |
+| --- | --- |
+| `npm run dev` | Start Vite dev server (regenerates `resume.json` first) |
+| `npm run build` | Production build (regenerates `resume.json` first → `dist/`) |
+| `npm run build:resume` | Just regenerate LaTeX + web JSON from `resume/master.json` |
+| `npm run preview` | Serve the built `dist/` locally |
+| `npm run lint` | ESLint on `src/` |
 
-### Production Build
+## Editing the résumé
 
-```bash
-npm run build
-npm run preview
-```
+1. Edit `resume/master.json` (bilingual fields use `{ "en": "...", "fr": "..." }`).
+2. Run `npm run build:resume`.
+3. Compile a PDF from `resume/build/cv_en_onepage.tex` (XeLaTeX recommended).
+4. Commit `master.json` and the regenerated `src/data/resume.json`.
+
+### Adding a new entry
+
+- New experience: append to `experience[]` in `master.json`. Set `style: "compact"`
+  to render as a single-line `\resumeEntryTD` (good for short stints).
+- New section order: edit `sectionOrder` at the top of `master.json`.
+- New language: add the locale to every `{ "en": ..., "fr": ... }` field, add a
+  variant file in `resume/variants/`, and the build will pick it up automatically.
+
+## Privacy / public-repo discipline
+
+This repo is public. `master.json` contains placeholder phone/email; the real
+values live in `resume/master.local.json` (gitignored). The build script deep-merges
+the local file on top of `master.json` for LaTeX output, and **always strips**
+`identity.links` before writing `src/data/resume.json` — so the deployed site
+never bundles a phone number or email address, even if you're building locally
+with your real contact info.
+
+If you fork this, drop your contact info in `master.local.json` (never in
+`master.json`).
 
 ## Deployment
 
-The project is deployed using **Github Pages** with continuous deployment enabled.
-Every push to the `main` branch triggers an automatic rebuild and deployment.
+GitHub Pages. Every push to `main` triggers `.github/workflows/deploy.yml`:
+`npm ci` → `npm run build` (which runs `build:resume` via the `prebuild` hook) →
+publish `dist/` to the `gh-pages` branch.
 
-Build configuration:
-
-* Build command: `npm run build`
-* Publish directory: `dist`
+A second workflow (`update-github-projects.yml`) refreshes
+`src/data/github_projects.json` daily so the **Projects** section reflects the
+latest public repos without a redeploy.
 
 ## License
 
-This project is personal and not intended for redistribution.
+Personal portfolio — not intended for redistribution. LaTeX résumé macros are
+adapted from Leslie Cheng (MIT).
