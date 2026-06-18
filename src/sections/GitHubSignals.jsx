@@ -1,13 +1,4 @@
 import { useEffect, useState } from "react";
-import {
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  ResponsiveContainer,
-} from "recharts";
 import { Database, Award, Globe } from "lucide-react";
 
 import KpiCard from "../components/KpiCard";
@@ -68,13 +59,8 @@ const GitHubSignals = () => {
 
   const topRepos = repos
     .filter(r => !r.fork)
-    .sort((a, b) => b.stargazers_count - a.stargazers_count)
+    .sort((a, b) => (b.stargazers_count - a.stargazers_count) || new Date(b.pushed_at) - new Date(a.pushed_at))
     .slice(0, 6);
-
-  const chartData = topRepos.map(r => ({
-    name: r.name,
-    stars: r.stargazers_count,
-  }));
 
   return (
     <section className="mb-20">
@@ -107,22 +93,25 @@ const GitHubSignals = () => {
         />
       </div>
 
-      <div className="h-[260px] bg-white border rounded-xl p-4">
-        <ResponsiveContainer width="100%" height="100%">
-          <LineChart data={chartData}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" hide />
-            <YAxis />
-            <Tooltip />
-            <Line
-              type="monotone"
-              dataKey="stars"
-              stroke="#2563eb"
-              strokeWidth={2}
-            />
-          </LineChart>
-        </ResponsiveContainer>
-      </div>
+      {!loading && topRepos.length > 0 && (
+        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          {topRepos.map((r) => (
+            <li key={r.id} className="bg-white border rounded-xl p-4 hover:border-blue-300 transition">
+              <a href={r.html_url} target="_blank" rel="noreferrer" className="font-semibold text-slate-900 hover:text-blue-700">
+                {r.name}
+              </a>
+              {r.description && (
+                <p className="text-xs text-slate-600 mt-1 line-clamp-2">{r.description}</p>
+              )}
+              <div className="flex gap-3 text-xs text-slate-500 mt-2">
+                {r.language && <span>{r.language}</span>}
+                <span>★ {r.stargazers_count}</span>
+                <span>Updated {new Date(r.pushed_at).toLocaleDateString()}</span>
+              </div>
+            </li>
+          ))}
+        </ul>
+      )}
     </section>
   );
 };

@@ -5,7 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "prebuild": "node scripts/build-resume.mjs",
     "build": "vite build",
+    "build:resume": "node scripts/build-resume.mjs",
+    "predev": "node scripts/build-resume.mjs",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -15,7 +18,6 @@
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-icons": "^5.5.0",
-    "recharts": "^3.6.0",
     "simple-icons": "^16.2.0"
   },
   "devDependencies": {
