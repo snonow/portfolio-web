@@ -10,7 +10,7 @@ const FeaturedProjects = ({ locale = "en" }) => {
       <Reveal>
         <h2 className="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-3">
           <span className="w-1.5 h-7 bg-blue-900 rounded-sm" />
-          Featured Projects
+          {locale === "fr" ? "Projets" : "Featured Projects"}
         </h2>
       </Reveal>
 

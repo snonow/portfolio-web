@@ -16,7 +16,7 @@ const Skills = ({ locale = "en" }) => {
       <Reveal>
         <h2 className="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-3">
           <span className="w-1.5 h-7 bg-blue-900 rounded-sm" />
-          Skills
+          {locale === "fr" ? "Compétences" : "Skills"}
         </h2>
       </Reveal>
 

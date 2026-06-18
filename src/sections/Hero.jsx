@@ -49,10 +49,21 @@ const Hero = ({ locale = "en" }) => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-base md:text-lg text-slate-500 max-w-3xl leading-relaxed mb-8"
           >
-            I build <span className="text-slate-800 font-medium">reliable data pipelines</span>,{" "}
-            <span className="text-slate-800 font-medium">decision-ready dashboards</span>, and{" "}
-            <span className="text-slate-800 font-medium">controlled AI-assisted workflows</span>.
-            Currently splitting time between Polytech Annecy, BFH Bern, and an upcoming BI internship at PwC Luxembourg.
+            {locale === "fr" ? (
+              <>
+                Je construis des <span className="text-slate-800 font-medium">pipelines de données fiables</span>,{" "}
+                des <span className="text-slate-800 font-medium">tableaux de bord décisionnels</span>, et des{" "}
+                <span className="text-slate-800 font-medium">workflows IA maîtrisés</span>.
+                {" "}Actuellement BI Intern chez PwC Luxembourg, en parallèle de mon diplôme d&apos;ingénieur à Polytech Annecy.
+              </>
+            ) : (
+              <>
+                I build <span className="text-slate-800 font-medium">reliable data pipelines</span>,{" "}
+                <span className="text-slate-800 font-medium">decision-ready dashboards</span>, and{" "}
+                <span className="text-slate-800 font-medium">controlled AI-assisted workflows</span>.
+                {" "}Currently a BI Intern at PwC Luxembourg, alongside my engineering degree at Polytech Annecy.
+              </>
+            )}
           </motion.p>
 
           <motion.div

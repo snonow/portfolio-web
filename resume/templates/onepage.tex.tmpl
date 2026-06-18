@@ -32,10 +32,6 @@
 \def \linkedinlink {{{LINK_LINKEDIN_HREF}}}
 \def \linkedintext {{{LINK_LINKEDIN_TEXT}}}
 
-\def \phoneicon {\faPhone}
-\def \phonelink {{{LINK_PHONE_HREF}}}
-\def \phonetext {{{LINK_PHONE_TEXT}}}
-
 \def \emailicon {\faEnvelope}
 \def \emaillink {{{LINK_EMAIL_HREF}}}
 \def \emailtext {{{LINK_EMAIL_TEXT}}}
@@ -55,7 +51,6 @@
 \definecolor{links}{HTML}{1565C0}
 
 \def \linkedin {\linkedinicon \hspace{3pt}\href{\linkedinlink}{\linkedintext}}
-\def \phone    {\phoneicon    \hspace{3pt}\href{\phonelink}{\phonetext}}
 \def \email    {\emailicon    \hspace{3pt}\href{\emaillink}{\emailtext}}
 \def \github   {\githubicon   \hspace{3pt}\href{\githublink}{\githubtext}}
 
@@ -111,7 +106,7 @@
     \end{tabular}
     &
     \begin{tabular}[c]{@{}l@{}}
-        {\small#1} \\ {\small#2} \\ {\small#3} \\ {\small#4}
+        {\small#1} \\ {\small#2} \\ {\small#3}
     \end{tabular}
   \end{tabularx}
 }
@@ -134,7 +129,7 @@
 
 \begin{document}
 
-\headertype{\linkedin}{\github}{\phone}{\email}
+\headertype{\linkedin}{\email}{\github}{}
 \vspace{10pt}
 
 {{BODY}}

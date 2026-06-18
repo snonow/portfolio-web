@@ -5,6 +5,7 @@
 
 import { readFile, writeFile, readdir, mkdir, copyFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
+import { execSync } from "node:child_process";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -111,10 +112,8 @@ const buildVariant = async (master, variant) => {
     LINK_LINKEDIN_TEXT: master.identity.links.linkedin.text,
     LINK_GITHUB_HREF:   master.identity.links.github.href,
     LINK_GITHUB_TEXT:   master.identity.links.github.text,
-    LINK_PHONE_HREF:    master.identity.links.phone.href,
-    LINK_PHONE_TEXT:    master.identity.links.phone.text,
-    LINK_EMAIL_HREF:    master.identity.links.email.href,
-    LINK_EMAIL_TEXT:    master.identity.links.email.text,
+    LINK_EMAIL_HREF:    master.identity.links.email?.href ?? "",
+    LINK_EMAIL_TEXT:    master.identity.links.email?.text ?? "",
     BODY:               renderBody(master, variant),
   };
 
@@ -147,15 +146,25 @@ const stripPrivate = (master) => {
   return { ...rest, identity: identityPublic };
 };
 
+const getLastUpdated = () => {
+  try {
+    return execSync("git log -1 --format=%cd --date=format:%Y-%m-%d -- resume/master.json", { encoding: "utf8" }).trim();
+  } catch {
+    return new Date().toISOString().slice(0, 10);
+  }
+};
+
 const buildWebJson = async (master) => {
   const safe = stripPrivate(master);
+  const lastUpdated = getLastUpdated();
   const payload = {
+    _lastUpdated: lastUpdated,
     en: localizeForWeb(safe, "en"),
     fr: localizeForWeb(safe, "fr"),
   };
   await mkdir(dirname(webDataPath), { recursive: true });
   await writeFile(webDataPath, JSON.stringify(payload, null, 2), "utf8");
-  console.log(`  ✓ web → ${webDataPath}`);
+  console.log(`  ✓ web → ${webDataPath} (last updated ${lastUpdated})`);
 };
 
 const main = async () => {

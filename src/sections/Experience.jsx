@@ -14,7 +14,7 @@ const Experience = ({ locale = "en" }) => {
 
   return (
     <section className="mb-24">
-      <Reveal><SectionHeading>Experience</SectionHeading></Reveal>
+      <Reveal><SectionHeading>{locale === "fr" ? "Expérience Professionnelle" : "Professional Experience"}</SectionHeading></Reveal>
 
       <ol className="relative border-l border-slate-200 ml-3 space-y-8">
         {items.map((x, i) => (

@@ -1,4 +1,5 @@
 {
+  "_lastUpdated": "2026-06-18",
   "en": {
     "$comment": "Gitignored. Private overrides merged on top of master.json at build time.",
     "sectionOrder": [
@@ -11,8 +12,8 @@
       {
         "id": "pwc-2026",
         "company": "PwC Luxembourg",
-        "role": "Business Intelligence Intern -- Data Science Team",
-        "dates": "Feb. 2026 -- Aug. 2026",
+        "role": "Business Intelligence Intern – Data Science Team",
+        "dates": "Feb. 2026 – Aug. 2026",
         "location": "Luxembourg",
         "tags": [
           "cloud",
@@ -48,9 +49,9 @@
       },
       {
         "id": "kagawa-mlops",
-        "company": "Kagawa University -- Machine Learning Laboratory",
+        "company": "Kagawa University – Machine Learning Laboratory",
         "role": "MLOps Technician Intern",
-        "dates": "Feb. 2025 -- Apr. 2025",
+        "dates": "Feb. 2025 – Apr. 2025",
         "location": "Takamatsu, Japan",
         "tags": [
           "ml",
@@ -79,7 +80,7 @@
         "id": "junior-pac",
         "company": "Junior Enterprise (Junior PAC)",
         "role": "Association President",
-        "dates": "Sep. 2024 -- Present",
+        "dates": "Sep. 2024 – Present",
         "location": "Annecy, France",
         "tags": [
           "leadership",
@@ -106,7 +107,7 @@
       {
         "id": "edf",
         "style": "compact",
-        "company": "EDF -- Saint-Alban Nuclear Power Plant",
+        "company": "EDF – Saint-Alban Nuclear Power Plant",
         "role": "Intern",
         "dates": "Aug. 2024",
         "tags": [
@@ -125,8 +126,8 @@
       {
         "id": "bfh-curation",
         "title": "Data Curation Pipeline & Web Crawling Project",
-        "org": "GenAI Laboratory -- BFH",
-        "dates": "Sep. 2025 -- Feb. 2026",
+        "org": "GenAI Laboratory – BFH",
+        "dates": "Sep. 2025 – Feb. 2026",
         "location": "Bern, Switzerland",
         "tags": [
           "ml",
@@ -159,7 +160,7 @@
         "school": "Polytech Annecy",
         "degree": "Master of Engineering in CS & Data Analytics",
         "details": "Specialization: Computer Science, Data & Applications",
-        "dates": "Sep. 2023 -- Sep. 2026",
+        "dates": "Sep. 2023 – Sep. 2026",
         "location": "Annecy, France",
         "tags": [
           "core"
@@ -170,7 +171,7 @@
         "school": "Bern University of Applied Sciences (BFH)",
         "degree": "MSc Engineering (Exchange)",
         "details": "Transformers, Self-Supervised Learning, Cloud Systems",
-        "dates": "Sep. 2025 -- Feb. 2026",
+        "dates": "Sep. 2025 – Feb. 2026",
         "location": "Bern, Switzerland",
         "tags": [
           "exchange",
@@ -183,7 +184,7 @@
         "school": "Kagawa University",
         "degree": "Master's in Data Science (Exchange)",
         "details": "Blockchain, Cryptography, Mathematics & Data Science",
-        "dates": "Apr. 2025 -- Aug. 2025",
+        "dates": "Apr. 2025 – Aug. 2025",
         "location": "Takamatsu, Japan",
         "tags": [
           "exchange"
@@ -194,7 +195,7 @@
         "style": "compact",
         "school": "Lycée Claude Gellé",
         "degree": "Classe Préparatoire aux Grandes Écoles (MP)",
-        "dates": "Sep. 2021 -- Sep. 2023",
+        "dates": "Sep. 2021 – Sep. 2023",
         "tags": []
       },
       {
@@ -202,7 +203,7 @@
         "style": "compact",
         "school": "Lycée La Malgrange",
         "degree": "Baccalauréat with Honours (Maths, Physics, CS)",
-        "dates": "Sep. 2018 -- Sep. 2021",
+        "dates": "Sep. 2018 – Sep. 2021",
         "tags": []
       }
     ],
@@ -213,7 +214,7 @@
       },
       {
         "category": "Programming:",
-        "items": "Python (advanced -- since 2021), SQL (PostgreSQL, MySQL), Java, C#, .NET"
+        "items": "Python (advanced – since 2021), SQL (PostgreSQL, MySQL), Java, C#, .NET"
       },
       {
         "category": "Data & ML:",
@@ -225,7 +226,7 @@
       },
       {
         "category": "Languages:",
-        "items": "French (Native), English (Fluent -- TOEIC 920/990), Japanese (N3/B1)"
+        "items": "French (Native), English (Fluent – TOEIC 920/990), Japanese (N3/B1)"
       },
       {
         "category": "Interests:",
@@ -261,8 +262,8 @@
       {
         "id": "pwc-2026",
         "company": "PwC Luxembourg",
-        "role": "Stagiaire Business Intelligence - Équipe Data Science",
-        "dates": "Fév. 2026 -- Août 2026",
+        "role": "Stagiaire Business Intelligence – Équipe Data Science",
+        "dates": "Fév. 2026 – Août 2026",
         "location": "Luxembourg",
         "tags": [
           "cloud",
@@ -298,9 +299,9 @@
       },
       {
         "id": "kagawa-mlops",
-        "company": "Université de Kagawa -- Laboratoire ML",
+        "company": "Université de Kagawa – Laboratoire ML",
         "role": "Stagiaire Technicien MLOps",
-        "dates": "Fév. 2025 -- Avr. 2025",
+        "dates": "Fév. 2025 – Avr. 2025",
         "location": "Takamatsu, Japon",
         "tags": [
           "ml",
@@ -329,7 +330,7 @@
         "id": "junior-pac",
         "company": "Junior Entreprise (Junior PAC)",
         "role": "Président d'Association",
-        "dates": "Sep. 2024 -- Présent",
+        "dates": "Sep. 2024 – Présent",
         "location": "Annecy, France",
         "tags": [
           "leadership",
@@ -356,7 +357,7 @@
       {
         "id": "edf",
         "style": "compact",
-        "company": "EDF -- Centrale Nucléaire Saint-Alban",
+        "company": "EDF – Centrale Nucléaire Saint-Alban",
         "role": "Stagiaire",
         "dates": "Août 2024",
         "tags": [
@@ -375,8 +376,8 @@
       {
         "id": "bfh-curation",
         "title": "Projet Pipeline de Curation de Données et Web Crawling",
-        "org": "Laboratoire GenAI -- BFH",
-        "dates": "Sep. 2025 -- Fév. 2026",
+        "org": "Laboratoire GenAI – BFH",
+        "dates": "Sep. 2025 – Fév. 2026",
         "location": "Berne, Suisse",
         "tags": [
           "ml",
@@ -409,7 +410,7 @@
         "school": "Polytech Annecy",
         "degree": "Diplôme d'Ingénieur Informatique & Data Analytics",
         "details": "Spécialité : Informatique Données Usages",
-        "dates": "Sep. 2023 -- Sep. 2026",
+        "dates": "Sep. 2023 – Sep. 2026",
         "location": "Annecy, France",
         "tags": [
           "core"
@@ -420,7 +421,7 @@
         "school": "Haute École Spécialisée Bernoise (BFH)",
         "degree": "MSc Ingénierie (Échange)",
         "details": "Transformers, Self-Supervised Learning, Cloud Systems",
-        "dates": "Sep. 2025 -- Fév. 2026",
+        "dates": "Sep. 2025 – Fév. 2026",
         "location": "Berne, Suisse",
         "tags": [
           "exchange",
@@ -433,7 +434,7 @@
         "school": "Université de Kagawa",
         "degree": "Master Data Science (Échange)",
         "details": "Blockchain, Cryptographie, Mathématiques & Data Science",
-        "dates": "Avr. 2025 -- Août 2025",
+        "dates": "Avr. 2025 – Août 2025",
         "location": "Takamatsu, Japon",
         "tags": [
           "exchange"
@@ -444,7 +445,7 @@
         "style": "compact",
         "school": "Lycée Claude Gellé",
         "degree": "Classe Préparatoire aux Grandes Écoles (MP)",
-        "dates": "Sep. 2021 -- Sep. 2023",
+        "dates": "Sep. 2021 – Sep. 2023",
         "tags": []
       },
       {
@@ -452,7 +453,7 @@
         "style": "compact",
         "school": "Lycée La Malgrange",
         "degree": "Baccalauréat avec mention (Maths, Physique, Info)",
-        "dates": "Sep. 2018 -- Sep. 2021",
+        "dates": "Sep. 2018 – Sep. 2021",
         "tags": []
       }
     ],
@@ -475,7 +476,7 @@
       },
       {
         "category": "Langues :",
-        "items": "Français (Natif), Anglais (Courant -- TOEIC 920/990), Japonais (N3/B1)"
+        "items": "Français (Natif), Anglais (Courant – TOEIC 920/990), Japonais (N3/B1)"
       },
       {
         "category": "Passions :",

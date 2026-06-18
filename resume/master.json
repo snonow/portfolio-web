@@ -10,8 +10,7 @@
     "links": {
       "linkedin": { "href": "https://www.linkedin.com/in/arno-wilhelm/", "text": "/arno-wilhelm" },
       "github":   { "href": "https://github.com/snonow",                 "text": "/snonow" },
-      "phone":    { "href": "tel:REDACTED",                              "text": "+## # ## ## ## ##" },
-      "email":    { "href": "mailto:contact@example.com",                "text": "contact@example.com" }
+      "email":    { "href": "mailto:arno.wilhelm@kmail.com",                "text": "arno.wilhelm@kmail.com" }
     }
   },
 
@@ -21,8 +20,8 @@
     {
       "id": "pwc-2026",
       "company": { "en": "PwC Luxembourg", "fr": "PwC Luxembourg" },
-      "role": { "en": "Business Intelligence Intern -- Data Science Team", "fr": "Stagiaire Business Intelligence - Équipe Data Science" },
-      "dates": { "en": "Feb. 2026 -- Aug. 2026", "fr": "Fév. 2026 -- Août 2026" },
+      "role": { "en": "Business Intelligence Intern – Data Science Team", "fr": "Stagiaire Business Intelligence – Équipe Data Science" },
+      "dates": { "en": "Feb. 2026 – Aug. 2026", "fr": "Fév. 2026 – Août 2026" },
       "location": { "en": "Luxembourg", "fr": "Luxembourg" },
       "tags": ["cloud", "ai", "current"],
       "bullets": [
@@ -42,9 +41,9 @@
     },
     {
       "id": "kagawa-mlops",
-      "company": { "en": "Kagawa University -- Machine Learning Laboratory", "fr": "Université de Kagawa -- Laboratoire ML" },
+      "company": { "en": "Kagawa University – Machine Learning Laboratory", "fr": "Université de Kagawa – Laboratoire ML" },
       "role": { "en": "MLOps Technician Intern", "fr": "Stagiaire Technicien MLOps" },
-      "dates": { "en": "Feb. 2025 -- Apr. 2025", "fr": "Fév. 2025 -- Avr. 2025" },
+      "dates": { "en": "Feb. 2025 – Apr. 2025", "fr": "Fév. 2025 – Avr. 2025" },
       "location": { "en": "Takamatsu, Japan", "fr": "Takamatsu, Japon" },
       "tags": ["ml", "cloud", "research"],
       "bullets": [
@@ -56,7 +55,7 @@
       "id": "junior-pac",
       "company": { "en": "Junior Enterprise (Junior PAC)", "fr": "Junior Entreprise (Junior PAC)" },
       "role": { "en": "Association President", "fr": "Président d'Association" },
-      "dates": { "en": "Sep. 2024 -- Present", "fr": "Sep. 2024 -- Présent" },
+      "dates": { "en": "Sep. 2024 – Present", "fr": "Sep. 2024 – Présent" },
       "location": { "en": "Annecy, France", "fr": "Annecy, France" },
       "tags": ["leadership", "current"],
       "bullets": [
@@ -67,7 +66,7 @@
     {
       "id": "edf",
       "style": "compact",
-      "company": { "en": "EDF -- Saint-Alban Nuclear Power Plant", "fr": "EDF -- Centrale Nucléaire Saint-Alban" },
+      "company": { "en": "EDF – Saint-Alban Nuclear Power Plant", "fr": "EDF – Centrale Nucléaire Saint-Alban" },
       "role": { "en": "Intern", "fr": "Stagiaire" },
       "dates": { "en": "Aug. 2024", "fr": "Août 2024" },
       "tags": ["industry"],
@@ -81,8 +80,8 @@
     {
       "id": "bfh-curation",
       "title": { "en": "Data Curation Pipeline & Web Crawling Project", "fr": "Projet Pipeline de Curation de Données et Web Crawling" },
-      "org": { "en": "GenAI Laboratory -- BFH", "fr": "Laboratoire GenAI -- BFH" },
-      "dates": { "en": "Sep. 2025 -- Feb. 2026", "fr": "Sep. 2025 -- Fév. 2026" },
+      "org": { "en": "GenAI Laboratory – BFH", "fr": "Laboratoire GenAI – BFH" },
+      "dates": { "en": "Sep. 2025 – Feb. 2026", "fr": "Sep. 2025 – Fév. 2026" },
       "location": { "en": "Bern, Switzerland", "fr": "Berne, Suisse" },
       "tags": ["ml", "ai", "data", "current"],
       "bullets": [
@@ -98,7 +97,7 @@
       "school": { "en": "Polytech Annecy", "fr": "Polytech Annecy" },
       "degree": { "en": "Master of Engineering in CS & Data Analytics", "fr": "Diplôme d'Ingénieur Informatique & Data Analytics" },
       "details": { "en": "Specialization: Computer Science, Data & Applications", "fr": "Spécialité : Informatique Données Usages" },
-      "dates": { "en": "Sep. 2023 -- Sep. 2026", "fr": "Sep. 2023 -- Sep. 2026" },
+      "dates": { "en": "Sep. 2023 – Sep. 2026", "fr": "Sep. 2023 – Sep. 2026" },
       "location": { "en": "Annecy, France", "fr": "Annecy, France" },
       "tags": ["core"]
     },
@@ -107,7 +106,7 @@
       "school": { "en": "Bern University of Applied Sciences (BFH)", "fr": "Haute École Spécialisée Bernoise (BFH)" },
       "degree": { "en": "MSc Engineering (Exchange)", "fr": "MSc Ingénierie (Échange)" },
       "details": { "en": "Transformers, Self-Supervised Learning, Cloud Systems", "fr": "Transformers, Self-Supervised Learning, Cloud Systems" },
-      "dates": { "en": "Sep. 2025 -- Feb. 2026", "fr": "Sep. 2025 -- Fév. 2026" },
+      "dates": { "en": "Sep. 2025 – Feb. 2026", "fr": "Sep. 2025 – Fév. 2026" },
       "location": { "en": "Bern, Switzerland", "fr": "Berne, Suisse" },
       "tags": ["exchange", "ml", "cloud"]
     },
@@ -116,7 +115,7 @@
       "school": { "en": "Kagawa University", "fr": "Université de Kagawa" },
       "degree": { "en": "Master's in Data Science (Exchange)", "fr": "Master Data Science (Échange)" },
       "details": { "en": "Blockchain, Cryptography, Mathematics & Data Science", "fr": "Blockchain, Cryptographie, Mathématiques & Data Science" },
-      "dates": { "en": "Apr. 2025 -- Aug. 2025", "fr": "Avr. 2025 -- Août 2025" },
+      "dates": { "en": "Apr. 2025 – Aug. 2025", "fr": "Avr. 2025 – Août 2025" },
       "location": { "en": "Takamatsu, Japan", "fr": "Takamatsu, Japon" },
       "tags": ["exchange"]
     },
@@ -125,7 +124,7 @@
       "style": "compact",
       "school": { "en": "Lycée Claude Gellé", "fr": "Lycée Claude Gellé" },
       "degree": { "en": "Classe Préparatoire aux Grandes Écoles (MP)", "fr": "Classe Préparatoire aux Grandes Écoles (MP)" },
-      "dates": { "en": "Sep. 2021 -- Sep. 2023", "fr": "Sep. 2021 -- Sep. 2023" },
+      "dates": { "en": "Sep. 2021 – Sep. 2023", "fr": "Sep. 2021 – Sep. 2023" },
       "tags": []
     },
     {
@@ -133,17 +132,17 @@
       "style": "compact",
       "school": { "en": "Lycée La Malgrange", "fr": "Lycée La Malgrange" },
       "degree": { "en": "Baccalauréat with Honours (Maths, Physics, CS)", "fr": "Baccalauréat avec mention (Maths, Physique, Info)" },
-      "dates": { "en": "Sep. 2018 -- Sep. 2021", "fr": "Sep. 2018 -- Sep. 2021" },
+      "dates": { "en": "Sep. 2018 – Sep. 2021", "fr": "Sep. 2018 – Sep. 2021" },
       "tags": []
     }
   ],
 
   "skills": [
     { "category": { "en": "Cloud & DevOps:", "fr": "Cloud & DevOps :" },"items": { "en": "Microsoft Azure (ADF, Functions, Cosmos DB), AWS, Terraform (IaC), Docker, CI/CD", "fr": "Microsoft Azure (ADF, Functions, Cosmos DB), AWS, Terraform (IaC), Docker, CI/CD" } },
-    { "category": { "en": "Programming:",    "fr": "Programmation :" }, "items": { "en": "Python (advanced -- since 2021), SQL (PostgreSQL, MySQL), Java, C#, .NET",         "fr": "Python (avancé - depuis 2021), SQL (PostgreSQL, MySQL), Java, C#, .NET" } },
+    { "category": { "en": "Programming:",    "fr": "Programmation :" }, "items": { "en": "Python (advanced – since 2021), SQL (PostgreSQL, MySQL), Java, C#, .NET",         "fr": "Python (avancé - depuis 2021), SQL (PostgreSQL, MySQL), Java, C#, .NET" } },
     { "category": { "en": "Data & ML:",      "fr": "Data & ML :" },     "items": { "en": "PyTorch, TensorFlow, MLOps (CI/CD, monitoring), ETL pipelines",                    "fr": "PyTorch, TensorFlow, MLOps (CI/CD, monitoring), pipelines ETL" } },
     { "category": { "en": "Visualization:",  "fr": "Visualisation :" }, "items": { "en": "Power BI, Tableau, Python visualization libraries",                                 "fr": "Power BI, Tableau, librairies de visualisation Python" } },
-    { "category": { "en": "Languages:",      "fr": "Langues :" },       "items": { "en": "French (Native), English (Fluent -- TOEIC 920/990), Japanese (N3/B1)",             "fr": "Français (Natif), Anglais (Courant -- TOEIC 920/990), Japonais (N3/B1)" } },
+    { "category": { "en": "Languages:",      "fr": "Langues :" },       "items": { "en": "French (Native), English (Fluent – TOEIC 920/990), Japanese (N3/B1)",             "fr": "Français (Natif), Anglais (Courant – TOEIC 920/990), Japonais (N3/B1)" } },
     { "category": { "en": "Interests:",      "fr": "Passions :" },      "items": { "en": "Endurance sports (running, cycling, skiing) | Japanese culture & language",       "fr": "Sports d'endurance (course, cyclisme, ski) | Culture & langue japonaises" } }
   ],
 
