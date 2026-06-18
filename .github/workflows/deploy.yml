@@ -33,7 +33,10 @@ jobs:
       - name: Build site
         # `prebuild` regenerates src/data/resume.json from resume/master.json.
         # No master.local.json on CI, so the build uses placeholder contact info — by design.
+        # VITE_BASE_URL keeps the /portfolio-web/ subpath required by GitHub Pages.
         run: npm run build
+        env:
+          VITE_BASE_URL: /portfolio-web/
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
