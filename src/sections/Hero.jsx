@@ -107,7 +107,7 @@ const Hero = ({ locale = "en" }) => {
           <div className="relative w-52 h-52 rounded-full overflow-hidden border-4 border-white shadow-xl ring-1 ring-slate-200">
             <img
               src={`${BASE}profile.jpg`}
-              alt={fullName}
+              alt={`${fullName} — ${subtitle}`}
               className="w-full h-full object-cover"
               loading="eager"
             />
