@@ -1,7 +1,7 @@
 {
   "_lastUpdated": "2026-06-18",
   "en": {
-    "$comment": "Single source of truth for resume content. Edit this; LaTeX + web are generated. Private contact info lives in resume/master.local.json (gitignored).",
+    "$comment": "Gitignored. Private overrides merged on top of master.json at build time.",
     "sectionOrder": [
       "experience",
       "projects",
@@ -251,7 +251,7 @@
     }
   },
   "fr": {
-    "$comment": "Single source of truth for resume content. Edit this; LaTeX + web are generated. Private contact info lives in resume/master.local.json (gitignored).",
+    "$comment": "Gitignored. Private overrides merged on top of master.json at build time.",
     "sectionOrder": [
       "experience",
       "projects",
