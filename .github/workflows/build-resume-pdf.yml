@@ -1,0 +1,92 @@
+name: Build Résumé PDFs
+
+# Compiles the LaTeX résumés to PDF and commits them to public/resume/.
+# Cloudflare Pages has no TeX toolchain, so the PDFs are built here and the
+# resulting commit triggers a normal Pages deploy that ships them as static
+# assets (no [skip ci] token, so Cloudflare DOES rebuild on these commits).
+
+on:
+  schedule:
+    - cron: "0 3 * * *" # nightly at 03:00 UTC (offset from update-github-projects)
+  push:
+    branches: [main]
+    paths: # responsive rebuild whenever résumé sources change
+      - "resume/**"
+      - "scripts/build-resume.mjs"
+      - ".github/workflows/build-resume-pdf.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-resume-pdf
+  cancel-in-progress: false
+
+jobs:
+  build-pdfs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # build-resume.mjs reads `git log` for _lastUpdated
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Restore private contact info (phone/email)
+        env:
+          RESUME_MASTER_LOCAL: ${{ secrets.RESUME_MASTER_LOCAL }}
+        run: |
+          if [ -n "$RESUME_MASTER_LOCAL" ]; then
+            printf '%s' "$RESUME_MASTER_LOCAL" > resume/master.local.json
+            echo "Wrote resume/master.local.json from RESUME_MASTER_LOCAL secret"
+          else
+            echo "::warning::RESUME_MASTER_LOCAL not set — building with placeholder contact info"
+          fi
+
+      - name: Generate LaTeX sources + web JSON
+        run: node scripts/build-resume.mjs
+
+      - name: Source date for reproducible PDFs
+        id: meta
+        run: echo "epoch=$(git log -1 --format=%ct -- resume scripts/build-resume.mjs)" >> "$GITHUB_OUTPUT"
+
+      - name: Compile PDFs (XeLaTeX)
+        uses: xu-cheng/latex-action@v3
+        env:
+          # Make xdvipdfmx stamp a fixed date/ID so identical input ⇒ identical
+          # PDF bytes ⇒ no noisy nightly commit when nothing changed.
+          SOURCE_DATE_EPOCH: ${{ steps.meta.outputs.epoch }}
+          FORCE_SOURCE_DATE: "1"
+        with:
+          working_directory: resume/build
+          root_file: |
+            cv_en_onepage.tex
+            cv_fr_onepage.tex
+          latexmk_use_xelatex: true
+          pre_compile: |
+            # Make XeLaTeX resolve the "FontAwesome" font by name via fontconfig.
+            install -d /usr/share/fonts/opentype/fontawesome
+            cp "$(kpsewhich FontAwesome.otf)" /usr/share/fonts/opentype/fontawesome/
+            fc-cache -f
+
+      - name: Publish PDFs into public/resume
+        run: |
+          cp resume/build/cv_en_onepage.pdf public/resume/cv_en.pdf
+          cp resume/build/cv_fr_onepage.pdf public/resume/cv_fr.pdf
+
+      - name: Commit & push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/resume/cv_en.pdf public/resume/cv_fr.pdf src/data/resume.json
+          if git diff --cached --quiet; then
+            echo "No résumé changes to commit."
+          else
+            git commit -m "chore(resume): rebuild CV PDFs"
+            git push
+          fi
