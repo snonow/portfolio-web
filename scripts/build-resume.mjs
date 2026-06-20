@@ -114,6 +114,10 @@ const buildVariant = async (master, variant) => {
     LINK_GITHUB_TEXT:   master.identity.links.github.text,
     LINK_EMAIL_HREF:    master.identity.links.email?.href ?? "",
     LINK_EMAIL_TEXT:    master.identity.links.email?.text ?? "",
+    LINK_WEBSITE_HREF:  master.identity.links.website?.href ?? "",
+    LINK_WEBSITE_TEXT:  master.identity.links.website?.text ?? "",
+    LINK_PHONE_HREF:    master.identity.links.phone?.href ?? "",
+    LINK_PHONE_TEXT:    master.identity.links.phone?.text ?? "",
     BODY:               renderBody(master, variant),
   };
 
