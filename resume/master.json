@@ -10,6 +10,7 @@
     "links": {
       "linkedin": { "href": "https://www.linkedin.com/in/arno-wilhelm/", "text": "/arno-wilhelm" },
       "github":   { "href": "https://github.com/snonow",                 "text": "/snonow" },
+      "website":  { "href": "https://arno-wilhelm.dev",                  "text": "arno-wilhelm.dev" },
       "email":    { "href": "mailto:arno.wilhelm@kmail.com",                "text": "arno.wilhelm@kmail.com" }
     }
   },
@@ -26,16 +27,16 @@
       "tags": ["cloud", "ai", "current"],
       "bullets": [
         { "id": "pwc-migration", "text": {
-          "en": "Led a cloud-to-cloud Azure migration, re-codifying the full infrastructure as Terraform (IaC): 3 Function Apps, Azure Data Factory, SQL Server (>500 GB), Cosmos DB and an on-premise database",
-          "fr": "Pilotage d'une migration cloud-to-cloud Azure, recodification complète de l'infrastructure en Terraform (IaC) : 3 Function Apps, Azure Data Factory, SQL Server (>500 Go), Cosmos DB et une base on-premise"
+          "en": "Migrated a production Azure environment to a new tenant and codified its infrastructure as Terraform (IaC), spanning Data Factory and Function Apps",
+          "fr": "Migration d'un environnement Azure de production vers un nouveau tenant et codification de l'infrastructure en Terraform (IaC), couvrant Data Factory et Function Apps"
         }, "tags": ["cloud", "iac"] },
         { "id": "pwc-adf", "text": {
-          "en": "Re-architected and redeployed 80+ ADF pipelines in clean YAML, rewiring 200+ data sources with end-to-end quality checks to ensure system reliability",
-          "fr": "Ré-architecture et redéploiement de plus de 80 pipelines ADF en YAML, recâblage de 200+ sources de données avec contrôles qualité de bout en bout pour garantir la fiabilité du système"
+          "en": "Rewrote the multi-environment deployment pipelines (DEV, UAT, PROD) as clear, maintainable YAML, with quality gates at each stage",
+          "fr": "Réécriture des pipelines de déploiement multi-environnements (DEV, UAT, PROD) en YAML clair et maintenable, avec des contrôles qualité à chaque étape"
         }, "tags": ["data", "cloud"] },
         { "id": "pwc-rag", "text": {
-          "en": "Built the full back-end and front-end infrastructure for an internal RAG / agentic AI solution for process automation",
-          "fr": "Construction complète de l'infrastructure back-end et front-end d'une solution interne RAG / IA agentique pour l'automatisation de processus"
+          "en": "Deployed the infrastructure for an internal RAG / agentic-AI tool and integrated its back-end and front-end",
+          "fr": "Déploiement de l'infrastructure d'un outil interne de RAG / IA agentique et intégration de son back-end et front-end"
         }, "tags": ["ai", "llm"] }
       ]
     },
@@ -48,7 +49,7 @@
       "tags": ["ml", "cloud", "research"],
       "bullets": [
         { "id": "kagawa-paper", "text": { "en": "Co-authored a published research paper on hybrid MLOps practices for SMEs",                                                                            "fr": "Co-rédaction d'un papier de recherche publié sur les pratiques MLOps hybrides pour les PME" }, "tags": ["research"] },
-        { "id": "kagawa-cicd",  "text": { "en": "Deployed a hybrid CI/CD infrastructure (GitLab, Docker) and ETL pipelines for training Machine Learning models on the cloud", "fr": "Déploiement d'une infrastructure CI/CD hybride (GitLab, Docker) et de pipelines ETL pour l'entraînement de modèles Machine Learning sur le cloud" }, "tags": ["cloud", "ml"] }
+        { "id": "kagawa-cicd",  "text": { "en": "Built a hybrid CI/CD pipeline (GitLab, Docker) and ETL workflows to train ML models in the cloud", "fr": "Mise en place d'une chaîne CI/CD hybride (GitLab, Docker) et de workflows ETL pour entraîner des modèles ML dans le cloud" }, "tags": ["cloud", "ml"] }
       ]
     },
     {
@@ -59,8 +60,8 @@
       "location": { "en": "Annecy, France", "fr": "Annecy, France" },
       "tags": ["leadership", "current"],
       "bullets": [
-        { "id": "jpac-team",   "text": { "en": "Managing a team of 6 engineers within a small-scale consulting structure",                              "fr": "Management d'une équipe de 6 ingénieurs pour une structure à taille humaine" },                              "tags": ["leadership"] },
-        { "id": "jpac-client", "text": { "en": "Client relationship management, meeting facilitation, and oversight of consulting projects (Data & Software)", "fr": "Gestion de la relation client, animation de réunions et pilotage de projets de conseil (Data & Logiciel)" }, "tags": ["leadership", "client"] }
+        { "id": "jpac-team",   "text": { "en": "Lead a 6-engineer team in a student-run consulting association (Junior-Entreprise)",                          "fr": "Encadrement d'une équipe de 6 ingénieurs au sein d'une Junior-Entreprise (conseil)" },                          "tags": ["leadership"] },
+        { "id": "jpac-client", "text": { "en": "Manage client relationships, run meetings, and oversee Data & Software consulting projects",       "fr": "Gestion de la relation client, animation de réunions et pilotage de projets de conseil (Data & Logiciel)" }, "tags": ["leadership", "client"] }
       ]
     },
     {

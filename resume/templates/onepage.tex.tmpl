@@ -40,6 +40,14 @@
 \def \githublink {{{LINK_GITHUB_HREF}}}
 \def \githubtext {{{LINK_GITHUB_TEXT}}}
 
+\def \websiteicon {\faGlobe}
+\def \websitelink {{{LINK_WEBSITE_HREF}}}
+\def \websitetext {{{LINK_WEBSITE_TEXT}}}
+
+\def \phoneicon {\faPhone}
+\def \phonelink {{{LINK_PHONE_HREF}}}
+\def \phonetext {{{LINK_PHONE_TEXT}}}
+
 \def \headertype {\doublecol}
 
 \def \entryspacing {-5pt}
@@ -53,6 +61,8 @@
 \def \linkedin {\linkedinicon \hspace{3pt}\href{\linkedinlink}{\linkedintext}}
 \def \email    {\emailicon    \hspace{3pt}\href{\emaillink}{\emailtext}}
 \def \github   {\githubicon   \hspace{3pt}\href{\githublink}{\githubtext}}
+\def \website  {\websiteicon  \hspace{3pt}\href{\websitelink}{\websitetext}}
+\def \phone    {\phoneicon    \hspace{3pt}\href{\phonelink}{\phonetext}}
 
 \addtolength{\oddsidemargin}{-0.55in}
 \addtolength{\evensidemargin}{-0.55in}
@@ -106,7 +116,7 @@
     \end{tabular}
     &
     \begin{tabular}[c]{@{}l@{}}
-        {\small#1} \\ {\small#2} \\ {\small#3}
+        {\small\phone} \\ {\small\email} \\ {\small\website} \\ {\small\linkedin} \\ {\small\github}
     \end{tabular}
   \end{tabularx}
 }

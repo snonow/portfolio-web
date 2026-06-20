@@ -1,12 +1,25 @@
 import resume from "../data/resume.json";
 import Reveal from "../components/Reveal";
 
-const splitItems = (str) =>
-  str
-    .split(",")
-    .flatMap((s) => s.split("|"))
-    .map((s) => s.trim())
-    .filter(Boolean);
+// Split on top-level commas/pipes only, so parenthetical groups like
+// "Microsoft Azure (ADF, Functions, Cosmos DB)" stay a single chip.
+const splitItems = (str) => {
+  const out = [];
+  let buf = "";
+  let depth = 0;
+  for (const ch of str) {
+    if (ch === "(") depth++;
+    else if (ch === ")") depth = Math.max(0, depth - 1);
+    if ((ch === "," || ch === "|") && depth === 0) {
+      if (buf.trim()) out.push(buf.trim());
+      buf = "";
+    } else {
+      buf += ch;
+    }
+  }
+  if (buf.trim()) out.push(buf.trim());
+  return out;
+};
 
 const Skills = ({ locale = "en" }) => {
   const items = resume[locale].skills;

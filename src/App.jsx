@@ -3,13 +3,10 @@ import Hero from "./sections/Hero";
 import Experience from "./sections/Experience";
 import Education from "./sections/Education";
 import Skills from "./sections/Skills";
-import FeaturedProjects from "./sections/FeaturedProjects";
-import GitHubSignals from "./sections/GitHubSignals";
-import PipelineProof from "./sections/PipelineProof";
-import ProjectsGallery from "./sections/ProjectsGallery";
+import Projects from "./sections/Projects";
+import GitHubActivity from "./sections/GitHubActivity";
 
 import ScrollProgress from "./components/ScrollProgress";
-import { pipelineStages } from "./data/pipeline";
 import resume from "./data/resume.json";
 
 import { Mail } from "lucide-react";
@@ -19,15 +16,15 @@ const NAV = {
   en: [
     { id: "experience", label: "Experience" },
     { id: "projects",   label: "Projects" },
-    { id: "skills",     label: "Skills" },
     { id: "education",  label: "Education" },
+    { id: "skills",     label: "Skills" },
     { id: "github",     label: "GitHub" },
   ],
   fr: [
     { id: "experience", label: "Expérience" },
     { id: "projects",   label: "Projets" },
-    { id: "skills",     label: "Compétences" },
     { id: "education",  label: "Formation" },
+    { id: "skills",     label: "Compétences" },
     { id: "github",     label: "GitHub" },
   ],
 };
@@ -63,12 +60,10 @@ const App = () => {
       <main className="pt-20 max-w-6xl mx-auto px-6">
         <section id="hero"><Hero locale={locale} /></section>
         <section id="experience"><Experience locale={locale} /></section>
-        <section id="projects"><FeaturedProjects locale={locale} /></section>
-        <section id="open-source"><ProjectsGallery locale={locale} /></section>
-        <section id="skills"><Skills locale={locale} /></section>
+        <section id="projects"><Projects locale={locale} /></section>
         <section id="education"><Education locale={locale} /></section>
-        <section id="github"><GitHubSignals /></section>
-        <section id="pipeline"><PipelineProof stages={pipelineStages} /></section>
+        <section id="skills"><Skills locale={locale} /></section>
+        <section id="github"><GitHubActivity locale={locale} /></section>
       </main>
 
       <footer className="mt-24 border-t bg-slate-900 text-slate-400">

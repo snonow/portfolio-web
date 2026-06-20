@@ -1,5 +1,5 @@
 {
-  "_lastUpdated": "2026-06-18",
+  "_lastUpdated": "2026-06-20",
   "en": {
     "$comment": "Gitignored. Private overrides merged on top of master.json at build time.",
     "sectionOrder": [
@@ -23,7 +23,7 @@
         "bullets": [
           {
             "id": "pwc-migration",
-            "text": "Led a cloud-to-cloud Azure migration, re-codifying the full infrastructure as Terraform (IaC): 3 Function Apps, Azure Data Factory, SQL Server (>500 GB), Cosmos DB and an on-premise database",
+            "text": "Migrated a production Azure environment to a new tenant and codified its infrastructure as Terraform (IaC), spanning Data Factory and Function Apps",
             "tags": [
               "cloud",
               "iac"
@@ -31,7 +31,7 @@
           },
           {
             "id": "pwc-adf",
-            "text": "Re-architected and redeployed 80+ ADF pipelines in clean YAML, rewiring 200+ data sources with end-to-end quality checks to ensure system reliability",
+            "text": "Rewrote the multi-environment deployment pipelines (DEV, UAT, PROD) as clear, maintainable YAML, with quality gates at each stage",
             "tags": [
               "data",
               "cloud"
@@ -39,7 +39,7 @@
           },
           {
             "id": "pwc-rag",
-            "text": "Built the full back-end and front-end infrastructure for an internal RAG / agentic AI solution for process automation",
+            "text": "Deployed the infrastructure for an internal RAG / agentic-AI tool and integrated its back-end and front-end",
             "tags": [
               "ai",
               "llm"
@@ -68,7 +68,7 @@
           },
           {
             "id": "kagawa-cicd",
-            "text": "Deployed a hybrid CI/CD infrastructure (GitLab, Docker) and ETL pipelines for training Machine Learning models on the cloud",
+            "text": "Built a hybrid CI/CD pipeline (GitLab, Docker) and ETL workflows to train ML models in the cloud",
             "tags": [
               "cloud",
               "ml"
@@ -89,14 +89,14 @@
         "bullets": [
           {
             "id": "jpac-team",
-            "text": "Managing a team of 6 engineers within a small-scale consulting structure",
+            "text": "Lead a 6-engineer team in a student-run consulting association (Junior-Entreprise)",
             "tags": [
               "leadership"
             ]
           },
           {
             "id": "jpac-client",
-            "text": "Client relationship management, meeting facilitation, and oversight of consulting projects (Data & Software)",
+            "text": "Manage client relationships, run meetings, and oversee Data & Software consulting projects",
             "tags": [
               "leadership",
               "client"
@@ -273,7 +273,7 @@
         "bullets": [
           {
             "id": "pwc-migration",
-            "text": "Pilotage d'une migration cloud-to-cloud Azure, recodification complète de l'infrastructure en Terraform (IaC) : 3 Function Apps, Azure Data Factory, SQL Server (>500 Go), Cosmos DB et une base on-premise",
+            "text": "Migration d'un environnement Azure de production vers un nouveau tenant et codification de l'infrastructure en Terraform (IaC), couvrant Data Factory et Function Apps",
             "tags": [
               "cloud",
               "iac"
@@ -281,7 +281,7 @@
           },
           {
             "id": "pwc-adf",
-            "text": "Ré-architecture et redéploiement de plus de 80 pipelines ADF en YAML, recâblage de 200+ sources de données avec contrôles qualité de bout en bout pour garantir la fiabilité du système",
+            "text": "Réécriture des pipelines de déploiement multi-environnements (DEV, UAT, PROD) en YAML clair et maintenable, avec des contrôles qualité à chaque étape",
             "tags": [
               "data",
               "cloud"
@@ -289,7 +289,7 @@
           },
           {
             "id": "pwc-rag",
-            "text": "Construction complète de l'infrastructure back-end et front-end d'une solution interne RAG / IA agentique pour l'automatisation de processus",
+            "text": "Déploiement de l'infrastructure d'un outil interne de RAG / IA agentique et intégration de son back-end et front-end",
             "tags": [
               "ai",
               "llm"
@@ -318,7 +318,7 @@
           },
           {
             "id": "kagawa-cicd",
-            "text": "Déploiement d'une infrastructure CI/CD hybride (GitLab, Docker) et de pipelines ETL pour l'entraînement de modèles Machine Learning sur le cloud",
+            "text": "Mise en place d'une chaîne CI/CD hybride (GitLab, Docker) et de workflows ETL pour entraîner des modèles ML dans le cloud",
             "tags": [
               "cloud",
               "ml"
@@ -339,7 +339,7 @@
         "bullets": [
           {
             "id": "jpac-team",
-            "text": "Management d'une équipe de 6 ingénieurs pour une structure à taille humaine",
+            "text": "Encadrement d'une équipe de 6 ingénieurs au sein d'une Junior-Entreprise (conseil)",
             "tags": [
               "leadership"
             ]
