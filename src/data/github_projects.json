@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-21T09:42:15.238147Z",
+  "generated_at": "2026-06-21T12:41:30.870696Z",
   "projects": [
     {
       "name": "earthquake-realestate-viz",
@@ -54,16 +54,6 @@
         "img-readme-rapport/messages_pop-up.png",
         "img-readme-rapport/Utilisateurs_connectes.png"
       ],
-      "releases": []
-    },
-    {
-      "name": "Proj_APP_Solaire",
-      "description": null,
-      "url": "https://github.com/lloxy9l/Proj_APP_Solaire",
-      "stars": 2,
-      "language": "Python",
-      "topics": [],
-      "readme_images": [],
       "releases": []
     },
     {
