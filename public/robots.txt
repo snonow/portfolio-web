@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# Update Sitemap URL once your custom domain is set
-# Sitemap: https://arno-portfolio.pages.dev/sitemap.xml
+Sitemap: https://arno-wilhelm.dev/sitemap.xml
