@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-21T09:06:55.110189Z",
+  "generated_at": "2026-06-21T09:21:56.994647Z",
   "projects": [
     {
       "name": "earthquake-realestate-viz",
@@ -98,6 +98,27 @@
       "stars": 0,
       "language": "HTML",
       "topics": [],
+      "readme_images": [],
+      "releases": []
+    },
+    {
+      "name": "portfolio-web",
+      "description": "Personal portfolio & bilingual r\u00e9sum\u00e9 pipeline for Arno Wilhelm (Data & MLOps Engineer): a single JSON source generates both the LaTeX CVs (EN/FR) and a React/Vite site with live GitHub activity, deployed on Cloudflare Pages.",
+      "url": "https://github.com/snonow/portfolio-web",
+      "stars": 0,
+      "language": "JavaScript",
+      "topics": [
+        "cloudflare-functions",
+        "cloudflare-pages",
+        "cv",
+        "data-engineering",
+        "framer-motion",
+        "github-api",
+        "i18n",
+        "latex",
+        "mlops",
+        "personal-website"
+      ],
       "readme_images": [],
       "releases": []
     }
