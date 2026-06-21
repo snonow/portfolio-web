@@ -16,6 +16,24 @@ const Hero = ({ locale = "en" }) => {
 
       <div className="grid md:grid-cols-[1fr_auto] gap-12 items-center">
         <div>
+          {/* Mobile-only avatar — brings the desktop photo treatment to phones */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.92 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="md:hidden relative w-28 h-28 mb-7"
+          >
+            <div className="absolute -inset-2 rounded-full bg-gradient-to-br from-blue-200/60 via-indigo-200/40 to-transparent blur-lg" />
+            <div className="relative w-28 h-28 rounded-full overflow-hidden border-4 border-white shadow-xl ring-1 ring-slate-200">
+              <img
+                src={`${BASE}profile.jpg`}
+                alt={`${fullName} — ${subtitle}`}
+                className="w-full h-full object-cover"
+                loading="eager"
+              />
+            </div>
+          </motion.div>
+
           <motion.span
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
