@@ -2,7 +2,7 @@
 
 Personal portfolio + résumé pipeline. One JSON file is the single source of truth; it
 generates both the LaTeX résumés (EN/FR) and the React site you see at
-**[snonow.github.io/portfolio-web](https://snonow.github.io/portfolio-web/)**.
+**[arno-wilhelm.dev](https://arno-wilhelm.dev)**.
 
 ## Why this exists
 
@@ -104,13 +104,19 @@ If you fork this, drop your contact info in `master.local.json` (never in
 
 ## Deployment
 
-GitHub Pages. Every push to `main` triggers `.github/workflows/deploy.yml`:
-`npm ci` → `npm run build` (which runs `build:resume` via the `prebuild` hook) →
-publish `dist/` to the `gh-pages` branch.
+**Cloudflare Pages**, connected to `main`. Each push builds with
+`npm run build` (which runs `build:resume` via the `prebuild` hook) and serves
+`dist/`. The **Live GitHub activity** section is backed by a Cloudflare Pages
+Function (`functions/api/github.js`) that proxies the GitHub GraphQL API for the
+contribution calendar and language mix (set a `GITHUB_TOKEN` env var on the Pages
+project; without it the section falls back to the unauthenticated REST API).
 
-A second workflow (`update-github-projects.yml`) refreshes
-`src/data/github_projects.json` daily so the **Projects** section reflects the
-latest public repos without a redeploy.
+Two scheduled GitHub Actions keep generated content fresh on `main`:
+
+- `build-resume-pdf.yml` — recompiles the LaTeX CVs to PDF (XeLaTeX) and commits
+  the results to `public/resume/` so Cloudflare ships the latest PDFs.
+- `update-github-projects.yml` — refreshes `src/data/github_projects.json` daily
+  so the **Projects** section reflects the latest **pinned** repos.
 
 ## License
 
