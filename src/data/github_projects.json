@@ -1,6 +1,27 @@
 {
-  "generated_at": "2026-06-21T12:41:30.870696Z",
+  "generated_at": "2026-06-22T02:27:59.755735Z",
   "projects": [
+    {
+      "name": "portfolio-web",
+      "description": "Personal portfolio & bilingual r\u00e9sum\u00e9 pipeline for Arno Wilhelm (Data & MLOps Engineer): a single JSON source generates both the LaTeX CVs (EN/FR) and a React/Vite site with live GitHub activity, deployed on Cloudflare Pages.",
+      "url": "https://github.com/snonow/portfolio-web",
+      "stars": 0,
+      "language": "JavaScript",
+      "topics": [
+        "cloudflare-functions",
+        "cloudflare-pages",
+        "cv",
+        "data-engineering",
+        "framer-motion",
+        "github-api",
+        "i18n",
+        "latex",
+        "mlops",
+        "personal-website"
+      ],
+      "readme_images": [],
+      "releases": []
+    },
     {
       "name": "earthquake-realestate-viz",
       "description": "Analysis of the impact of earthquakes on real estate prices (AK vs. CA, 1999-2022). Conclusion: economics takes precedence over geophysics.",
@@ -38,25 +59,6 @@
       ]
     },
     {
-      "name": "INFO641-Messagerie",
-      "description": "Projet Java en INFO641 afin de cr\u00e9er une messagerie instantan\u00e9e.",
-      "url": "https://github.com/snonow/INFO641-Messagerie",
-      "stars": 0,
-      "language": "Java",
-      "topics": [],
-      "readme_images": [
-        "img-readme-rapport/Welcome.png",
-        "img-readme-rapport/Inscription.png",
-        "img-readme-rapport/Login.png",
-        "img-readme-rapport/Connect\u00e9.png",
-        "img-readme-rapport/Connexion_concierge.png",
-        "img-readme-rapport/Messages_envoy\u00e9s_recu.png",
-        "img-readme-rapport/messages_pop-up.png",
-        "img-readme-rapport/Utilisateurs_connectes.png"
-      ],
-      "releases": []
-    },
-    {
       "name": "homeserver",
       "description": "Production-grade homeserver IaC: Proxmox, LXC, and GPU-accelerated AI/Media/NVR services via Ansible.",
       "url": "https://github.com/snonow/homeserver",
@@ -92,24 +94,22 @@
       "releases": []
     },
     {
-      "name": "portfolio-web",
-      "description": "Personal portfolio & bilingual r\u00e9sum\u00e9 pipeline for Arno Wilhelm (Data & MLOps Engineer): a single JSON source generates both the LaTeX CVs (EN/FR) and a React/Vite site with live GitHub activity, deployed on Cloudflare Pages.",
-      "url": "https://github.com/snonow/portfolio-web",
+      "name": "INFO641-Messagerie",
+      "description": "Projet Java en INFO641 afin de cr\u00e9er une messagerie instantan\u00e9e.",
+      "url": "https://github.com/snonow/INFO641-Messagerie",
       "stars": 0,
-      "language": "JavaScript",
-      "topics": [
-        "cloudflare-functions",
-        "cloudflare-pages",
-        "cv",
-        "data-engineering",
-        "framer-motion",
-        "github-api",
-        "i18n",
-        "latex",
-        "mlops",
-        "personal-website"
+      "language": "Java",
+      "topics": [],
+      "readme_images": [
+        "img-readme-rapport/Welcome.png",
+        "img-readme-rapport/Inscription.png",
+        "img-readme-rapport/Login.png",
+        "img-readme-rapport/Connect\u00e9.png",
+        "img-readme-rapport/Connexion_concierge.png",
+        "img-readme-rapport/Messages_envoy\u00e9s_recu.png",
+        "img-readme-rapport/messages_pop-up.png",
+        "img-readme-rapport/Utilisateurs_connectes.png"
       ],
-      "readme_images": [],
       "releases": []
     }
   ]
