@@ -3,12 +3,18 @@ import resume from "../data/resume.json";
 import Reveal from "../components/Reveal";
 import SectionHeading from "../components/SectionHeading";
 
+const T = {
+  en: { title: "Professional Experience" },
+  fr: { title: "Expérience Professionnelle" },
+};
+
 const Experience = ({ locale = "en" }) => {
+  const t = T[locale] ?? T.en;
   const items = resume[locale].experience;
 
   return (
     <section className="mb-24">
-      <Reveal><SectionHeading>{locale === "fr" ? "Expérience Professionnelle" : "Professional Experience"}</SectionHeading></Reveal>
+      <Reveal><SectionHeading>{t.title}</SectionHeading></Reveal>
 
       <ol className="relative border-l border-slate-200 ml-3 space-y-8">
         {items.map((x, i) => (

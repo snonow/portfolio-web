@@ -14,25 +14,32 @@ import { LINKEDIN_URL } from "./data/links";
 import { Mail } from "lucide-react";
 import { SiGithub, SiLinkedin } from "react-icons/si";
 
-const NAV = {
-  en: [
-    { id: "experience", label: "Experience" },
-    { id: "projects",   label: "Projects" },
-    { id: "education",  label: "Education" },
-    { id: "skills",     label: "Skills" },
-    { id: "github",     label: "GitHub" },
-  ],
-  fr: [
-    { id: "experience", label: "Expérience" },
-    { id: "projects",   label: "Projets" },
-    { id: "education",  label: "Formation" },
-    { id: "skills",     label: "Compétences" },
-    { id: "github",     label: "GitHub" },
-  ],
+const T = {
+  en: {
+    nav: [
+      { id: "experience", label: "Experience" },
+      { id: "projects",   label: "Projects" },
+      { id: "education",  label: "Education" },
+      { id: "skills",     label: "Skills" },
+      { id: "github",     label: "GitHub" },
+    ],
+    lastUpdated: "Last updated",
+  },
+  fr: {
+    nav: [
+      { id: "experience", label: "Expérience" },
+      { id: "projects",   label: "Projets" },
+      { id: "education",  label: "Formation" },
+      { id: "skills",     label: "Compétences" },
+      { id: "github",     label: "GitHub" },
+    ],
+    lastUpdated: "Mis à jour le",
+  },
 };
 
 const App = () => {
   const [locale, setLocale] = useState("en");
+  const t = T[locale] ?? T.en;
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800">
@@ -41,7 +48,7 @@ const App = () => {
           <a href="#hero" className="font-bold text-slate-900 tracking-tight">Arno Wilhelm</a>
           <div className="flex items-center gap-6">
             <div className="hidden md:flex gap-6 text-sm text-slate-600">
-              {NAV[locale].map((n) => (
+              {t.nav.map((n) => (
                 <a key={n.id} href={`#${n.id}`} className="hover:text-blue-800 transition">
                   {n.label}
                 </a>
@@ -84,7 +91,7 @@ const App = () => {
           <p className="text-sm">© {new Date().getFullYear()} Arno Wilhelm</p>
           {resume._lastUpdated && (
             <p className="text-xs mt-1 text-slate-600">
-              {locale === "en" ? "Last updated" : "Mis à jour le"} {resume._lastUpdated}
+              {t.lastUpdated} {resume._lastUpdated}
             </p>
           )}
         </div>
