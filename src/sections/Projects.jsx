@@ -94,7 +94,6 @@ const Projects = ({ locale = "en" }) => {
               <ProjectExpandableCard
                 key={project.name}
                 project={project}
-                isActive={active?.name === project.name}
                 onOpen={() => setActive(project)}
                 onClose={() => setActive(null)}
               />
