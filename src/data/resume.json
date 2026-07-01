@@ -1,7 +1,6 @@
 {
-  "_lastUpdated": "2026-06-20",
+  "_lastUpdated": "2026-07-01",
   "en": {
-    "$comment": "Gitignored. Private overrides merged on top of master.json at build time.",
     "sectionOrder": [
       "experience",
       "projects",
@@ -62,7 +61,11 @@
           {
             "id": "kagawa-paper",
             "text": "Co-authored a published research paper on hybrid MLOps practices for SMEs",
-            "link": { "href": "/papers/hybrid-mlops-smes-2025.pdf", "catalog": "https://jglobal.jst.go.jp/en/detail?JGLOBAL_ID=202602277665523641", "ndl": "https://ndlsearch.ndl.go.jp/books/R000000004-I034425513" },
+            "link": {
+              "href": "/papers/hybrid-mlops-smes-2025.pdf",
+              "catalog": "https://jglobal.jst.go.jp/en/detail?JGLOBAL_ID=202602277665523641",
+              "ndl": "https://ndlsearch.ndl.go.jp/books/R000000004-I034425513"
+            },
             "tags": [
               "research"
             ]
@@ -252,7 +255,6 @@
     }
   },
   "fr": {
-    "$comment": "Gitignored. Private overrides merged on top of master.json at build time.",
     "sectionOrder": [
       "experience",
       "projects",
@@ -313,7 +315,11 @@
           {
             "id": "kagawa-paper",
             "text": "Co-rédaction d'un papier de recherche publié sur les pratiques MLOps hybrides pour les PME",
-            "link": { "href": "/papers/hybrid-mlops-smes-2025.pdf", "catalog": "https://jglobal.jst.go.jp/en/detail?JGLOBAL_ID=202602277665523641", "ndl": "https://ndlsearch.ndl.go.jp/books/R000000004-I034425513" },
+            "link": {
+              "href": "/papers/hybrid-mlops-smes-2025.pdf",
+              "catalog": "https://jglobal.jst.go.jp/en/detail?JGLOBAL_ID=202602277665523641",
+              "ndl": "https://ndlsearch.ndl.go.jp/books/R000000004-I034425513"
+            },
             "tags": [
               "research"
             ]
