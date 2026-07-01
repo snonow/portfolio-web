@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Activity, GitBranch, Clock } from "lucide-react";
 
 import Reveal from "../components/Reveal";
+import SectionHeading from "../components/SectionHeading";
 import { GITHUB_USERNAME } from "../data/github";
 
 const T = {
@@ -113,10 +114,7 @@ const GitHubActivity = ({ locale = "en" }) => {
   return (
     <section className="mb-24">
       <Reveal>
-        <h2 className="text-2xl font-bold text-slate-900 mb-2 flex items-center gap-3">
-          <span className="w-1.5 h-7 bg-blue-900 rounded-sm" />
-          {t.title}
-        </h2>
+        <SectionHeading className="mb-2">{t.title}</SectionHeading>
         {data && (
           <p className="text-xs text-slate-400 mb-8 pl-5">
             {source === "function" ? t.served : t.servedFallback}
