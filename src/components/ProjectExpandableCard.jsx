@@ -20,7 +20,7 @@ const ProjectExpandableCard = ({
   return (
     <motion.div
       layout
-      onClick={!expanded ? onOpen : undefined}
+      onClick={expanded ? (e) => e.stopPropagation() : onOpen}
       className={`bg-white rounded-xl border border-slate-200 shadow-sm cursor-pointer ${
         expanded
           ? "w-full max-w-5xl max-h-[90vh] overflow-y-auto"
