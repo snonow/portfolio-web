@@ -9,6 +9,8 @@
 // Without it, this returns { available: false } and the front-end falls back to
 // the unauthenticated REST API for the basics.
 
+// Keep in sync with GITHUB_USERNAME in src/data/github.js (this file is
+// bundled separately by Cloudflare Pages and cannot import app source).
 const LOGIN = "snonow";
 
 const QUERY = `

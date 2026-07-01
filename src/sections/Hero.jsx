@@ -4,6 +4,8 @@ import { SiGithub, SiLinkedin } from "react-icons/si";
 
 import resume from "../data/resume.json";
 import DownloadCV from "../components/DownloadCV";
+import { GITHUB_PROFILE_URL } from "../data/github";
+import { LINKEDIN_URL } from "../data/links";
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -93,7 +95,7 @@ const Hero = ({ locale = "en" }) => {
             <DownloadCV />
 
             <a
-              href="https://github.com/snonow"
+              href={GITHUB_PROFILE_URL}
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 border border-slate-200 bg-white text-sm font-semibold text-slate-800 px-4 py-2.5 rounded-full hover:border-blue-300 hover:text-blue-800 transition"
@@ -101,7 +103,7 @@ const Hero = ({ locale = "en" }) => {
               <SiGithub size={16} /> GitHub
             </a>
             <a
-              href="https://www.linkedin.com/in/arno-wilhelm/"
+              href={LINKEDIN_URL}
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 border border-slate-200 bg-white text-sm font-semibold text-slate-800 px-4 py-2.5 rounded-full hover:border-blue-300 hover:text-blue-800 transition"

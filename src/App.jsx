@@ -8,6 +8,8 @@ import GitHubActivity from "./sections/GitHubActivity";
 
 import ScrollProgress from "./components/ScrollProgress";
 import resume from "./data/resume.json";
+import { GITHUB_PROFILE_URL } from "./data/github";
+import { LINKEDIN_URL } from "./data/links";
 
 import { Mail } from "lucide-react";
 import { SiGithub, SiLinkedin } from "react-icons/si";
@@ -69,10 +71,10 @@ const App = () => {
       <footer className="mt-24 border-t bg-slate-900 text-slate-400">
         <div className="max-w-6xl mx-auto px-6 py-12 text-center">
           <div className="flex justify-center gap-6 mb-6">
-            <a href="https://github.com/snonow" target="_blank" rel="noreferrer" aria-label="GitHub">
+            <a href={GITHUB_PROFILE_URL} target="_blank" rel="noreferrer" aria-label="GitHub">
               <SiGithub size={22} />
             </a>
-            <a href="https://linkedin.com/in/arno-wilhelm" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+            <a href={LINKEDIN_URL} target="_blank" rel="noreferrer" aria-label="LinkedIn">
               <SiLinkedin size={22} />
             </a>
             <a href="mailto:arnowilhelm3@icloud.com" aria-label="Email">

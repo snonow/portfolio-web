@@ -4,11 +4,10 @@ import { Pin } from "lucide-react";
 
 import resume from "../data/resume.json";
 import projectsData from "../data/github_projects.json";
+import { GITHUB_PROFILE_URL } from "../data/github";
 import Reveal from "../components/Reveal";
 import SectionHeading from "../components/SectionHeading";
 import ProjectExpandableCard from "../components/ProjectExpandableCard";
-
-const GITHUB_PROFILE = "https://github.com/snonow";
 
 const T = {
   en: { title: "Projects", repos: "Pinned on GitHub", profile: "github.com/snonow" },
@@ -78,7 +77,7 @@ const Projects = ({ locale = "en" }) => {
               {t.repos}
             </h3>
             <a
-              href={GITHUB_PROFILE}
+              href={GITHUB_PROFILE_URL}
               target="_blank"
               rel="noreferrer"
               className="text-xs text-slate-400 hover:text-blue-700 bg-white border px-3 py-1 rounded-full transition"
