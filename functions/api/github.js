@@ -62,7 +62,7 @@ export const onRequestGet = async ({ env }) => {
     });
     if (!res.ok) return json({ available: false, reason: `github-${res.status}` }, 200, 300);
     payload = await res.json();
-  } catch (e) {
+  } catch {
     return json({ available: false, reason: "fetch-failed" }, 200, 300);
   }
 

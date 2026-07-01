@@ -4,7 +4,6 @@ import { ExternalLink, X, FileText } from "lucide-react";
 const ProjectExpandableCard = ({
   project,
   expanded = false,
-  isActive,
   onOpen,
   onClose,
 }) => {
@@ -13,9 +12,9 @@ const ProjectExpandableCard = ({
     description,
     url,
     language,
-    topics,
-    readme_images,
-    releases,
+    topics = [],
+    readme_images = [],
+    releases = [],
   } = project;
 
   return (
@@ -100,7 +99,7 @@ const ProjectExpandableCard = ({
                       <p className="text-sm text-slate-600 mt-1">
                         {r.notes}
                       </p>
-                      {r.assets.map((a) => (
+                      {(r.assets ?? []).map((a) => (
                         <a
                           key={a}
                           href={a}
