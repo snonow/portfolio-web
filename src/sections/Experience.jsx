@@ -1,4 +1,4 @@
-import { Briefcase } from "lucide-react";
+import { Briefcase, FileText, ExternalLink } from "lucide-react";
 import resume from "../data/resume.json";
 import Reveal from "../components/Reveal";
 
@@ -32,7 +32,21 @@ const Experience = ({ locale = "en" }) => {
               </p>
               <ul className="list-disc list-outside pl-5 text-sm text-slate-700 space-y-1.5 leading-relaxed">
                 {x.bullets.map((b) => (
-                  <li key={b.id}>{b.text}</li>
+                  <li key={b.id} className="flex items-start gap-2">
+                    <span className="flex-1">{b.text}</span>
+                    {b.link && (
+                      <span className="flex items-center gap-1 shrink-0 mt-0.5">
+                        <a href={b.link.href} target="_blank" rel="noopener noreferrer" title="View PDF" className="text-blue-700 hover:text-blue-900">
+                          <FileText size={13} />
+                        </a>
+                        {(b.link.catalog || b.link.ndl) && (
+                          <a href={b.link.catalog || b.link.ndl} target="_blank" rel="noopener noreferrer" title="Catalog entry (J-GLOBAL)" className="text-slate-400 hover:text-slate-600">
+                            <ExternalLink size={13} />
+                          </a>
+                        )}
+                      </span>
+                    )}
+                  </li>
                 ))}
               </ul>
             </li>
