@@ -5,6 +5,7 @@ import { Pin } from "lucide-react";
 import resume from "../data/resume.json";
 import projectsData from "../data/github_projects.json";
 import Reveal from "../components/Reveal";
+import SectionHeading from "../components/SectionHeading";
 import ProjectExpandableCard from "../components/ProjectExpandableCard";
 
 const GITHUB_PROFILE = "https://github.com/snonow";
@@ -32,10 +33,7 @@ const Projects = ({ locale = "en" }) => {
   return (
     <section className="mb-24">
       <Reveal>
-        <h2 className="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-3">
-          <span className="w-1.5 h-7 bg-blue-900 rounded-sm" />
-          {t.title}
-        </h2>
+        <SectionHeading>{t.title}</SectionHeading>
       </Reveal>
 
       {/* Résumé projects — richest, with detailed bullets */}

@@ -1,5 +1,6 @@
 import resume from "../data/resume.json";
 import Reveal from "../components/Reveal";
+import SectionHeading from "../components/SectionHeading";
 
 // Split on top-level commas/pipes only, so parenthetical groups like
 // "Microsoft Azure (ADF, Functions, Cosmos DB)" stay a single chip.
@@ -27,10 +28,7 @@ const Skills = ({ locale = "en" }) => {
   return (
     <section className="mb-24">
       <Reveal>
-        <h2 className="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-3">
-          <span className="w-1.5 h-7 bg-blue-900 rounded-sm" />
-          {locale === "fr" ? "Compétences" : "Skills"}
-        </h2>
+        <SectionHeading>{locale === "fr" ? "Compétences" : "Skills"}</SectionHeading>
       </Reveal>
 
       <div className="grid md:grid-cols-2 gap-6">
