@@ -145,9 +145,23 @@ const localizeForWeb = (obj, locale) => {
 const stripPrivate = (master) => {
   // Web bundle is public; strip contact PII (phone/email/href links).
   const { identity, ...rest } = master;
-  // eslint-disable-next-line no-unused-vars
   const { links, photo, ...identityPublic } = identity;
   return { ...rest, identity: identityPublic };
+};
+
+// $-prefixed keys are source-file metadata ($comment etc.) — they may come
+// from the gitignored master.local.json and must not reach the public bundle.
+// Applied after localizeForWeb: its {en, fr} detection is key-count sensitive.
+const stripMetaKeys = (obj) => {
+  if (Array.isArray(obj)) return obj.map(stripMetaKeys);
+  if (obj && typeof obj === "object") {
+    const out = {};
+    for (const [k, v] of Object.entries(obj)) {
+      if (!k.startsWith("$")) out[k] = stripMetaKeys(v);
+    }
+    return out;
+  }
+  return obj;
 };
 
 const getLastUpdated = () => {
@@ -163,8 +177,8 @@ const buildWebJson = async (master) => {
   const lastUpdated = getLastUpdated();
   const payload = {
     _lastUpdated: lastUpdated,
-    en: localizeForWeb(safe, "en"),
-    fr: localizeForWeb(safe, "fr"),
+    en: stripMetaKeys(localizeForWeb(safe, "en")),
+    fr: stripMetaKeys(localizeForWeb(safe, "fr")),
   };
   await mkdir(dirname(webDataPath), { recursive: true });
   await writeFile(webDataPath, JSON.stringify(payload, null, 2), "utf8");
