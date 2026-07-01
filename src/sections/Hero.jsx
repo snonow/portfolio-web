@@ -9,6 +9,45 @@ import { LINKEDIN_URL } from "../data/links";
 
 const BASE = import.meta.env.BASE_URL;
 
+// Same photo treatment at two breakpoints; only sizing, glow spread and
+// entrance timing differ.
+const AVATAR = {
+  mobile: {
+    wrapper: "md:hidden relative w-28 h-28 mb-7",
+    glow: "absolute -inset-2 rounded-full bg-gradient-to-br from-blue-200/60 via-indigo-200/40 to-transparent blur-lg",
+    frame: "relative w-28 h-28 rounded-full overflow-hidden border-4 border-white shadow-xl ring-1 ring-slate-200",
+    transition: { duration: 0.5, ease: "easeOut" },
+  },
+  desktop: {
+    wrapper: "hidden md:block relative",
+    glow: "absolute -inset-3 rounded-full bg-gradient-to-br from-blue-200/60 via-indigo-200/40 to-transparent blur-xl",
+    frame: "relative w-52 h-52 rounded-full overflow-hidden border-4 border-white shadow-xl ring-1 ring-slate-200",
+    transition: { duration: 0.6, delay: 0.1, ease: "easeOut" },
+  },
+};
+
+const Avatar = ({ variant, alt }) => {
+  const v = AVATAR[variant];
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.92 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={v.transition}
+      className={v.wrapper}
+    >
+      <div className={v.glow} />
+      <div className={v.frame}>
+        <img
+          src={`${BASE}profile.jpg`}
+          alt={alt}
+          className="w-full h-full object-cover"
+          loading="eager"
+        />
+      </div>
+    </motion.div>
+  );
+};
+
 const Hero = ({ locale = "en" }) => {
   const { fullName, subtitle } = resume[locale].identity;
 
@@ -19,22 +58,7 @@ const Hero = ({ locale = "en" }) => {
       <div className="grid md:grid-cols-[1fr_auto] gap-12 items-center">
         <div>
           {/* Mobile-only avatar — brings the desktop photo treatment to phones */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.92 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-            className="md:hidden relative w-28 h-28 mb-7"
-          >
-            <div className="absolute -inset-2 rounded-full bg-gradient-to-br from-blue-200/60 via-indigo-200/40 to-transparent blur-lg" />
-            <div className="relative w-28 h-28 rounded-full overflow-hidden border-4 border-white shadow-xl ring-1 ring-slate-200">
-              <img
-                src={`${BASE}profile.jpg`}
-                alt={`${fullName} — ${subtitle}`}
-                className="w-full h-full object-cover"
-                loading="eager"
-              />
-            </div>
-          </motion.div>
+          <Avatar variant="mobile" alt={`${fullName} — ${subtitle}`} />
 
           <motion.span
             initial={{ opacity: 0, y: 8 }}
@@ -117,22 +141,7 @@ const Hero = ({ locale = "en" }) => {
           </motion.div>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.92 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-          className="hidden md:block relative"
-        >
-          <div className="absolute -inset-3 rounded-full bg-gradient-to-br from-blue-200/60 via-indigo-200/40 to-transparent blur-xl" />
-          <div className="relative w-52 h-52 rounded-full overflow-hidden border-4 border-white shadow-xl ring-1 ring-slate-200">
-            <img
-              src={`${BASE}profile.jpg`}
-              alt={`${fullName} — ${subtitle}`}
-              className="w-full h-full object-cover"
-              loading="eager"
-            />
-          </div>
-        </motion.div>
+        <Avatar variant="desktop" alt={`${fullName} — ${subtitle}`} />
       </div>
     </section>
   );
