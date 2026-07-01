@@ -22,13 +22,19 @@ const splitItems = (str) => {
   return out;
 };
 
+const T = {
+  en: { title: "Skills" },
+  fr: { title: "Compétences" },
+};
+
 const Skills = ({ locale = "en" }) => {
+  const t = T[locale] ?? T.en;
   const items = resume[locale].skills;
 
   return (
     <section className="mb-24">
       <Reveal>
-        <SectionHeading>{locale === "fr" ? "Compétences" : "Skills"}</SectionHeading>
+        <SectionHeading>{t.title}</SectionHeading>
       </Reveal>
 
       <div className="grid md:grid-cols-2 gap-6">

@@ -3,13 +3,19 @@ import resume from "../data/resume.json";
 import Reveal from "../components/Reveal";
 import SectionHeading from "../components/SectionHeading";
 
+const T = {
+  en: { title: "Education" },
+  fr: { title: "Formation" },
+};
+
 const Education = ({ locale = "en" }) => {
+  const t = T[locale] ?? T.en;
   const items = resume[locale].education;
 
   return (
     <section className="mb-24">
       <Reveal>
-        <SectionHeading>{locale === "fr" ? "Formation" : "Education"}</SectionHeading>
+        <SectionHeading>{t.title}</SectionHeading>
       </Reveal>
 
       <ol className="relative border-l border-slate-200 ml-3 space-y-7">
