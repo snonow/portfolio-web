@@ -81,7 +81,8 @@ ${skills.map((s) => `  \\resumeEntryS{${pick(s.category, locale)}}{${pick(s.item
 const SECTION_RENDERERS = {
   experience: (m, l) => m.experience.map((x) => renderExperienceEntry(l, x)).join("\n\n"),
   education:  (m, l) => m.education.map((e)  => renderEducationEntry(l, e)).join("\n\n"),
-  projects:   (m, l) => m.projects.map((p)   => renderProjectEntry(l, p)).join("\n\n"),
+  // webOnly projects appear on the site but not in the one-page PDF.
+  projects:   (m, l) => m.projects.filter((p) => !p.webOnly).map((p) => renderProjectEntry(l, p)).join("\n\n"),
   skills:     (m, l) => renderSkills(m.skills, l),
 };
 
@@ -108,6 +109,8 @@ const buildVariant = async (master, variant) => {
   const subs = {
     IDENTITY_FULLNAME: master.identity.fullName,
     IDENTITY_SUBTITLE: subtitle,
+    // Shown as the tab/window title when the PDF is opened in a viewer.
+    PDF_TITLE: `${master.identity.fullName} — CV (${variant.locale === "fr" ? "Français" : "English"})`,
     LINK_LINKEDIN_HREF: master.identity.links.linkedin.href,
     LINK_LINKEDIN_TEXT: master.identity.links.linkedin.text,
     LINK_GITHUB_HREF:   master.identity.links.github.href,

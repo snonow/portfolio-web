@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-05T01:44:05.144601Z",
+  "generated_at": "2026-07-05T19:20:15.211999Z",
   "projects": [
     {
       "name": "portfolio-web",
@@ -39,13 +39,10 @@
         "tsm-infvis"
       ],
       "readme_images": [
-        "https://img.shields.io/badge/Python-3.13.2-blue",
-        "https://img.shields.io/badge/Topic-Data%20Visualization-green",
-        "https://img.shields.io/badge/Status-Completed-success",
-        "visualisations/B1/v1_b1_report_usa_map_state_county.png",
-        "visualisations/B1/v2_b1_AK_CA_WY_NJ_eq_vs_re_v2.png",
-        "visualisations/B1/v3_b1_re_across_eq_zone_v2.png",
-        "visualisations/B2/v2_b2_earthquake_influence_housing.png"
+        "https://raw.githubusercontent.com/snonow/earthquake-realestate-viz/main/visualisations/B1/v1_b1_report_usa_map_state_county.png",
+        "https://raw.githubusercontent.com/snonow/earthquake-realestate-viz/main/visualisations/B1/v2_b1_AK_CA_WY_NJ_eq_vs_re_v2.png",
+        "https://raw.githubusercontent.com/snonow/earthquake-realestate-viz/main/visualisations/B1/v3_b1_re_across_eq_zone_v2.png",
+        "https://raw.githubusercontent.com/snonow/earthquake-realestate-viz/main/visualisations/B2/v2_b2_earthquake_influence_housing.png"
       ],
       "releases": [
         {
@@ -76,11 +73,7 @@
         "ollama",
         "proxmox"
       ],
-      "readme_images": [
-        "https://img.shields.io/badge/License-MIT-blue.svg",
-        "https://img.shields.io/badge/IaC-Ansible-red.svg",
-        "https://img.shields.io/badge/PRs-welcome-brightgreen.svg"
-      ],
+      "readme_images": [],
       "releases": []
     },
     {
@@ -110,14 +103,12 @@
       "language": "Java",
       "topics": [],
       "readme_images": [
-        "img-readme-rapport/Welcome.png",
-        "img-readme-rapport/Inscription.png",
-        "img-readme-rapport/Login.png",
-        "img-readme-rapport/Connect\u00e9.png",
-        "img-readme-rapport/Connexion_concierge.png",
-        "img-readme-rapport/Messages_envoy\u00e9s_recu.png",
-        "img-readme-rapport/messages_pop-up.png",
-        "img-readme-rapport/Utilisateurs_connectes.png"
+        "https://raw.githubusercontent.com/snonow/INFO641-Messagerie/main/img-readme-rapport/Welcome.png",
+        "https://raw.githubusercontent.com/snonow/INFO641-Messagerie/main/img-readme-rapport/Inscription.png",
+        "https://raw.githubusercontent.com/snonow/INFO641-Messagerie/main/img-readme-rapport/Login.png",
+        "https://raw.githubusercontent.com/snonow/INFO641-Messagerie/main/img-readme-rapport/Connect%C3%A9.png",
+        "https://raw.githubusercontent.com/snonow/INFO641-Messagerie/main/img-readme-rapport/Connexion_concierge.png",
+        "https://raw.githubusercontent.com/snonow/INFO641-Messagerie/main/img-readme-rapport/Messages_envoy%C3%A9s_recu.png"
       ],
       "releases": []
     }

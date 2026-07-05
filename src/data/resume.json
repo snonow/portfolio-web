@@ -1,5 +1,5 @@
 {
-  "_lastUpdated": "2026-07-01",
+  "_lastUpdated": "2026-07-05",
   "en": {
     "sectionOrder": [
       "experience",
@@ -10,6 +10,7 @@
     "experience": [
       {
         "id": "pwc-2026",
+        "url": "https://www.pwc.lu/",
         "company": "PwC Luxembourg",
         "role": "Business Intelligence Intern – Data Science Team",
         "dates": "Feb. 2026 – Aug. 2026",
@@ -48,6 +49,7 @@
       },
       {
         "id": "kagawa-mlops",
+        "url": "https://www.kagawa-u.ac.jp/en/",
         "company": "Kagawa University – Machine Learning Laboratory",
         "role": "MLOps Technician Intern",
         "dates": "Feb. 2025 – Apr. 2025",
@@ -82,6 +84,7 @@
       },
       {
         "id": "junior-pac",
+        "url": "https://www.linkedin.com/company/junior-pac/",
         "company": "Junior Enterprise (Junior PAC)",
         "role": "Association President",
         "dates": "Sep. 2024 – Present",
@@ -111,6 +114,7 @@
       {
         "id": "edf",
         "style": "compact",
+        "url": "https://www.edf.fr/centrale-nucleaire-saint-alban",
         "company": "EDF – Saint-Alban Nuclear Power Plant",
         "role": "Intern",
         "dates": "Aug. 2024",
@@ -128,7 +132,40 @@
     ],
     "projects": [
       {
+        "id": "fudami",
+        "webOnly": true,
+        "url": "https://fudami.net",
+        "title": "Fudami — Japanese Learning Platform",
+        "org": "Personal product — solo design & build",
+        "dates": "Jun. 2026 – Present",
+        "tags": [
+          "ai",
+          "mobile",
+          "cloud",
+          "current"
+        ],
+        "bullets": [
+          {
+            "id": "fudami-platform",
+            "text": "Designing and building a spaced-repetition language-learning platform as a three-tier system: a cross-platform Expo/React Native app (iOS, Android, Web), a Python content pipeline, and a Cloudflare serverless backend (Workers, D1, R2)",
+            "tags": [
+              "mobile",
+              "cloud"
+            ]
+          },
+          {
+            "id": "fudami-engine",
+            "text": "Implemented an FSRS-based spaced-repetition engine with server-authoritative progress tracking and offline-capable on-device reviews",
+            "tags": [
+              "ai",
+              "data"
+            ]
+          }
+        ]
+      },
+      {
         "id": "bfh-curation",
+        "url": "https://www.bfh.ch/en/",
         "title": "Data Curation Pipeline & Web Crawling Project",
         "org": "GenAI Laboratory – BFH",
         "dates": "Sep. 2025 – Feb. 2026",
@@ -161,6 +198,7 @@
     "education": [
       {
         "id": "polytech-annecy",
+        "url": "https://www.polytech.univ-smb.fr/",
         "school": "Polytech Annecy",
         "degree": "Master of Engineering in CS & Data Analytics",
         "details": "Specialization: Computer Science, Data & Applications",
@@ -172,6 +210,7 @@
       },
       {
         "id": "bfh",
+        "url": "https://www.bfh.ch/en/",
         "school": "Bern University of Applied Sciences (BFH)",
         "degree": "MSc Engineering (Exchange)",
         "details": "Transformers, Self-Supervised Learning, Cloud Systems",
@@ -185,6 +224,7 @@
       },
       {
         "id": "kagawa",
+        "url": "https://www.kagawa-u.ac.jp/en/",
         "school": "Kagawa University",
         "degree": "Master's in Data Science (Exchange)",
         "details": "Blockchain, Cryptography, Mathematics & Data Science",
@@ -197,6 +237,7 @@
       {
         "id": "cpge",
         "style": "compact",
+        "url": "https://lyc-gellee.monbureaunumerique.fr/",
         "school": "Lycée Claude Gellé",
         "degree": "Classe Préparatoire aux Grandes Écoles (MP)",
         "dates": "Sep. 2021 – Sep. 2023",
@@ -205,6 +246,7 @@
       {
         "id": "bac",
         "style": "compact",
+        "url": "https://www.lamalgrange.net/",
         "school": "Lycée La Malgrange",
         "degree": "Baccalauréat with Honours (Maths, Physics, CS)",
         "dates": "Sep. 2018 – Sep. 2021",
@@ -264,6 +306,7 @@
     "experience": [
       {
         "id": "pwc-2026",
+        "url": "https://www.pwc.lu/",
         "company": "PwC Luxembourg",
         "role": "Stagiaire Business Intelligence – Équipe Data Science",
         "dates": "Fév. 2026 – Août 2026",
@@ -302,6 +345,7 @@
       },
       {
         "id": "kagawa-mlops",
+        "url": "https://www.kagawa-u.ac.jp/en/",
         "company": "Université de Kagawa – Laboratoire ML",
         "role": "Stagiaire Technicien MLOps",
         "dates": "Fév. 2025 – Avr. 2025",
@@ -336,6 +380,7 @@
       },
       {
         "id": "junior-pac",
+        "url": "https://www.linkedin.com/company/junior-pac/",
         "company": "Junior Entreprise (Junior PAC)",
         "role": "Président d'Association",
         "dates": "Sep. 2024 – Présent",
@@ -365,6 +410,7 @@
       {
         "id": "edf",
         "style": "compact",
+        "url": "https://www.edf.fr/centrale-nucleaire-saint-alban",
         "company": "EDF – Centrale Nucléaire Saint-Alban",
         "role": "Stagiaire",
         "dates": "Août 2024",
@@ -382,7 +428,40 @@
     ],
     "projects": [
       {
+        "id": "fudami",
+        "webOnly": true,
+        "url": "https://fudami.net",
+        "title": "Fudami — Plateforme d'Apprentissage du Japonais",
+        "org": "Produit personnel — conception & développement solo",
+        "dates": "Juin 2026 – Présent",
+        "tags": [
+          "ai",
+          "mobile",
+          "cloud",
+          "current"
+        ],
+        "bullets": [
+          {
+            "id": "fudami-platform",
+            "text": "Conception et développement d'une plateforme d'apprentissage des langues par répétition espacée, en trois tiers : application Expo/React Native multiplateforme (iOS, Android, Web), pipeline de contenu Python et backend serverless Cloudflare (Workers, D1, R2)",
+            "tags": [
+              "mobile",
+              "cloud"
+            ]
+          },
+          {
+            "id": "fudami-engine",
+            "text": "Implémentation d'un moteur de répétition espacée basé sur FSRS, avec suivi de progression côté serveur et révisions hors-ligne sur l'appareil",
+            "tags": [
+              "ai",
+              "data"
+            ]
+          }
+        ]
+      },
+      {
         "id": "bfh-curation",
+        "url": "https://www.bfh.ch/en/",
         "title": "Projet Pipeline de Curation de Données et Web Crawling",
         "org": "Laboratoire GenAI – BFH",
         "dates": "Sep. 2025 – Fév. 2026",
@@ -415,6 +494,7 @@
     "education": [
       {
         "id": "polytech-annecy",
+        "url": "https://www.polytech.univ-smb.fr/",
         "school": "Polytech Annecy",
         "degree": "Diplôme d'Ingénieur Informatique & Data Analytics",
         "details": "Spécialité : Informatique Données Usages",
@@ -426,6 +506,7 @@
       },
       {
         "id": "bfh",
+        "url": "https://www.bfh.ch/en/",
         "school": "Haute École Spécialisée Bernoise (BFH)",
         "degree": "MSc Ingénierie (Échange)",
         "details": "Transformers, Self-Supervised Learning, Cloud Systems",
@@ -439,6 +520,7 @@
       },
       {
         "id": "kagawa",
+        "url": "https://www.kagawa-u.ac.jp/en/",
         "school": "Université de Kagawa",
         "degree": "Master Data Science (Échange)",
         "details": "Blockchain, Cryptographie, Mathématiques & Data Science",
@@ -451,6 +533,7 @@
       {
         "id": "cpge",
         "style": "compact",
+        "url": "https://lyc-gellee.monbureaunumerique.fr/",
         "school": "Lycée Claude Gellé",
         "degree": "Classe Préparatoire aux Grandes Écoles (MP)",
         "dates": "Sep. 2021 – Sep. 2023",
@@ -459,6 +542,7 @@
       {
         "id": "bac",
         "style": "compact",
+        "url": "https://www.lamalgrange.net/",
         "school": "Lycée La Malgrange",
         "degree": "Baccalauréat avec mention (Maths, Physique, Info)",
         "dates": "Sep. 2018 – Sep. 2021",

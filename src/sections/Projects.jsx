@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Pin } from "lucide-react";
 
@@ -7,6 +7,7 @@ import projectsData from "../data/github_projects.json";
 import { GITHUB_PROFILE_URL } from "../data/github";
 import Reveal from "../components/Reveal";
 import SectionHeading from "../components/SectionHeading";
+import ExternalTextLink from "../components/ExternalTextLink";
 import ProjectExpandableCard from "../components/ProjectExpandableCard";
 
 const T = {
@@ -26,6 +27,16 @@ const Projects = ({ locale = "en" }) => {
   const t = T[locale] ?? T.en;
   const [active, setActive] = useState(null);
 
+  // Lock page scroll behind the expanded-card overlay.
+  useEffect(() => {
+    if (!active) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = prev;
+    };
+  }, [active]);
+
   const resumeProjects = resume[locale]?.projects ?? [];
   const repos = [...(projectsData.projects ?? [])].sort((a, b) => richness(b) - richness(a));
 
@@ -42,7 +53,9 @@ const Projects = ({ locale = "en" }) => {
             <Reveal key={p.id} delay={i * 0.05}>
               <article className="bg-white border border-slate-200 rounded-xl p-6 hover:border-blue-300 transition h-full">
                 <div className="flex flex-wrap items-baseline justify-between gap-x-4 mb-1">
-                  <h3 className="font-semibold text-slate-900">{p.title}</h3>
+                  <h3 className="font-semibold text-slate-900">
+                    <ExternalTextLink href={p.url}>{p.title}</ExternalTextLink>
+                  </h3>
                   <time className="text-xs text-slate-500 font-medium">{p.dates}</time>
                 </div>
                 <p className="italic text-sm text-slate-600 mb-3">
