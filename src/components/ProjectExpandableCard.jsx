@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ExternalLink, X, FileText } from "lucide-react";
+import { ExternalLink, Maximize2, X, FileText } from "lucide-react";
 
 const ProjectExpandableCard = ({
   project,
@@ -21,10 +21,10 @@ const ProjectExpandableCard = ({
     <motion.div
       layout
       onClick={expanded ? (e) => e.stopPropagation() : onOpen}
-      className={`bg-white rounded-xl border border-slate-200 shadow-sm cursor-pointer ${
+      className={`group bg-white rounded-xl border border-slate-200 shadow-sm cursor-pointer ${
         expanded
           ? "w-full max-w-5xl max-h-[90vh] overflow-y-auto"
-          : "hover:border-blue-300"
+          : "hover:border-blue-300 hover:shadow-md transition-shadow"
       }`}
     >
       <div className="p-6">
@@ -46,7 +46,13 @@ const ProjectExpandableCard = ({
             >
               <X size={18} />
             </button>
-          ) : null}
+          ) : (
+            <Maximize2
+              size={15}
+              className="shrink-0 mt-1 text-slate-300 group-hover:text-blue-600 transition-colors"
+              aria-hidden="true"
+            />
+          )}
         </div>
 
         {/* META */}
