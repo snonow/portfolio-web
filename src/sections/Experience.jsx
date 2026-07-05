@@ -2,6 +2,7 @@ import { Briefcase, FileText, ExternalLink } from "lucide-react";
 import resume from "../data/resume.json";
 import Reveal from "../components/Reveal";
 import SectionHeading from "../components/SectionHeading";
+import ExternalTextLink from "../components/ExternalTextLink";
 
 const T = {
   en: { title: "Professional Experience" },
@@ -24,7 +25,9 @@ const Experience = ({ locale = "en" }) => {
                 <Briefcase size={12} className="text-blue-800" />
               </span>
               <div className="flex flex-wrap items-baseline justify-between gap-x-4">
-                <h3 className="font-semibold text-slate-900">{x.company}</h3>
+                <h3 className="font-semibold text-slate-900">
+                  <ExternalTextLink href={x.url}>{x.company}</ExternalTextLink>
+                </h3>
                 <time className="text-xs text-slate-500 font-medium">{x.dates}</time>
               </div>
               <p className="italic text-sm text-slate-600 mb-2">
