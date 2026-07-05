@@ -108,6 +108,8 @@ const buildVariant = async (master, variant) => {
   const subs = {
     IDENTITY_FULLNAME: master.identity.fullName,
     IDENTITY_SUBTITLE: subtitle,
+    // Shown as the tab/window title when the PDF is opened in a viewer.
+    PDF_TITLE: `${master.identity.fullName} — CV (${variant.locale === "fr" ? "Français" : "English"})`,
     LINK_LINKEDIN_HREF: master.identity.links.linkedin.href,
     LINK_LINKEDIN_TEXT: master.identity.links.linkedin.text,
     LINK_GITHUB_HREF:   master.identity.links.github.href,
