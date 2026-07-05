@@ -2,10 +2,15 @@ import os
 import json
 import re
 import requests
-from datetime import datetime
+from datetime import datetime, timezone
+from urllib.parse import quote, urlparse
 
 USERNAME = "snonow"
 API = "https://api.github.com"
+RAW_BASE = "https://raw.githubusercontent.com"
+# Badge services produce status chips, not screenshots — keep them out of the gallery.
+BADGE_HOSTS = ("img.shields.io", "badgen.net", "badge.fury.io", "codecov.io")
+MAX_IMAGES = 6
 HEADERS = {
     "Authorization": f"Bearer {os.environ['GITHUB_TOKEN']}",
     "Accept": "application/vnd.github+json",
@@ -31,6 +36,7 @@ def get_pinned_repos():
                   url
                   stargazerCount
                   primaryLanguage {{ name }}
+                  defaultBranchRef {{ name }}
                   repositoryTopics(first: 10) {{
                     nodes {{ topic {{ name }} }}
                   }}
@@ -50,11 +56,42 @@ def get_pinned_repos():
     r.raise_for_status()
     return r.json()["data"]["user"]["pinnedItems"]["nodes"]
 
-def extract_readme_images(repo):
+def resolve_image_url(src, repo, branch):
+    """Turn a README image reference into a browser-loadable URL (or None)."""
+    src = src.strip()
+    if '"' in src:  # markdown title form: ![alt](path "title")
+        src = src.split('"')[0].strip()
+    if not src or src.startswith("data:"):
+        return None
+    basename = src.rsplit("/", 1)[-1].lower()
+    if re.search(r"favicon|logo|icon", basename):
+        return None  # branding assets, not project screenshots
+    parsed = urlparse(src)
+    if parsed.scheme in ("http", "https"):
+        host = parsed.netloc.lower()
+        if any(b in host for b in BADGE_HOSTS) or parsed.path.lower().endswith(".svg"):
+            return None
+        if host == "github.com" and "/blob/" in parsed.path:
+            return RAW_BASE + parsed.path.replace("/blob/", "/", 1)
+        return src
+    if src.lower().endswith(".svg"):
+        return None
+    # Relative path inside the repo → raw.githubusercontent.com
+    path = quote(src.removeprefix("./").lstrip("/"), safe="/")
+    return f"{RAW_BASE}/{USERNAME}/{repo}/{branch}/{path}"
+
+def extract_readme_images(repo, branch):
     try:
         readme = get(f"{API}/repos/{USERNAME}/{repo}/readme")
         content = requests.get(readme["download_url"]).text
-        return re.findall(r"!\[.*?\]\((.*?)\)", content)
+        srcs = re.findall(r"!\[[^\]]*\]\(([^)]+)\)", content)
+        srcs += re.findall(r"<img[^>]+src=[\"']([^\"']+)[\"']", content)
+        out = []
+        for s in srcs:
+            url = resolve_image_url(s, repo, branch)
+            if url and url not in out:
+                out.append(url)
+        return out[:MAX_IMAGES]
     except Exception:
         return []
 
@@ -79,6 +116,7 @@ def main():
 
     for r in pinned:
         name = r["name"]
+        branch = (r.get("defaultBranchRef") or {}).get("name") or "main"
         projects.append({
             "name": name,
             "description": r["description"],
@@ -86,12 +124,12 @@ def main():
             "stars": r["stargazerCount"],
             "language": r["primaryLanguage"]["name"] if r["primaryLanguage"] else None,
             "topics": [t["topic"]["name"] for t in r["repositoryTopics"]["nodes"]],
-            "readme_images": extract_readme_images(name),
+            "readme_images": extract_readme_images(name, branch),
             "releases": get_releases(name),
         })
 
     data = {
-        "generated_at": datetime.utcnow().isoformat() + "Z",
+        "generated_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
         "projects": projects,
     }
 

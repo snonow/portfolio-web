@@ -84,6 +84,10 @@ const ProjectExpandableCard = ({
                     src={img}
                     alt={`${name} visual ${idx}`}
                     className="rounded-lg border"
+                    loading="lazy"
+                    onError={(e) => {
+                      e.currentTarget.style.display = "none";
+                    }}
                   />
                 ))}
               </div>
