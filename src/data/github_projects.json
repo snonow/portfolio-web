@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-19T01:18:01.751957Z",
+  "generated_at": "2026-07-20T01:21:56.556439Z",
   "projects": [
     {
       "name": "portfolio-web",
@@ -102,14 +102,7 @@
       "stars": 0,
       "language": "Java",
       "topics": [],
-      "readme_images": [
-        "https://raw.githubusercontent.com/snonow/INFO641-Messagerie/main/img-readme-rapport/Welcome.png",
-        "https://raw.githubusercontent.com/snonow/INFO641-Messagerie/main/img-readme-rapport/Inscription.png",
-        "https://raw.githubusercontent.com/snonow/INFO641-Messagerie/main/img-readme-rapport/Login.png",
-        "https://raw.githubusercontent.com/snonow/INFO641-Messagerie/main/img-readme-rapport/Connect%C3%A9.png",
-        "https://raw.githubusercontent.com/snonow/INFO641-Messagerie/main/img-readme-rapport/Connexion_concierge.png",
-        "https://raw.githubusercontent.com/snonow/INFO641-Messagerie/main/img-readme-rapport/Messages_envoy%C3%A9s_recu.png"
-      ],
+      "readme_images": [],
       "releases": []
     }
   ]
