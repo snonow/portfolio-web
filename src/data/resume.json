@@ -1,5 +1,5 @@
 {
-  "_lastUpdated": "2026-07-05",
+  "_lastUpdated": "2026-09-04",
   "en": {
     "sectionOrder": [
       "experience",
@@ -159,6 +159,35 @@
             "tags": [
               "ai",
               "data"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "fudami-jisho",
+        "webOnly": true,
+        "url": "https://jisho.fudami.net",
+        "title": "Fudami Jisho — Self-hosted Japanese Dictionary",
+        "org": "Personal product — solo design & build",
+        "dates": "Aug. 2026 – Present",
+        "tags": [
+          "data",
+          "cloud",
+          "current"
+        ],
+        "bullets": [
+          {
+            "id": "fudami-jisho-search",
+            "text": "Built a self-hosted Japanese dictionary over 180,000+ JMdict entries and KANJIDIC2 with sub-5 ms full-text search, pitch-accent curves, and stroke-order animations",
+            "tags": [
+              "data"
+            ]
+          },
+          {
+            "id": "fudami-jisho-ops",
+            "text": "Deployed it on a home server behind a Cloudflare Tunnel with a pull-based, CI-gated release pipeline, and linked it to the learner's memory model to colour words by i+1 difficulty",
+            "tags": [
+              "cloud"
             ]
           }
         ]
@@ -455,6 +484,35 @@
             "tags": [
               "ai",
               "data"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "fudami-jisho",
+        "webOnly": true,
+        "url": "https://jisho.fudami.net",
+        "title": "Fudami Jisho — Dictionnaire de Japonais Auto-hébergé",
+        "org": "Produit personnel — conception & développement solo",
+        "dates": "Août 2026 – Présent",
+        "tags": [
+          "data",
+          "cloud",
+          "current"
+        ],
+        "bullets": [
+          {
+            "id": "fudami-jisho-search",
+            "text": "Développement d'un dictionnaire de japonais auto-hébergé sur plus de 180 000 entrées JMdict et KANJIDIC2, avec recherche plein texte en moins de 5 ms, courbes d'accent tonal et animations de l'ordre des traits",
+            "tags": [
+              "data"
+            ]
+          },
+          {
+            "id": "fudami-jisho-ops",
+            "text": "Déploiement sur un serveur personnel derrière un Cloudflare Tunnel avec un pipeline de livraison par tirage conditionné à la CI, et lien avec le modèle de mémoire de l'apprenant pour colorer les mots selon la difficulté i+1",
+            "tags": [
+              "cloud"
             ]
           }
         ]
