@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T03:17:17.113319Z",
+  "generated_at": "2026-10-10T02:56:55.366031Z",
   "projects": [
     {
       "name": "portfolio-web",
@@ -69,7 +69,8 @@
         "landing-page",
         "portfolio",
         "spaced-repetition",
-        "tailwindcss"
+        "tailwindcss",
+        "fudami"
       ],
       "readme_images": [],
       "releases": []
