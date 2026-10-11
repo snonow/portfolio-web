@@ -112,6 +112,7 @@
           },
           {
             "id": "kagawa-cicd",
+            "webOnly": true,
             "text": "Built a hybrid CI/CD pipeline (GitLab, Docker) and ETL workflows to train ML models in the cloud",
             "tags": [
               "cloud",
@@ -141,6 +142,7 @@
           },
           {
             "id": "jpac-client",
+            "webOnly": true,
             "text": "Manage client relationships, run meetings, and oversee Data & Software consulting projects",
             "tags": [
               "leadership",
@@ -151,6 +153,7 @@
       },
       {
         "id": "edf",
+        "webOnly": true,
         "style": "compact",
         "url": "https://www.edf.fr/centrale-nucleaire-saint-alban",
         "company": "EDF – Saint-Alban Nuclear Power Plant",
@@ -171,7 +174,6 @@
     "projects": [
       {
         "id": "fudami",
-        "webOnly": true,
         "url": "https://fudami.net",
         "title": "Fudami — Japanese Learning Platform",
         "org": "Personal product — solo design & build",
@@ -185,6 +187,7 @@
         "bullets": [
           {
             "id": "fudami-platform",
+            "webOnly": true,
             "text": "Designing and building a spaced-repetition language-learning platform as a three-tier system: a cross-platform Expo/React Native app (iOS, Android, Web), a Python content pipeline, and a Cloudflare serverless backend (Workers, D1, R2)",
             "tags": [
               "mobile",
@@ -193,6 +196,7 @@
           },
           {
             "id": "fudami-engine",
+            "webOnly": true,
             "text": "Implemented an FSRS-based spaced-repetition engine with server-authoritative progress tracking and offline-capable on-device reviews",
             "tags": [
               "ai",
@@ -232,6 +236,7 @@
       },
       {
         "id": "bfh-curation",
+        "webOnly": true,
         "url": "https://www.bfh.ch/en/",
         "title": "Data Curation Pipeline & Web Crawling Project",
         "org": "GenAI Laboratory – BFH",
@@ -314,7 +319,7 @@
     "skills": [
       {
         "category": "Cloud & DevOps:",
-        "items": "Microsoft Azure, Terraform, CI/CD (Azure DevOps YAML), Docker, Ansible, Linux, Git"
+        "items": "Microsoft Azure, Terraform / OpenTofu, Ansible, CI/CD (Azure DevOps YAML), Docker, Linux, Git, Proxmox homelab"
       },
       {
         "category": "Data:",
@@ -326,7 +331,7 @@
       },
       {
         "category": "AI & ML:",
-        "items": "Claude Code, GitHub Copilot, local RAG on a home server, MLOps (co-authored paper)"
+        "items": "Claude Code, GitHub Copilot, self-hosted RAG & AI agent (Ollama), MLOps (co-authored paper)"
       },
       {
         "category": "Languages:",
@@ -466,6 +471,7 @@
           },
           {
             "id": "kagawa-cicd",
+            "webOnly": true,
             "text": "Mise en place d'une chaîne CI/CD hybride (GitLab, Docker) et de workflows ETL pour entraîner des modèles ML dans le cloud",
             "tags": [
               "cloud",
@@ -495,6 +501,7 @@
           },
           {
             "id": "jpac-client",
+            "webOnly": true,
             "text": "Gestion de la relation client, animation de réunions et pilotage de projets de conseil (Data & Logiciel)",
             "tags": [
               "leadership",
@@ -505,6 +512,7 @@
       },
       {
         "id": "edf",
+        "webOnly": true,
         "style": "compact",
         "url": "https://www.edf.fr/centrale-nucleaire-saint-alban",
         "company": "EDF – Centrale Nucléaire Saint-Alban",
@@ -525,7 +533,6 @@
     "projects": [
       {
         "id": "fudami",
-        "webOnly": true,
         "url": "https://fudami.net",
         "title": "Fudami — Plateforme d'Apprentissage du Japonais",
         "org": "Produit personnel — conception & développement solo",
@@ -539,6 +546,7 @@
         "bullets": [
           {
             "id": "fudami-platform",
+            "webOnly": true,
             "text": "Conception et développement d'une plateforme d'apprentissage des langues par répétition espacée, en trois tiers : application Expo/React Native multiplateforme (iOS, Android, Web), pipeline de contenu Python et backend serverless Cloudflare (Workers, D1, R2)",
             "tags": [
               "mobile",
@@ -547,6 +555,7 @@
           },
           {
             "id": "fudami-engine",
+            "webOnly": true,
             "text": "Implémentation d'un moteur de répétition espacée basé sur FSRS, avec suivi de progression côté serveur et révisions hors-ligne sur l'appareil",
             "tags": [
               "ai",
@@ -586,6 +595,7 @@
       },
       {
         "id": "bfh-curation",
+        "webOnly": true,
         "url": "https://www.bfh.ch/en/",
         "title": "Projet Pipeline de Curation de Données et Web Crawling",
         "org": "Laboratoire GenAI – BFH",
@@ -668,7 +678,7 @@
     "skills": [
       {
         "category": "Cloud & DevOps :",
-        "items": "Microsoft Azure, Terraform, CI/CD (Azure DevOps YAML), Docker, Ansible, Linux, Git"
+        "items": "Microsoft Azure, Terraform / OpenTofu, Ansible, CI/CD (Azure DevOps YAML), Docker, Linux, Git, homelab Proxmox"
       },
       {
         "category": "Data :",
@@ -680,7 +690,7 @@
       },
       {
         "category": "IA & ML :",
-        "items": "Claude Code, GitHub Copilot, RAG local sur serveur perso, MLOps (article co-écrit)"
+        "items": "Claude Code, GitHub Copilot, RAG et agent IA auto-hébergés (Ollama), MLOps (article co-écrit)"
       },
       {
         "category": "Langues :",
@@ -820,6 +830,7 @@
           },
           {
             "id": "kagawa-cicd",
+            "webOnly": true,
             "text": "クラウド上でMLモデルを学習するためのハイブリッドCI/CDパイプライン（GitLab、Docker）とETLワークフローを構築",
             "tags": [
               "cloud",
@@ -849,6 +860,7 @@
           },
           {
             "id": "jpac-client",
+            "webOnly": true,
             "text": "顧客対応、会議の進行、データ・ソフトウェア分野のコンサルティング案件の管理を担当",
             "tags": [
               "leadership",
@@ -859,6 +871,7 @@
       },
       {
         "id": "edf",
+        "webOnly": true,
         "style": "compact",
         "url": "https://www.edf.fr/centrale-nucleaire-saint-alban",
         "company": "EDF サン・タルバン原子力発電所",
@@ -879,7 +892,6 @@
     "projects": [
       {
         "id": "fudami",
-        "webOnly": true,
         "url": "https://fudami.net",
         "title": "Fudami — 日本語学習プラットフォーム",
         "org": "個人開発 — 設計から開発まで単独で担当",
@@ -893,6 +905,7 @@
         "bullets": [
           {
             "id": "fudami-platform",
+            "webOnly": true,
             "text": "間隔反復による語学学習プラットフォームを3層構成で設計・開発：Expo／React Nativeのクロスプラットフォームアプリ（iOS・Android・Web）、Pythonのコンテンツパイプライン、Cloudflareのサーバーレスバックエンド（Workers、D1、R2）",
             "tags": [
               "mobile",
@@ -901,6 +914,7 @@
           },
           {
             "id": "fudami-engine",
+            "webOnly": true,
             "text": "FSRSベースの間隔反復エンジンを実装。学習進捗はサーバー側で一元管理し、オフラインでも端末上で復習が可能",
             "tags": [
               "ai",
@@ -940,6 +954,7 @@
       },
       {
         "id": "bfh-curation",
+        "webOnly": true,
         "url": "https://www.bfh.ch/en/",
         "title": "データキュレーション・パイプラインとWebクローリング",
         "org": "BFH 生成AI研究室",
@@ -1022,7 +1037,7 @@
     "skills": [
       {
         "category": "クラウド・DevOps：",
-        "items": "Microsoft Azure, Terraform, CI/CD（Azure DevOps YAML）, Docker, Ansible, Linux, Git"
+        "items": "Microsoft Azure, Terraform / OpenTofu, Ansible, CI/CD（Azure DevOps YAML）, Docker, Linux, Git, Proxmoxによる自宅ラボ"
       },
       {
         "category": "データ：",
@@ -1034,7 +1049,7 @@
       },
       {
         "category": "AI・ML：",
-        "items": "Claude Code, GitHub Copilot, 自宅サーバーでのローカルRAG構築, MLOps（論文共著）"
+        "items": "Claude Code, GitHub Copilot, セルフホストのRAG・AIエージェント（Ollama）, MLOps（論文共著）"
       },
       {
         "category": "語学：",
