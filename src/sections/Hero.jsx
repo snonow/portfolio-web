@@ -16,7 +16,7 @@ const T = {
         I build <span className="text-slate-800 font-medium">reliable data pipelines</span>,{" "}
         <span className="text-slate-800 font-medium">decision-ready dashboards</span>, and{" "}
         <span className="text-slate-800 font-medium">controlled AI-assisted workflows</span>.
-        {" "}Currently a BI Intern at PwC Luxembourg, alongside my engineering degree at Polytech Annecy.
+        {" "}Now a Data Engineer at PwC Luxembourg, after completing my engineering degree at Polytech Annecy.
       </>
     ),
   },
@@ -26,7 +26,7 @@ const T = {
         Je construis des <span className="text-slate-800 font-medium">pipelines de données fiables</span>,{" "}
         des <span className="text-slate-800 font-medium">tableaux de bord décisionnels</span>, et des{" "}
         <span className="text-slate-800 font-medium">workflows IA maîtrisés</span>.
-        {" "}Actuellement BI Intern chez PwC Luxembourg, en parallèle de mon diplôme d&apos;ingénieur à Polytech Annecy.
+        {" "}Désormais Data Engineer chez PwC Luxembourg, après mon diplôme d&apos;ingénieur à Polytech Annecy.
       </>
     ),
   },

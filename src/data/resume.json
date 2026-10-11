@@ -1,5 +1,5 @@
 {
-  "_lastUpdated": "2026-07-05",
+  "_lastUpdated": "2026-09-16",
   "en": {
     "sectionOrder": [
       "experience",
@@ -9,6 +9,28 @@
     ],
     "experience": [
       {
+        "id": "pwc-de-2026",
+        "url": "https://www.pwc.lu/",
+        "company": "PwC Luxembourg",
+        "role": "Data Engineer (Permanent)",
+        "dates": "Sep. 2026 – Present",
+        "location": "Luxembourg",
+        "tags": [
+          "data",
+          "cloud",
+          "current"
+        ],
+        "bullets": [
+          {
+            "id": "pwc-de-offer",
+            "text": "Offered a permanent position after a six-month internship, to keep building data solutions on advanced technologies within the same team",
+            "tags": [
+              "data"
+            ]
+          }
+        ]
+      },
+      {
         "id": "pwc-2026",
         "url": "https://www.pwc.lu/",
         "company": "PwC Luxembourg",
@@ -17,8 +39,7 @@
         "location": "Luxembourg",
         "tags": [
           "cloud",
-          "ai",
-          "current"
+          "ai"
         ],
         "bullets": [
           {
@@ -305,6 +326,28 @@
     ],
     "experience": [
       {
+        "id": "pwc-de-2026",
+        "url": "https://www.pwc.lu/",
+        "company": "PwC Luxembourg",
+        "role": "Data Engineer (CDI)",
+        "dates": "Sep. 2026 – Présent",
+        "location": "Luxembourg",
+        "tags": [
+          "data",
+          "cloud",
+          "current"
+        ],
+        "bullets": [
+          {
+            "id": "pwc-de-offer",
+            "text": "Embauché en CDI à l'issue de six mois de stage, pour continuer à construire des solutions data sur des technologies avancées au sein de la même équipe",
+            "tags": [
+              "data"
+            ]
+          }
+        ]
+      },
+      {
         "id": "pwc-2026",
         "url": "https://www.pwc.lu/",
         "company": "PwC Luxembourg",
@@ -313,8 +356,7 @@
         "location": "Luxembourg",
         "tags": [
           "cloud",
-          "ai",
-          "current"
+          "ai"
         ],
         "bullets": [
           {
