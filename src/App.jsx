@@ -84,7 +84,7 @@ const App = () => {
             <a href={LINKEDIN_URL} target="_blank" rel="noreferrer" aria-label="LinkedIn">
               <SiLinkedin size={22} />
             </a>
-            <a href="mailto:arnowilhelm3@icloud.com" aria-label="Email">
+            <a href="mailto:contact@arno-wilhelm.dev" aria-label="Email">
               <Mail size={22} />
             </a>
           </div>
