@@ -28,9 +28,13 @@
       "tags": ["data", "cloud", "current"],
       "bullets": [
         { "id": "pwc-de-platform", "text": {
-          "en": "Hired after my internship to carry on the data platform's infrastructure: production cut-over of the migrated stack, Terraform and CI/CD on Azure",
-          "fr": "Embauché à l'issue du stage pour poursuivre l'infrastructure de la plateforme data : bascule en production de la stack migrée, Terraform et CI/CD sur Azure"
-        }, "tags": ["cloud", "iac"] }
+          "en": "Build and maintain the Azure infrastructure of the team's data and AI platforms (data collection, internal RAG services) with Terraform and Azure DevOps CI/CD",
+          "fr": "Construction et maintien de l'infrastructure Azure des plateformes data et IA de l'équipe (collecte de données, services RAG internes) en Terraform et CI/CD Azure DevOps"
+        }, "tags": ["cloud", "iac"] },
+        { "id": "pwc-de-dotnet", "text": {
+          "en": "Support the team's application projects, mostly .NET 6/8, on hosting, deployment and runtime issues",
+          "fr": "Support des projets applicatifs de l'équipe, majoritairement en .NET 6/8, sur l'hébergement, le déploiement et l'exploitation"
+        }, "tags": ["cloud", "dotnet"] }
       ]
     },
     {
@@ -55,8 +59,8 @@
           "fr": "Rétablissement des flux applicatifs et Data Factory après la bascule (intégration VNet, points de terminaison privés, droits de la base) et division par plus de 10 des coûts de télémétrie"
         }, "tags": ["cloud", "network"] },
         { "id": "pwc-rag", "text": {
-          "en": "Deployed the infrastructure for an internal RAG / agentic-AI tool and integrated its back-end and front-end",
-          "fr": "Déploiement de l'infrastructure d'un outil interne de RAG / IA agentique et intégration de son back-end et front-end"
+          "en": "Designed and deployed the Azure infrastructure (Terraform) of an internal RAG / agentic-AI services hub, and integrated its back-end and front-end",
+          "fr": "Conception et déploiement de l'infrastructure Azure (Terraform) d'un hub interne de services RAG / IA agentique, et intégration de son back-end et front-end"
         }, "tags": ["ai", "llm"] }
       ]
     },
@@ -188,7 +192,7 @@
 
   "skills": [
     { "category": { "en": "Cloud & DevOps:", "fr": "Cloud & DevOps :" },"items": { "en": "Azure (Data Factory, Functions, SQL, Cosmos DB, VNet & Private Endpoints), Terraform (IaC), Azure DevOps CI/CD (YAML), Docker, AWS", "fr": "Azure (Data Factory, Functions, SQL, Cosmos DB, VNet & Private Endpoints), Terraform (IaC), Azure DevOps CI/CD (YAML), Docker, AWS" } },
-    { "category": { "en": "Programming:",    "fr": "Programmation :" }, "items": { "en": "Python (advanced – since 2021), SQL (PostgreSQL, MySQL), Java, C#, .NET",         "fr": "Python (avancé - depuis 2021), SQL (PostgreSQL, MySQL), Java, C#, .NET" } },
+    { "category": { "en": "Programming:",    "fr": "Programmation :" }, "items": { "en": "Python (advanced – since 2021), SQL (PostgreSQL, MySQL), C# / .NET (6, 8), Java",         "fr": "Python (avancé - depuis 2021), SQL (PostgreSQL, MySQL), C# / .NET (6, 8), Java" } },
     { "category": { "en": "Data & ML:",      "fr": "Data & ML :" },     "items": { "en": "PyTorch, TensorFlow, MLOps (CI/CD, monitoring), ETL pipelines",                    "fr": "PyTorch, TensorFlow, MLOps (CI/CD, monitoring), pipelines ETL" } },
     { "category": { "en": "Visualization:",  "fr": "Visualisation :" }, "items": { "en": "Power BI, Tableau, Python visualization libraries",                                 "fr": "Power BI, Tableau, librairies de visualisation Python" } },
     { "category": { "en": "Languages:",      "fr": "Langues :" },       "items": { "en": "French (Native), English (Fluent – TOEIC 920/990), Japanese (N3/B1)",             "fr": "Français (Natif), Anglais (Courant – TOEIC 920/990), Japonais (N3/B1)" } },
