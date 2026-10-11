@@ -1,8 +1,9 @@
-import { Activity, GitBranch, Clock } from "lucide-react";
+import { Activity, GitBranch, Clock, GitCommit, CalendarDays, Flame } from "lucide-react";
 
 import Reveal from "../components/Reveal";
 import SectionHeading from "../components/SectionHeading";
 import useGitHubActivity from "../hooks/useGitHubActivity";
+import stats from "../data/github_stats.json";
 
 const T = {
   en: {
@@ -10,6 +11,12 @@ const T = {
     served: "Served live from a Cloudflare Function",
     servedFallback: "Fetched live from the GitHub API",
     contributions: "contributions in the last year",
+    commits: "commits in the last year",
+    activeDays: "active days",
+    streak: (n) => `day${n === 1 ? "" : "s"} in a row`,
+    allRepos: "repositories",
+    privateRepos: (n) => `${n} private`,
+    lines: (s) => `+${s.additions.toLocaleString("en")} / −${s.deletions.toLocaleString("en")} lines over the last 12 months, across ${s.repos} repositories (${s.private_repos} private)`,
     repos: "public repositories",
     lastPush: "last pushed",
     languages: "Most-used languages",
@@ -22,6 +29,12 @@ const T = {
     served: "Servi en direct par une Cloudflare Function",
     servedFallback: "Récupéré en direct via l'API GitHub",
     contributions: "contributions sur les 12 derniers mois",
+    commits: "commits sur les 12 derniers mois",
+    activeDays: "jours actifs",
+    streak: (n) => `jour${n === 1 ? "" : "s"} d'affilée`,
+    allRepos: "dépôts",
+    privateRepos: (n) => `dont ${n} privés`,
+    lines: (s) => `+${s.additions.toLocaleString("fr")} / −${s.deletions.toLocaleString("fr")} lignes sur les 12 derniers mois, dans ${s.repos} dépôts (dont ${s.private_repos} privés)`,
     repos: "dépôts publics",
     lastPush: "dernier push",
     languages: "Langages les plus utilisés",
@@ -34,6 +47,12 @@ const T = {
     served: "Cloudflare Functionからリアルタイム配信",
     servedFallback: "GitHub APIからリアルタイム取得",
     contributions: "過去1年間のコントリビューション",
+    commits: "過去1年間のコミット",
+    activeDays: "活動日数",
+    streak: () => "日連続",
+    allRepos: "リポジトリ",
+    privateRepos: (n) => `うち非公開 ${n}`,
+    lines: (s) => `過去12か月で +${s.additions.toLocaleString("ja")} / −${s.deletions.toLocaleString("ja")} 行（${s.repos}リポジトリ、うち非公開 ${s.private_repos}）`,
     repos: "公開リポジトリ",
     lastPush: "最終プッシュ",
     languages: "よく使う言語",
@@ -50,6 +69,21 @@ const daysSince = (iso) => {
 
 // The REST fallback emits color: null (|| keeps that falling through too).
 const languageColor = (lang, i) => lang.color || `hsl(${210 + i * 24} 60% 55%)`;
+
+const Stat = ({ icon, tone, value, label }) => {
+  const Icon = icon;
+  return (
+    <div className="flex items-center gap-3">
+      <span className={`w-9 h-9 rounded-lg flex items-center justify-center ${tone}`}>
+        <Icon size={18} />
+      </span>
+      <span>
+        <span className="text-2xl font-bold text-slate-900">{value}</span>{" "}
+        <span className="text-sm text-slate-500">{label}</span>
+      </span>
+    </div>
+  );
+};
 
 const GitHubActivity = ({ locale = "en" }) => {
   const t = T[locale] ?? T.en;
@@ -77,25 +111,24 @@ const GitHubActivity = ({ locale = "en" }) => {
           {/* Headline numbers — only render what's meaningful */}
           <div className="flex flex-wrap gap-x-10 gap-y-4">
             {data.totalContributions != null && (
-              <div className="flex items-center gap-3">
-                <span className="w-9 h-9 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center">
-                  <Activity size={18} />
-                </span>
-                <span>
-                  <span className="text-2xl font-bold text-slate-900">{data.totalContributions.toLocaleString()}</span>{" "}
-                  <span className="text-sm text-slate-500">{t.contributions}</span>
-                </span>
-              </div>
+              <Stat icon={Activity} tone="bg-emerald-50 text-emerald-700" value={data.totalContributions.toLocaleString(locale)} label={t.contributions} />
             )}
-            <div className="flex items-center gap-3">
-              <span className="w-9 h-9 rounded-lg bg-indigo-50 text-indigo-700 flex items-center justify-center">
-                <GitBranch size={18} />
-              </span>
-              <span>
-                <span className="text-2xl font-bold text-slate-900">{data.repoCount}</span>{" "}
-                <span className="text-sm text-slate-500">{t.repos}</span>
-              </span>
-            </div>
+            {data.commits != null && (
+              <Stat icon={GitCommit} tone="bg-sky-50 text-sky-700" value={data.commits.toLocaleString(locale)} label={t.commits} />
+            )}
+            {data.activeDays != null && (
+              <Stat icon={CalendarDays} tone="bg-violet-50 text-violet-700" value={data.activeDays} label={t.activeDays} />
+            )}
+            {data.currentStreak > 0 && (
+              <Stat icon={Flame} tone="bg-orange-50 text-orange-700" value={data.currentStreak} label={t.streak(data.currentStreak)} />
+            )}
+            <Stat
+              icon={GitBranch}
+              tone="bg-indigo-50 text-indigo-700"
+              value={data.repoCount}
+              // The Function sees private repos too; the REST fallback only public ones.
+              label={data.privateRepoCount ? `${t.allRepos} (${t.privateRepos(data.privateRepoCount)})` : t.repos}
+            />
             {lastPushLabel && (
               <div className="flex items-center gap-3">
                 <span className="w-9 h-9 rounded-lg bg-amber-50 text-amber-700 flex items-center justify-center">
@@ -108,6 +141,9 @@ const GitHubActivity = ({ locale = "en" }) => {
               </div>
             )}
           </div>
+
+          {/* Nightly aggregate (scripts/generate_github_stats.py), private repos included */}
+          {stats.generated_at && <p className="text-sm text-slate-600">{t.lines(stats)}</p>}
 
           {/* Contribution calendar — only when the Function provides it */}
           {data.calendar && (
