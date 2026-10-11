@@ -1,5 +1,5 @@
 {
-  "_lastUpdated": "2026-09-16",
+  "_lastUpdated": "2026-10-09",
   "en": {
     "sectionOrder": [
       "experience",
@@ -9,21 +9,43 @@
     ],
     "experience": [
       {
-        "id": "pwc-2026",
+        "id": "pwc-de-2026",
         "url": "https://www.pwc.lu/",
         "company": "PwC Luxembourg",
-        "role": "Business Intelligence Intern – Data Science Team",
-        "dates": "Feb. 2026 – Aug. 2026",
+        "role": "Data Engineer (Permanent)",
+        "dates": "Sep. 2026 – Present",
         "location": "Luxembourg",
         "tags": [
+          "data",
           "cloud",
-          "ai",
           "current"
         ],
         "bullets": [
           {
+            "id": "pwc-de-platform",
+            "text": "Hired after my internship to carry on the data platform's infrastructure: production cut-over of the migrated stack, Terraform and CI/CD on Azure",
+            "tags": [
+              "cloud",
+              "iac"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pwc-2026",
+        "url": "https://www.pwc.lu/",
+        "company": "PwC Luxembourg",
+        "role": "Cloud Infrastructure Intern – Data Science Team",
+        "dates": "Feb. 2026 – Aug. 2026",
+        "location": "Luxembourg",
+        "tags": [
+          "cloud",
+          "ai"
+        ],
+        "bullets": [
+          {
             "id": "pwc-migration",
-            "text": "Migrated a production Azure environment to a new tenant and codified its infrastructure as Terraform (IaC), spanning Data Factory and Function Apps",
+            "text": "Migrated a manually-built production data platform to a locked-down enterprise Azure tenant, describing its 60+ resources in Terraform with zero state drift",
             "tags": [
               "cloud",
               "iac"
@@ -31,10 +53,18 @@
           },
           {
             "id": "pwc-adf",
-            "text": "Rewrote the multi-environment deployment pipelines (DEV, UAT, PROD) as clear, maintainable YAML, with quality gates at each stage",
+            "text": "Standardised the DEV/UAT/PROD deployment pipelines as versioned Azure DevOps YAML, with the firm's security controls and post-deployment smoke tests",
             "tags": [
-              "data",
-              "cloud"
+              "cloud",
+              "cicd"
+            ]
+          },
+          {
+            "id": "pwc-network",
+            "text": "Restored application and Data Factory connectivity after the cut-over (VNet integration, private endpoints, database access rights) and cut telemetry costs by over 10×",
+            "tags": [
+              "cloud",
+              "network"
             ]
           },
           {
@@ -285,7 +315,7 @@
     "skills": [
       {
         "category": "Cloud & DevOps:",
-        "items": "Microsoft Azure (ADF, Functions, Cosmos DB), AWS, Terraform (IaC), Docker, CI/CD"
+        "items": "Azure (Data Factory, Functions, SQL, Cosmos DB, VNet & Private Endpoints), Terraform (IaC), Azure DevOps CI/CD (YAML), Docker, AWS"
       },
       {
         "category": "Programming:",
@@ -322,7 +352,7 @@
     },
     "identity": {
       "fullName": "Arno Wilhelm",
-      "subtitle": "Data & MLOps Engineer"
+      "subtitle": "Data & Cloud Engineer"
     }
   },
   "fr": {
@@ -334,21 +364,43 @@
     ],
     "experience": [
       {
-        "id": "pwc-2026",
+        "id": "pwc-de-2026",
         "url": "https://www.pwc.lu/",
         "company": "PwC Luxembourg",
-        "role": "Stagiaire Business Intelligence – Équipe Data Science",
-        "dates": "Fév. 2026 – Août 2026",
+        "role": "Data Engineer (CDI)",
+        "dates": "Sep. 2026 – Présent",
         "location": "Luxembourg",
         "tags": [
+          "data",
           "cloud",
-          "ai",
           "current"
         ],
         "bullets": [
           {
+            "id": "pwc-de-platform",
+            "text": "Embauché à l'issue du stage pour poursuivre l'infrastructure de la plateforme data : bascule en production de la stack migrée, Terraform et CI/CD sur Azure",
+            "tags": [
+              "cloud",
+              "iac"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pwc-2026",
+        "url": "https://www.pwc.lu/",
+        "company": "PwC Luxembourg",
+        "role": "Stagiaire Infrastructure Cloud – Équipe Data Science",
+        "dates": "Fév. 2026 – Août 2026",
+        "location": "Luxembourg",
+        "tags": [
+          "cloud",
+          "ai"
+        ],
+        "bullets": [
+          {
             "id": "pwc-migration",
-            "text": "Migration d'un environnement Azure de production vers un nouveau tenant et codification de l'infrastructure en Terraform (IaC), couvrant Data Factory et Function Apps",
+            "text": "Migration d'une plateforme data de production, construite à la main, vers un tenant Azure d'entreprise verrouillé, en décrivant ses 60+ ressources en Terraform sans dérive d'état",
             "tags": [
               "cloud",
               "iac"
@@ -356,10 +408,18 @@
           },
           {
             "id": "pwc-adf",
-            "text": "Réécriture des pipelines de déploiement multi-environnements (DEV, UAT, PROD) en YAML clair et maintenable, avec des contrôles qualité à chaque étape",
+            "text": "Normalisation des pipelines de déploiement DEV/UAT/PROD en YAML Azure DevOps versionné, avec les contrôles de sécurité du cabinet et des tests de fumée après déploiement",
             "tags": [
-              "data",
-              "cloud"
+              "cloud",
+              "cicd"
+            ]
+          },
+          {
+            "id": "pwc-network",
+            "text": "Rétablissement des flux applicatifs et Data Factory après la bascule (intégration VNet, points de terminaison privés, droits de la base) et division par plus de 10 des coûts de télémétrie",
+            "tags": [
+              "cloud",
+              "network"
             ]
           },
           {
@@ -610,7 +670,7 @@
     "skills": [
       {
         "category": "Cloud & DevOps :",
-        "items": "Microsoft Azure (ADF, Functions, Cosmos DB), AWS, Terraform (IaC), Docker, CI/CD"
+        "items": "Azure (Data Factory, Functions, SQL, Cosmos DB, VNet & Private Endpoints), Terraform (IaC), Azure DevOps CI/CD (YAML), Docker, AWS"
       },
       {
         "category": "Programmation :",
@@ -647,7 +707,7 @@
     },
     "identity": {
       "fullName": "Arno Wilhelm",
-      "subtitle": "Ingénieur Data & MLOps"
+      "subtitle": "Ingénieur Data & Cloud"
     }
   }
 }
