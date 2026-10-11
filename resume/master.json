@@ -74,7 +74,7 @@
       "tags": ["ml", "cloud", "research"],
       "bullets": [
         { "id": "kagawa-paper", "text": { "en": "Co-authored a published research paper on hybrid MLOps practices for SMEs",                                                                            "fr": "Co-rédaction d'un papier de recherche publié sur les pratiques MLOps hybrides pour les PME", "ja": "中小企業向けハイブリッドMLOpsに関する論文を共著で発表" }, "link": { "href": "/papers/Hybrid-MLOps-for-SMEs-2025.pdf", "catalog": "https://jglobal.jst.go.jp/en/detail?JGLOBAL_ID=202602277665523641", "ndl": "https://ndlsearch.ndl.go.jp/books/R000000004-I034425513" }, "tags": ["research"] },
-        { "id": "kagawa-cicd",  "text": { "en": "Built a hybrid CI/CD pipeline (GitLab, Docker) and ETL workflows to train ML models in the cloud", "fr": "Mise en place d'une chaîne CI/CD hybride (GitLab, Docker) et de workflows ETL pour entraîner des modèles ML dans le cloud", "ja": "クラウド上でMLモデルを学習するためのハイブリッドCI/CDパイプライン（GitLab、Docker）とETLワークフローを構築" }, "tags": ["cloud", "ml"] }
+        { "id": "kagawa-cicd", "webOnly": true,  "text": { "en": "Built a hybrid CI/CD pipeline (GitLab, Docker) and ETL workflows to train ML models in the cloud", "fr": "Mise en place d'une chaîne CI/CD hybride (GitLab, Docker) et de workflows ETL pour entraîner des modèles ML dans le cloud", "ja": "クラウド上でMLモデルを学習するためのハイブリッドCI/CDパイプライン（GitLab、Docker）とETLワークフローを構築" }, "tags": ["cloud", "ml"] }
       ]
     },
     {
@@ -87,11 +87,12 @@
       "tags": ["leadership", "current"],
       "bullets": [
         { "id": "jpac-team",   "text": { "en": "Lead a 6-engineer team in a student-run consulting association (Junior-Entreprise)",                          "fr": "Encadrement d'une équipe de 6 ingénieurs au sein d'une Junior-Entreprise (conseil)", "ja": "学生が運営するコンサルティング団体で、エンジニア6名のチームを統率" },                          "tags": ["leadership"] },
-        { "id": "jpac-client", "text": { "en": "Manage client relationships, run meetings, and oversee Data & Software consulting projects",       "fr": "Gestion de la relation client, animation de réunions et pilotage de projets de conseil (Data & Logiciel)", "ja": "顧客対応、会議の進行、データ・ソフトウェア分野のコンサルティング案件の管理を担当" }, "tags": ["leadership", "client"] }
+        { "id": "jpac-client", "webOnly": true, "text": { "en": "Manage client relationships, run meetings, and oversee Data & Software consulting projects",       "fr": "Gestion de la relation client, animation de réunions et pilotage de projets de conseil (Data & Logiciel)", "ja": "顧客対応、会議の進行、データ・ソフトウェア分野のコンサルティング案件の管理を担当" }, "tags": ["leadership", "client"] }
       ]
     },
     {
       "id": "edf",
+      "webOnly": true,
       "style": "compact",
       "url": "https://www.edf.fr/centrale-nucleaire-saint-alban",
       "company": { "en": "EDF – Saint-Alban Nuclear Power Plant", "fr": "EDF – Centrale Nucléaire Saint-Alban", "ja": "EDF サン・タルバン原子力発電所" },
@@ -107,18 +108,18 @@
   "projects": [
     {
       "id": "fudami",
-      "webOnly": true,
       "url": "https://fudami.net",
       "title": { "en": "Fudami — Japanese Learning Platform", "fr": "Fudami — Plateforme d'Apprentissage du Japonais", "ja": "Fudami — 日本語学習プラットフォーム" },
       "org": { "en": "Personal product — solo design & build", "fr": "Produit personnel — conception & développement solo", "ja": "個人開発 — 設計から開発まで単独で担当" },
       "dates": { "en": "Jun. 2026 – Present", "fr": "Juin 2026 – Présent", "ja": "2026年6月 – 現在" },
       "tags": ["ai", "mobile", "cloud", "current"],
       "bullets": [
-        { "id": "fudami-platform", "text": {
+        { "id": "fudami-cv", "cvOnly": true, "text": {"en": "Japanese learning app (React Native, Python, Cloudflare Workers/D1/R2) with an FSRS spaced-repetition engine", "fr": "Appli d'apprentissage du japonais (React Native, Python, Cloudflare Workers/D1/R2), répétition espacée FSRS", "ja": "FSRS方式の間隔反復エンジンを備えた日本語学習アプリ（React Native、Python、Cloudflare Workers/D1/R2）"}, "tags": ["mobile", "cloud"] },
+        { "id": "fudami-platform", "webOnly": true, "text": {
           "en": "Designing and building a spaced-repetition language-learning platform as a three-tier system: a cross-platform Expo/React Native app (iOS, Android, Web), a Python content pipeline, and a Cloudflare serverless backend (Workers, D1, R2)",
           "fr": "Conception et développement d'une plateforme d'apprentissage des langues par répétition espacée, en trois tiers : application Expo/React Native multiplateforme (iOS, Android, Web), pipeline de contenu Python et backend serverless Cloudflare (Workers, D1, R2)", "ja": "間隔反復による語学学習プラットフォームを3層構成で設計・開発：Expo／React Nativeのクロスプラットフォームアプリ（iOS・Android・Web）、Pythonのコンテンツパイプライン、Cloudflareのサーバーレスバックエンド（Workers、D1、R2）"
         }, "tags": ["mobile", "cloud"] },
-        { "id": "fudami-engine", "text": {
+        { "id": "fudami-engine", "webOnly": true, "text": {
           "en": "Implemented an FSRS-based spaced-repetition engine with server-authoritative progress tracking and offline-capable on-device reviews",
           "fr": "Implémentation d'un moteur de répétition espacée basé sur FSRS, avec suivi de progression côté serveur et révisions hors-ligne sur l'appareil", "ja": "FSRSベースの間隔反復エンジンを実装。学習進捗はサーバー側で一元管理し、オフラインでも端末上で復習が可能"
         }, "tags": ["ai", "data"] }
@@ -145,6 +146,7 @@
     },
     {
       "id": "bfh-curation",
+      "webOnly": true,
       "url": "https://www.bfh.ch/en/",
       "title": { "en": "Data Curation Pipeline & Web Crawling Project", "fr": "Projet Pipeline de Curation de Données et Web Crawling", "ja": "データキュレーション・パイプラインとWebクローリング" },
       "org": { "en": "GenAI Laboratory – BFH", "fr": "Laboratoire GenAI – BFH", "ja": "BFH 生成AI研究室" },
@@ -201,10 +203,10 @@
   ],
 
   "skills": [
-    { "category": { "en": "Cloud & DevOps:", "fr": "Cloud & DevOps :", "ja": "クラウド・DevOps：" }, "items": { "en": "Microsoft Azure, Terraform, CI/CD (Azure DevOps YAML), Docker, Ansible, Linux, Git", "fr": "Microsoft Azure, Terraform, CI/CD (Azure DevOps YAML), Docker, Ansible, Linux, Git", "ja": "Microsoft Azure, Terraform, CI/CD（Azure DevOps YAML）, Docker, Ansible, Linux, Git" } },
+    { "category": { "en": "Cloud & DevOps:", "fr": "Cloud & DevOps :", "ja": "クラウド・DevOps：" }, "items": { "en": "Microsoft Azure, Terraform / OpenTofu, Ansible, CI/CD (Azure DevOps YAML), Docker, Linux, Git, Proxmox homelab", "fr": "Microsoft Azure, Terraform / OpenTofu, Ansible, CI/CD (Azure DevOps YAML), Docker, Linux, Git, homelab Proxmox", "ja": "Microsoft Azure, Terraform / OpenTofu, Ansible, CI/CD（Azure DevOps YAML）, Docker, Linux, Git, Proxmoxによる自宅ラボ" } },
     { "category": { "en": "Data:",           "fr": "Data :", "ja": "データ：" },           "items": { "en": "Python (advanced), SQL, ETL pipelines, Neo4j, Power BI, Tableau",               "fr": "Python (avancé), SQL, pipelines ETL, Neo4j, Power BI, Tableau", "ja": "Python（上級）, SQL, ETLパイプライン, Neo4j, Power BI, Tableau" } },
     { "category": { "en": "Dev:",            "fr": "Dev :", "ja": "開発：" },            "items": { "en": "C# / .NET, FastAPI, TypeScript / React Native",                                 "fr": "C# / .NET, FastAPI, TypeScript / React Native", "ja": "C# / .NET, FastAPI, TypeScript / React Native" } },
-    { "category": { "en": "AI & ML:",        "fr": "IA & ML :", "ja": "AI・ML：" },        "items": { "en": "Claude Code, GitHub Copilot, local RAG on a home server, MLOps (co-authored paper)", "fr": "Claude Code, GitHub Copilot, RAG local sur serveur perso, MLOps (article co-écrit)", "ja": "Claude Code, GitHub Copilot, 自宅サーバーでのローカルRAG構築, MLOps（論文共著）" } },
+    { "category": { "en": "AI & ML:",        "fr": "IA & ML :", "ja": "AI・ML：" },        "items": { "en": "Claude Code, GitHub Copilot, self-hosted RAG & AI agent (Ollama), MLOps (co-authored paper)", "fr": "Claude Code, GitHub Copilot, RAG et agent IA auto-hébergés (Ollama), MLOps (article co-écrit)", "ja": "Claude Code, GitHub Copilot, セルフホストのRAG・AIエージェント（Ollama）, MLOps（論文共著）" } },
     { "category": { "en": "Languages:",      "fr": "Langues :", "ja": "語学：" },        "items": { "en": "French (native), English (C1, TOEIC 920), Japanese (~N3)",                     "fr": "Français (natif), Anglais (C1, TOEIC 920), Japonais (~N3)", "ja": "フランス語（ネイティブ）, 英語（C1・TOEIC 920点）, 日本語（N3程度）" } },
     { "category": { "en": "Interests:",      "fr": "Passions :", "ja": "趣味：" },       "items": { "en": "Endurance sports (running, cycling, skiing) | Language learning",              "fr": "Sports d'endurance (course, cyclisme, ski) | Apprentissage des langues", "ja": "持久系スポーツ（ランニング・自転車・スキー） | 語学学習" } }
   ],

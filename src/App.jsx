@@ -118,7 +118,7 @@ const App = ({ locale = "en" }) => {
           </div>
           <p className="text-sm">
             © {new Date().getFullYear()} Arno Wilhelm ·{" "}
-            <a href={locale === "fr" ? "/legal/#fr" : "/legal/"} className="underline hover:text-slate-200">{t.legal}</a>
+            <a href={locale === "en" ? "/legal/" : `/legal/#${locale}`} className="underline hover:text-slate-200">{t.legal}</a>
           </p>
           {resume._lastUpdated && (
             <p className="text-xs mt-1 text-slate-600">

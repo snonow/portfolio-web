@@ -19,7 +19,7 @@ const escapeTex = (s) =>
   typeof s === "string" ? s.replace(/([&%#$_])/g, "\\$1").replace(/~/g, "\\textasciitilde{}") : s;
 
 const pick = (field, locale) =>
-  escapeTex(field && typeof field === "object" && locale in field ? field[locale] : field);
+  escapeTex(field && typeof field === "object" && locale in field ? field[locale] : field) ?? "";
 
 const deepMerge = (base, override) => {
   if (Array.isArray(base) || Array.isArray(override)) return override ?? base;
@@ -31,8 +31,12 @@ const deepMerge = (base, override) => {
   return override === undefined ? base : override;
 };
 
+// `webOnly` entries/bullets appear on the site but not in the PDF CVs;
+// `cvOnly` bullets are the reverse (short PDF wording of a detailed web entry).
+const inPdf = (x) => !x.webOnly;
+
 const renderBullets = (bullets, locale) =>
-  (bullets || []).map((b) => `      \\resumeItem{${pick(b.text, locale)}}`).join("\n");
+  (bullets || []).filter(inPdf).map((b) => `      \\resumeItem{${pick(b.text, locale)}}`).join("\n");
 
 const renderExperienceEntry = (locale, x) => {
   const dates = pick(x.dates, locale);
@@ -44,7 +48,7 @@ const renderExperienceEntry = (locale, x) => {
     : `    \\resumeEntryTSDL
       {${company}}{${dates}}
       {${role}}{${pick(x.location, locale)}}`;
-  const bullets = x.bullets?.length
+  const bullets = x.bullets?.some(inPdf)
     ? `\n    \\resumeItemListStart\n${renderBullets(x.bullets, locale)}\n    \\resumeItemListEnd`
     : "";
   return `  \\resumeEntryStart\n${head}${bullets}\n  \\resumeEntryEnd`;
@@ -79,10 +83,9 @@ ${skills.map((s) => `  \\resumeEntryS{${pick(s.category, locale)}}{${pick(s.item
  \\resumeEntryEnd`;
 
 const SECTION_RENDERERS = {
-  experience: (m, l) => m.experience.map((x) => renderExperienceEntry(l, x)).join("\n\n"),
+  experience: (m, l) => m.experience.filter(inPdf).map((x) => renderExperienceEntry(l, x)).join("\n\n"),
   education:  (m, l) => m.education.map((e)  => renderEducationEntry(l, e)).join("\n\n"),
-  // webOnly projects appear on the site but not in the one-page PDF.
-  projects:   (m, l) => m.projects.filter((p) => !p.webOnly).map((p) => renderProjectEntry(l, p)).join("\n\n"),
+  projects:   (m, l) => m.projects.filter(inPdf).map((p) => renderProjectEntry(l, p)).join("\n\n"),
   skills:     (m, l) => renderSkills(m.skills, l),
 };
 
@@ -114,7 +117,7 @@ const renderShokumu = (master) => {
     const rows = roles.map((r) => {
       const [from, to] = splitDates(r.dates);
       const when = to ? `${from}\\newline 〜${to}` : from;
-      return `${when} & \\textbf{${ja(r.role)}}\\newline ${items(r.bullets.map((b) => b.text.ja))} \\\\ \\hline`;
+      return `${when} & \\textbf{${ja(r.role)}}\\newline ${items(r.bullets.filter((b) => !b.cvOnly).map((b) => b.text.ja))} \\\\ \\hline`;
     });
     const note = sk.companies[company.en];
     return `\\jcompany{${ja(company)}}{${period}}
@@ -128,7 +131,7 @@ ${rows.join("\n")}
   out.push(`\\jsec{職務経歴}\n${blocks.join("\n\n")}`);
 
   out.push(`\\jsec{個人開発・研究プロジェクト}
-${master.projects.map((p) => `\\jcompany{${ja(p.title)}}{${ja(p.dates)}}\n\\jnote{${[ja(p.org), ja(p.location)].filter(Boolean).join("・")}}\n{\\small ${items(p.bullets.map((b) => b.text.ja))}}\\par`).join("\n")}`);
+${master.projects.map((p) => `\\jcompany{${ja(p.title)}}{${ja(p.dates)}}\n\\jnote{${[ja(p.org), ja(p.location)].filter(Boolean).join("・")}}\n{\\small ${items(p.bullets.filter((b) => !b.cvOnly).map((b) => b.text.ja))}}\\par`).join("\n")}`);
 
   out.push(`\\jsec{活かせる経験・知識・技術}\n${items(sk.strengths)}`);
 
@@ -252,8 +255,16 @@ const getLastUpdated = () => {
   }
 };
 
+const dropCvOnly = (obj) => {
+  if (Array.isArray(obj)) return obj.filter((v) => !v?.cvOnly).map(dropCvOnly);
+  if (obj && typeof obj === "object") {
+    return Object.fromEntries(Object.entries(obj).map(([k, v]) => [k, dropCvOnly(v)]));
+  }
+  return obj;
+};
+
 const buildWebJson = async (master) => {
-  const safe = stripPrivate(master);
+  const safe = dropCvOnly(stripPrivate(master));
   const lastUpdated = getLastUpdated();
   const payload = {
     _lastUpdated: lastUpdated,

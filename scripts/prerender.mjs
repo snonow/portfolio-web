@@ -5,7 +5,7 @@
 //   dist/fr/index.html   French page, same
 //   dist/ja/index.html   Japanese page, same
 //   dist/404.html        real 404 (Cloudflare Pages serves it with a 404 status)
-//   dist/legal/          legal notice & privacy policy (EN + FR)
+//   dist/legal/          legal notice & privacy policy (EN + FR + JA)
 //   dist/sitemap.xml     both locales with hreflang + the PDFs
 //   dist/llms.txt        the whole résumé as Markdown, for LLM crawlers/agents
 //
@@ -164,7 +164,7 @@ const write = (rel, content) => {
   console.log(`  ✓ ${rel}`);
 };
 
-// Small standalone pages (no React bundle): 404 and legal notice.
+// Small standalone pages (no React bundle): 404 and legal notice (EN/FR/JA).
 const staticPage = ({ title, robots = "index, follow", body, extraStyle = "" }) => `<!doctype html>
 <html lang="en">
   <head>
@@ -198,10 +198,10 @@ const notFound = staticPage({
 // Facts this page states — keep true if the site changes (new third-party
 // script, analytics, form, cookie…), otherwise the notice becomes wrong.
 const legal = staticPage({
-  title: "Legal notice & privacy — Arno Wilhelm",
+  title: "Legal notice & privacy · Mentions légales · 法的情報 — Arno Wilhelm",
   extraStyle: "main{max-width:46rem;margin:0 auto;padding:3rem 1.25rem}h2{margin-top:2.5rem}section+section{border-top:1px solid #e2e8f0;margin-top:3rem}",
   body: `    <main>
-      <p><a href="/">← arno-wilhelm.dev</a> · <a href="#fr" hreflang="fr">Français ↓</a></p>
+      <p><a href="/">← arno-wilhelm.dev</a> · <a href="#fr" hreflang="fr">Français ↓</a> · <a href="#ja" hreflang="ja">日本語 ↓</a></p>
       <section>
         <h1>Legal notice &amp; privacy</h1>
         <h2>Publisher</h2>
@@ -235,6 +235,23 @@ const legal = staticPage({
           <li><strong>GitHub.</strong> Les captures des projets sont chargées depuis <code>raw.githubusercontent.com</code> et les statistiques GitHub en direct peuvent l'être depuis <code>api.github.com</code>. Ces requêtes transmettent votre adresse IP à GitHub (<a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">déclaration de confidentialité de GitHub</a>).</li>
         </ul>
         <p>Vous pouvez demander l'accès, la rectification ou l'effacement de vos données à <a href="mailto:${EMAIL}">${EMAIL}</a>, et saisir l'autorité de protection des données de votre pays (par ex. la CNPD au Luxembourg, la CNIL en France).</p>
+      </section>
+      <section id="ja" lang="ja">
+        <h1>法的情報・プライバシー</h1>
+        <h2>運営者</h2>
+        <p>アルノ・ヴィルヘルム（個人）。個人による非営利のウェブサイトです。<br />連絡先：<a href="mailto:${EMAIL}">${EMAIL}</a></p>
+        <h2>ホスティング</h2>
+        <p>Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, USA（Cloudflare Pages）— <a href="https://www.cloudflare.com/ja-jp/">cloudflare.com</a></p>
+        <h2>知的財産</h2>
+        <p>本サイトの文章・写真・資料の著作権はアルノ・ヴィルヘルムに帰属します。無断での転用はご遠慮ください。各プロジェクト名・ロゴはそれぞれの権利者に帰属します。</p>
+        <h2>個人情報</h2>
+        <ul>
+          <li><strong>トラッキングなし。</strong>アクセス解析、広告、ソーシャルウィジェット、アカウント、問い合わせフォームはありません。</li>
+          <li><strong>機能Cookieは1件のみ。</strong><code>lang</code> は言語切替をクリックした場合にのみ設定され、<code>en</code>・<code>fr</code>・<code>ja</code> のいずれかを12か月間保存し、その言語でサイトを表示するためだけに使われます。ご自身が求めた機能に厳密に必要なものであるため、同意は不要です。</li>
+          <li><strong>ホスティングのログ。</strong>サイトの配信と保護のため、CloudflareがIPアドレス、ブラウザのユーザーエージェント、リクエストされたURLなどの技術データを処理します（<a href="https://www.cloudflare.com/ja-jp/privacypolicy/">Cloudflareのプライバシーポリシー</a>）。CloudflareはEU-米国データプライバシーフレームワークの認証を受けています。法的根拠：安全なウェブサイト運営という正当な利益（GDPR第6条1項(f)）。</li>
+          <li><strong>GitHub。</strong>プロジェクトの画像は <code>raw.githubusercontent.com</code> から、GitHubの統計は <code>api.github.com</code> から読み込まれる場合があり、その際にIPアドレスがGitHubに送信されます（<a href="https://docs.github.com/ja/site-policy/privacy-policies/github-general-privacy-statement">GitHubのプライバシーステートメント</a>）。</li>
+        </ul>
+        <p>ご自身のデータの開示・訂正・削除のご依頼は <a href="mailto:${EMAIL}">${EMAIL}</a> までご連絡ください。また、お住まいの国のデータ保護当局（例：ルクセンブルクのCNPD、フランスのCNIL、日本の個人情報保護委員会）に苦情を申し立てることができます。</p>
       </section>
     </main>`,
 });
