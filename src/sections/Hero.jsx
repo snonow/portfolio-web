@@ -13,8 +13,8 @@ const T = {
   en: {
     tagline: (
       <>
-        I build <span className="text-slate-800 font-medium">reliable data pipelines</span>,{" "}
-        <span className="text-slate-800 font-medium">decision-ready dashboards</span>, and{" "}
+        I build <span className="text-slate-800 font-medium">cloud infrastructure as code</span>,{" "}
+        <span className="text-slate-800 font-medium">reliable data pipelines</span>, and{" "}
         <span className="text-slate-800 font-medium">controlled AI-assisted workflows</span>.
         {" "}Now a Data Engineer at PwC Luxembourg, after completing my engineering degree at Polytech Annecy.
       </>
@@ -23,8 +23,8 @@ const T = {
   fr: {
     tagline: (
       <>
-        Je construis des <span className="text-slate-800 font-medium">pipelines de données fiables</span>,{" "}
-        des <span className="text-slate-800 font-medium">tableaux de bord décisionnels</span>, et des{" "}
+        Je construis de l&apos;<span className="text-slate-800 font-medium">infrastructure cloud as code</span>,{" "}
+        des <span className="text-slate-800 font-medium">pipelines de données fiables</span>, et des{" "}
         <span className="text-slate-800 font-medium">workflows IA maîtrisés</span>.
         {" "}Désormais Data Engineer chez PwC Luxembourg, après mon diplôme d&apos;ingénieur à Polytech Annecy.
       </>
