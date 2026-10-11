@@ -55,8 +55,8 @@
           "fr": "Fiabilisation des mises en production : chaque changement suit désormais le même circuit automatisé et contrôlé, du test à la production (Azure DevOps)"
         }, "tags": ["cloud", "cicd"] },
         { "id": "pwc-network", "text": {
-          "en": "Brought the platform's apps and data flows back online after the move (secure private networking), and cut its monitoring costs by over 10×",
-          "fr": "Remise en service des applications et flux de données après la bascule (réseau privé sécurisé), et division par plus de 10 des coûts de supervision"
+          "en": "Brought the platform's apps and data flows back online after the move (secure private networking)",
+          "fr": "Remise en service des applications et flux de données après la bascule (réseau privé sécurisé)"
         }, "tags": ["cloud", "network"] },
         { "id": "pwc-rag", "text": {
           "en": "Designed and deployed the Azure infrastructure (Terraform) of an internal RAG / agentic-AI services hub, and integrated its back-end and front-end",

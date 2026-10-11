@@ -69,7 +69,7 @@
           },
           {
             "id": "pwc-network",
-            "text": "Brought the platform's apps and data flows back online after the move (secure private networking), and cut its monitoring costs by over 10×",
+            "text": "Brought the platform's apps and data flows back online after the move (secure private networking)",
             "tags": [
               "cloud",
               "network"
@@ -403,7 +403,7 @@
           },
           {
             "id": "pwc-network",
-            "text": "Remise en service des applications et flux de données après la bascule (réseau privé sécurisé), et division par plus de 10 des coûts de supervision",
+            "text": "Remise en service des applications et flux de données après la bascule (réseau privé sécurisé)",
             "tags": [
               "cloud",
               "network"
