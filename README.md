@@ -112,7 +112,7 @@ and AI agents get the full content without running JavaScript; it also emits the
 SEO tags, JSON-LD, `sitemap.xml`, `llms.txt` (résumé as Markdown) and a real
 `404.html`, all derived from `src/data/resume.json`. The **Live GitHub activity** section is backed by a Cloudflare Pages
 Function (`functions/api/github.js`) that proxies the GitHub GraphQL API for the
-contribution calendar and language mix (set a `GITHUB_TOKEN` env var on the Pages
+contribution calendar and language mix (set a `STATS_TOKEN` secret on the Pages
 project; without it the section falls back to the unauthenticated REST API).
 
 Two scheduled GitHub Actions keep generated content fresh on `main`:
