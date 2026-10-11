@@ -13,6 +13,7 @@ import ProjectExpandableCard from "../components/ProjectExpandableCard";
 const T = {
   en: { title: "Projects", repos: "Pinned on GitHub", profile: "github.com/snonow" },
   fr: { title: "Projets", repos: "Épinglés sur GitHub", profile: "github.com/snonow" },
+  ja: { title: "プロジェクト", repos: "GitHubのピン留め", profile: "github.com/snonow" },
 };
 
 // Every pinned repo is shown (curation is done on GitHub via pin/unpin).

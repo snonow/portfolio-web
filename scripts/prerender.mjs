@@ -3,6 +3,7 @@
 //
 //   dist/index.html      English page, fully rendered (hydrated by src/main.jsx)
 //   dist/fr/index.html   French page, same
+//   dist/ja/index.html   Japanese page, same
 //   dist/404.html        real 404 (Cloudflare Pages serves it with a 404 status)
 //   dist/legal/          legal notice & privacy policy (EN + FR)
 //   dist/sitemap.xml     both locales with hreflang + the PDFs
@@ -22,11 +23,12 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const DIST = path.join(ROOT, "dist");
 const SITE = "https://arno-wilhelm.dev";
 const EMAIL = "contact@arno-wilhelm.dev";
-const PATHS = { en: "/", fr: "/fr/" };
-const OG_LOCALE = { en: "en_US", fr: "fr_FR" };
+const PATHS = { en: "/", fr: "/fr/", ja: "/ja/" };
+const OG_LOCALE = { en: "en_US", fr: "fr_FR", ja: "ja_JP" };
 const PDFS = {
   en: "/resume/Arno-Wilhelm-CV-EN.pdf",
   fr: "/resume/Arno-Wilhelm-CV-FR.pdf",
+  ja: "/resume/Arno-Wilhelm-Shokumu-Keirekisho-JA.pdf",
 };
 
 const resume = JSON.parse(fs.readFileSync(path.join(ROOT, "src/data/resume.json"), "utf8"));
@@ -61,9 +63,11 @@ const current = (r) => {
 const describe = (locale) => {
   const r = resume[locale];
   const { role, company } = current(r);
-  return locale === "fr"
-    ? `${r.identity.fullName} — ${role} chez ${company}. Infrastructure cloud as code (Azure, Terraform), CI/CD et pipelines de données. Portfolio, projets et CV.`
-    : `${r.identity.fullName} — ${role} at ${company}. Cloud infrastructure as code (Azure, Terraform), CI/CD and data pipelines. Portfolio, projects and résumé.`;
+  if (locale === "fr")
+    return `${r.identity.fullName} — ${role} chez ${company}. Infrastructure cloud as code (Azure, Terraform), CI/CD et pipelines de données. Portfolio, projets et CV.`;
+  if (locale === "ja")
+    return `${r.identity.fullName}（アルノ・ヴィルヘルム）— ${company}の${role}。Azure・TerraformによるクラウドインフラのIaC、CI/CD、データパイプライン。ポートフォリオ、プロジェクト、職務経歴書。`;
+  return `${r.identity.fullName} — ${role} at ${company}. Cloud infrastructure as code (Azure, Terraform), CI/CD and data pipelines. Portfolio, projects and résumé.`;
 };
 
 const jsonLd = (locale) => {
@@ -93,7 +97,7 @@ const jsonLd = (locale) => {
       "@id": `${SITE}/#website`,
       url: `${SITE}/`,
       name: r.identity.fullName,
-      inLanguage: ["en", "fr"],
+      inLanguage: Object.keys(PATHS),
     },
     {
       "@type": "ProfilePage",
@@ -116,7 +120,6 @@ const headTags = (locale) => {
   const title = `${r.identity.fullName} — ${r.identity.subtitle}`;
   const description = describe(locale);
   const url = SITE + PATHS[locale];
-  const other = locale === "en" ? "fr" : "en";
   return [
     `<meta name="description" content="${esc(description)}" />`,
     `<meta name="author" content="${esc(r.identity.fullName)}" />`,
@@ -133,7 +136,7 @@ const headTags = (locale) => {
     `<meta property="og:image" content="${SITE}/profile.jpg" />`,
     `<meta property="og:image:alt" content="${esc(title)}" />`,
     `<meta property="og:locale" content="${OG_LOCALE[locale]}" />`,
-    `<meta property="og:locale:alternate" content="${OG_LOCALE[other]}" />`,
+    ...Object.keys(PATHS).filter((l) => l !== locale).map((l) => `<meta property="og:locale:alternate" content="${OG_LOCALE[l]}" />`),
     `<meta name="twitter:card" content="summary" />`,
     `<script type="application/ld+json">\n${jsonLd(locale)}\n</script>`,
     // Without JS, framer-motion's entrance animations never run: show the content.
@@ -188,7 +191,7 @@ const notFound = staticPage({
   extraStyle: "body{min-height:100vh;display:grid;place-items:center;text-align:center}",
   body: `    <main>
       <h1>404 — Page not found</h1>
-      <p><a href="/">arno-wilhelm.dev</a> · <a href="/fr/">Version française</a></p>
+      <p><a href="/">arno-wilhelm.dev</a> · <a href="/fr/">Version française</a> · <a href="/ja/">日本語</a></p>
     </main>`,
 });
 
@@ -210,7 +213,7 @@ const legal = staticPage({
         <h2>Personal data</h2>
         <ul>
           <li><strong>No tracking.</strong> No analytics, advertising, social widgets, account or contact form.</li>
-          <li><strong>One functional cookie.</strong> <code>lang</code> is set only when you click the language switch, stores <code>en</code> or <code>fr</code> for 12 months, and is used solely to show the site in that language. Being strictly necessary for a feature you ask for, it does not require consent.</li>
+          <li><strong>One functional cookie.</strong> <code>lang</code> is set only when you click the language switch, stores <code>en</code>, <code>fr</code> or <code>ja</code> for 12 months, and is used solely to show the site in that language. Being strictly necessary for a feature you ask for, it does not require consent.</li>
           <li><strong>Hosting logs.</strong> To deliver and protect the site, Cloudflare processes technical data such as your IP address, browser user agent and the requested URL (<a href="https://www.cloudflare.com/privacypolicy/">Cloudflare privacy policy</a>). Cloudflare is certified under the EU-US Data Privacy Framework. Legal basis: legitimate interest (GDPR art. 6(1)(f)) in operating a secure website.</li>
           <li><strong>GitHub.</strong> Project screenshots are loaded from <code>raw.githubusercontent.com</code>, and live GitHub statistics may be fetched from <code>api.github.com</code>. These requests reveal your IP address to GitHub (<a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">GitHub privacy statement</a>).</li>
         </ul>
@@ -227,7 +230,7 @@ const legal = staticPage({
         <h2>Données personnelles</h2>
         <ul>
           <li><strong>Aucun suivi.</strong> Pas de mesure d'audience, de publicité, de widget social, de compte ni de formulaire.</li>
-          <li><strong>Un cookie fonctionnel.</strong> <code>lang</code> n'est déposé que si vous cliquez sur le sélecteur de langue ; il stocke <code>en</code> ou <code>fr</code> pendant 12 mois et sert uniquement à afficher le site dans cette langue. Strictement nécessaire à une fonction que vous demandez, il n'exige pas de consentement.</li>
+          <li><strong>Un cookie fonctionnel.</strong> <code>lang</code> n'est déposé que si vous cliquez sur le sélecteur de langue ; il stocke <code>en</code>, <code>fr</code> ou <code>ja</code> pendant 12 mois et sert uniquement à afficher le site dans cette langue. Strictement nécessaire à une fonction que vous demandez, il n'exige pas de consentement.</li>
           <li><strong>Journaux d'hébergement.</strong> Pour servir et protéger le site, Cloudflare traite des données techniques comme votre adresse IP, le user agent du navigateur et l'URL demandée (<a href="https://www.cloudflare.com/fr-fr/privacypolicy/">politique de confidentialité de Cloudflare</a>). Cloudflare est certifié au titre du Data Privacy Framework UE–États-Unis. Base légale : intérêt légitime (art. 6.1.f RGPD) à exploiter un site sécurisé.</li>
           <li><strong>GitHub.</strong> Les captures des projets sont chargées depuis <code>raw.githubusercontent.com</code> et les statistiques GitHub en direct peuvent l'être depuis <code>api.github.com</code>. Ces requêtes transmettent votre adresse IP à GitHub (<a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">déclaration de confidentialité de GitHub</a>).</li>
         </ul>
@@ -275,8 +278,8 @@ const llms = () => {
 
 > ${describe("en")}
 
-- Website: ${SITE}/ (French: ${SITE}/fr/)
-- Résumé (PDF): ${SITE}${PDFS.en} · French: ${SITE}${PDFS.fr}
+- Website: ${SITE}/ (French: ${SITE}/fr/, Japanese: ${SITE}/ja/)
+- Résumé (PDF): ${SITE}${PDFS.en} · French: ${SITE}${PDFS.fr} · Japanese (職務経歴書): ${SITE}${PDFS.ja}
 - GitHub: ${GITHUB_PROFILE_URL}
 - LinkedIn: ${LINKEDIN_URL}
 - Email: ${EMAIL}
@@ -289,6 +292,7 @@ _Last updated: ${resume._lastUpdated}_
 
 console.log("Prerendering:");
 write("fr/index.html", page("fr"));
+write("ja/index.html", page("ja"));
 write("index.html", page("en"));
 write("404.html", notFound);
 write("legal/index.html", legal);

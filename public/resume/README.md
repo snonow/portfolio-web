@@ -5,6 +5,7 @@ The Hero's **Download CV** button looks for:
 
 - `Arno-Wilhelm-CV-EN.pdf`
 - `Arno-Wilhelm-CV-FR.pdf`
+- `Arno-Wilhelm-Shokumu-Keirekisho-JA.pdf` (Japanese 職務経歴書, `resume/templates/shokumu.tex.tmpl`)
 
 To build locally: run `npm run build:resume`, compile
 `resume/build/cv_en_onepage.tex` (XeLaTeX), then rename to match.

@@ -7,6 +7,7 @@ import ExternalTextLink from "../components/ExternalTextLink";
 const T = {
   en: { title: "Education" },
   fr: { title: "Formation" },
+  ja: { title: "学歴" },
 };
 
 const Education = ({ locale = "en" }) => {

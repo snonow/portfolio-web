@@ -29,6 +29,18 @@ const T = {
     today: "aujourd'hui",
     daysAgo: (n) => `il y a ${n} jour${n === 1 ? "" : "s"}`,
   },
+  ja: {
+    title: "GitHubアクティビティ（リアルタイム）",
+    served: "Cloudflare Functionからリアルタイム配信",
+    servedFallback: "GitHub APIからリアルタイム取得",
+    contributions: "過去1年間のコントリビューション",
+    repos: "公開リポジトリ",
+    lastPush: "最終プッシュ",
+    languages: "よく使う言語",
+    unavailable: "GitHubのデータを一時的に取得できません。",
+    today: "今日",
+    daysAgo: (n) => `${n}日前`,
+  },
 };
 
 const daysSince = (iso) => {

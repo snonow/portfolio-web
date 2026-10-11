@@ -36,14 +36,29 @@ const T = {
     lastUpdated: "Mis à jour le",
     legal: "Mentions légales & confidentialité",
   },
+  ja: {
+    nav: [
+      { id: "experience", label: "職務経歴" },
+      { id: "projects",   label: "プロジェクト" },
+      { id: "education",  label: "学歴" },
+      { id: "skills",     label: "スキル" },
+      { id: "github",     label: "GitHub" },
+    ],
+    lastUpdated: "最終更新",
+    legal: "法的情報・プライバシー",
+  },
 };
 
 // Locale is fixed per page: / is English, /fr/ is French (both prerendered).
-const LOCALE_PATHS = { en: "/", fr: "/fr/" };
+const LOCALE_PATHS = { en: "/", fr: "/fr/", ja: "/ja/" };
+const LOCALE_LINKS = {
+  en: { label: "EN", aria: "English version" },
+  fr: { label: "FR", aria: "Version française" },
+  ja: { label: "日本語", aria: "日本語版" },
+};
 
 const App = ({ locale = "en" }) => {
   const t = T[locale] ?? T.en;
-  const other = locale === "en" ? "fr" : "en";
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800">
@@ -58,17 +73,22 @@ const App = ({ locale = "en" }) => {
                 </a>
               ))}
             </div>
-            <a
-              href={LOCALE_PATHS[other]}
-              // Remembered by functions/index.js so "/" stops auto-redirecting.
-              onClick={() => { document.cookie = `lang=${other}; path=/; max-age=31536000; samesite=lax`; }}
-              hrefLang={other}
-              lang={other}
-              className="text-xs font-semibold px-2.5 py-1 rounded-full border border-slate-200 text-slate-600 hover:border-blue-300 hover:text-blue-800 transition"
-              aria-label={other === "fr" ? "Version française" : "English version"}
-            >
-              {other.toUpperCase()}
-            </a>
+            <div className="flex items-center gap-1.5">
+              {Object.keys(LOCALE_PATHS).filter((l) => l !== locale).map((l) => (
+                <a
+                  key={l}
+                  href={LOCALE_PATHS[l]}
+                  // Remembered by functions/index.js so "/" stops auto-redirecting.
+                  onClick={() => { document.cookie = `lang=${l}; path=/; max-age=31536000; samesite=lax`; }}
+                  hrefLang={l}
+                  lang={l}
+                  className="text-xs font-semibold px-2.5 py-1 rounded-full border border-slate-200 text-slate-600 hover:border-blue-300 hover:text-blue-800 transition"
+                  aria-label={LOCALE_LINKS[l].aria}
+                >
+                  {LOCALE_LINKS[l].label}
+                </a>
+              ))}
+            </div>
           </div>
         </nav>
       </header>

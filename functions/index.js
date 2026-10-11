@@ -7,7 +7,7 @@
 //   so the canonical page is what gets indexed; hreflang covers the rest.
 
 // Keep in sync with the locales prerendered by scripts/prerender.mjs.
-const PATHS = { en: "/", fr: "/fr/" };
+const PATHS = { en: "/", fr: "/fr/", ja: "/ja/" };
 
 const cookieLang = (header) => header?.match(/(?:^|;\s*)lang=([a-z]{2})/)?.[1];
 

@@ -25,6 +25,7 @@ const splitItems = (str) => {
 const T = {
   en: { title: "Skills" },
   fr: { title: "Compétences" },
+  ja: { title: "スキル" },
 };
 
 const Skills = ({ locale = "en" }) => {
