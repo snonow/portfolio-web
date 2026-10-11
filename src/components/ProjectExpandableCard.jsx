@@ -1,10 +1,9 @@
 import { motion } from "framer-motion";
-import { ExternalLink, X, FileText } from "lucide-react";
+import { ExternalLink, Maximize2, X, FileText } from "lucide-react";
 
 const ProjectExpandableCard = ({
   project,
   expanded = false,
-  isActive,
   onOpen,
   onClose,
 }) => {
@@ -13,19 +12,19 @@ const ProjectExpandableCard = ({
     description,
     url,
     language,
-    topics,
-    readme_images,
-    releases,
+    topics = [],
+    readme_images = [],
+    releases = [],
   } = project;
 
   return (
     <motion.div
       layout
-      onClick={!expanded ? onOpen : undefined}
-      className={`bg-white rounded-xl border border-slate-200 shadow-sm cursor-pointer ${
+      onClick={expanded ? (e) => e.stopPropagation() : onOpen}
+      className={`group bg-white rounded-xl border border-slate-200 shadow-sm cursor-pointer ${
         expanded
           ? "w-full max-w-5xl max-h-[90vh] overflow-y-auto"
-          : "hover:border-blue-300"
+          : "hover:border-blue-300 hover:shadow-md transition-shadow"
       }`}
     >
       <div className="p-6">
@@ -47,7 +46,13 @@ const ProjectExpandableCard = ({
             >
               <X size={18} />
             </button>
-          ) : null}
+          ) : (
+            <Maximize2
+              size={15}
+              className="shrink-0 mt-1 text-slate-300 group-hover:text-blue-600 transition-colors"
+              aria-hidden="true"
+            />
+          )}
         </div>
 
         {/* META */}
@@ -79,6 +84,10 @@ const ProjectExpandableCard = ({
                     src={img}
                     alt={`${name} visual ${idx}`}
                     className="rounded-lg border"
+                    loading="lazy"
+                    onError={(e) => {
+                      e.currentTarget.style.display = "none";
+                    }}
                   />
                 ))}
               </div>
@@ -100,7 +109,7 @@ const ProjectExpandableCard = ({
                       <p className="text-sm text-slate-600 mt-1">
                         {r.notes}
                       </p>
-                      {r.assets.map((a) => (
+                      {(r.assets ?? []).map((a) => (
                         <a
                           key={a}
                           href={a}

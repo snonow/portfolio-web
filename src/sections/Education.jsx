@@ -1,17 +1,22 @@
 import { GraduationCap } from "lucide-react";
 import resume from "../data/resume.json";
 import Reveal from "../components/Reveal";
+import SectionHeading from "../components/SectionHeading";
+import ExternalTextLink from "../components/ExternalTextLink";
+
+const T = {
+  en: { title: "Education" },
+  fr: { title: "Formation" },
+};
 
 const Education = ({ locale = "en" }) => {
+  const t = T[locale] ?? T.en;
   const items = resume[locale].education;
 
   return (
     <section className="mb-24">
       <Reveal>
-        <h2 className="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-3">
-          <span className="w-1.5 h-7 bg-blue-900 rounded-sm" />
-          {locale === "fr" ? "Formation" : "Education"}
-        </h2>
+        <SectionHeading>{t.title}</SectionHeading>
       </Reveal>
 
       <ol className="relative border-l border-slate-200 ml-3 space-y-7">
@@ -23,7 +28,7 @@ const Education = ({ locale = "en" }) => {
               </span>
               <div className="flex flex-wrap items-baseline justify-between gap-x-4">
                 <h3 className="font-semibold text-slate-900">
-                  {e.school}
+                  <ExternalTextLink href={e.url}>{e.school}</ExternalTextLink>
                   <span className="text-slate-500 font-normal"> — {e.degree}</span>
                 </h3>
                 <time className="text-xs text-slate-500 font-medium">{e.dates}</time>

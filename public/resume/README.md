@@ -1,11 +1,13 @@
 # /public/resume
 
-Drop compiled PDFs of your résumé here. The Hero's **Download CV** button looks for:
+Compiled résumé PDFs, published here by the `build-resume-pdf.yml` workflow.
+The Hero's **Download CV** button looks for:
 
-- `cv_en.pdf`
-- `cv_fr.pdf`
+- `Arno-Wilhelm-CV-EN.pdf`
+- `Arno-Wilhelm-CV-FR.pdf`
 
-Compile from `resume/build/cv_en_onepage.tex` (XeLaTeX recommended) after running
-`npm run build:resume`, then rename to match.
+To build locally: run `npm run build:resume`, compile
+`resume/build/cv_en_onepage.tex` (XeLaTeX), then rename to match.
+Old `cv_en.pdf` / `cv_fr.pdf` URLs are 301-redirected in `public/_redirects`.
 
-Files in this directory ship as static assets to GitHub Pages.
+Files in this directory ship as static assets.

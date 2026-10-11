@@ -4,8 +4,8 @@ import { Download, ChevronDown } from "lucide-react";
 const BASE = import.meta.env.BASE_URL;
 
 const FILES = [
-  { label: "English (PDF)", href: `${BASE}resume/cv_en.pdf` },
-  { label: "Français (PDF)", href: `${BASE}resume/cv_fr.pdf` },
+  { label: "English (PDF)", href: `${BASE}resume/Arno-Wilhelm-CV-EN.pdf` },
+  { label: "Français (PDF)", href: `${BASE}resume/Arno-Wilhelm-CV-FR.pdf` },
 ];
 
 const DownloadCV = () => {

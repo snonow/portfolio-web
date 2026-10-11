@@ -9,6 +9,8 @@
 // Without it, this returns { available: false } and the front-end falls back to
 // the unauthenticated REST API for the basics.
 
+// Keep in sync with GITHUB_USERNAME in src/data/github.js (this file is
+// bundled separately by Cloudflare Pages and cannot import app source).
 const LOGIN = "snonow";
 
 const QUERY = `
@@ -62,7 +64,7 @@ export const onRequestGet = async ({ env }) => {
     });
     if (!res.ok) return json({ available: false, reason: `github-${res.status}` }, 200, 300);
     payload = await res.json();
-  } catch (e) {
+  } catch {
     return json({ available: false, reason: "fetch-failed" }, 200, 300);
   }
 

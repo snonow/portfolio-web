@@ -81,7 +81,8 @@ ${skills.map((s) => `  \\resumeEntryS{${pick(s.category, locale)}}{${pick(s.item
 const SECTION_RENDERERS = {
   experience: (m, l) => m.experience.map((x) => renderExperienceEntry(l, x)).join("\n\n"),
   education:  (m, l) => m.education.map((e)  => renderEducationEntry(l, e)).join("\n\n"),
-  projects:   (m, l) => m.projects.map((p)   => renderProjectEntry(l, p)).join("\n\n"),
+  // webOnly projects appear on the site but not in the one-page PDF.
+  projects:   (m, l) => m.projects.filter((p) => !p.webOnly).map((p) => renderProjectEntry(l, p)).join("\n\n"),
   skills:     (m, l) => renderSkills(m.skills, l),
 };
 
@@ -108,6 +109,8 @@ const buildVariant = async (master, variant) => {
   const subs = {
     IDENTITY_FULLNAME: master.identity.fullName,
     IDENTITY_SUBTITLE: subtitle,
+    // Shown as the tab/window title when the PDF is opened in a viewer.
+    PDF_TITLE: `${master.identity.fullName} — CV (${variant.locale === "fr" ? "Français" : "English"})`,
     LINK_LINKEDIN_HREF: master.identity.links.linkedin.href,
     LINK_LINKEDIN_TEXT: master.identity.links.linkedin.text,
     LINK_GITHUB_HREF:   master.identity.links.github.href,
@@ -145,9 +148,23 @@ const localizeForWeb = (obj, locale) => {
 const stripPrivate = (master) => {
   // Web bundle is public; strip contact PII (phone/email/href links).
   const { identity, ...rest } = master;
-  // eslint-disable-next-line no-unused-vars
   const { links, photo, ...identityPublic } = identity;
   return { ...rest, identity: identityPublic };
+};
+
+// $-prefixed keys are source-file metadata ($comment etc.) — they may come
+// from the gitignored master.local.json and must not reach the public bundle.
+// Applied after localizeForWeb: its {en, fr} detection is key-count sensitive.
+const stripMetaKeys = (obj) => {
+  if (Array.isArray(obj)) return obj.map(stripMetaKeys);
+  if (obj && typeof obj === "object") {
+    const out = {};
+    for (const [k, v] of Object.entries(obj)) {
+      if (!k.startsWith("$")) out[k] = stripMetaKeys(v);
+    }
+    return out;
+  }
+  return obj;
 };
 
 const getLastUpdated = () => {
@@ -163,8 +180,8 @@ const buildWebJson = async (master) => {
   const lastUpdated = getLastUpdated();
   const payload = {
     _lastUpdated: lastUpdated,
-    en: localizeForWeb(safe, "en"),
-    fr: localizeForWeb(safe, "fr"),
+    en: stripMetaKeys(localizeForWeb(safe, "en")),
+    fr: stripMetaKeys(localizeForWeb(safe, "fr")),
   };
   await mkdir(dirname(webDataPath), { recursive: true });
   await writeFile(webDataPath, JSON.stringify(payload, null, 2), "utf8");

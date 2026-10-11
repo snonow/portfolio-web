@@ -76,14 +76,14 @@ jobs:
 
       - name: Publish PDFs into public/resume
         run: |
-          cp resume/build/cv_en_onepage.pdf public/resume/cv_en.pdf
-          cp resume/build/cv_fr_onepage.pdf public/resume/cv_fr.pdf
+          cp resume/build/cv_en_onepage.pdf public/resume/Arno-Wilhelm-CV-EN.pdf
+          cp resume/build/cv_fr_onepage.pdf public/resume/Arno-Wilhelm-CV-FR.pdf
 
       - name: Commit & push if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add public/resume/cv_en.pdf public/resume/cv_fr.pdf src/data/resume.json
+          git add public/resume/Arno-Wilhelm-CV-EN.pdf public/resume/Arno-Wilhelm-CV-FR.pdf src/data/resume.json
           if git diff --cached --quiet; then
             echo "No résumé changes to commit."
           else

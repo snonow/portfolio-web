@@ -1,13 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Pin } from "lucide-react";
 
 import resume from "../data/resume.json";
 import projectsData from "../data/github_projects.json";
+import { GITHUB_PROFILE_URL } from "../data/github";
 import Reveal from "../components/Reveal";
+import SectionHeading from "../components/SectionHeading";
+import ExternalTextLink from "../components/ExternalTextLink";
 import ProjectExpandableCard from "../components/ProjectExpandableCard";
-
-const GITHUB_PROFILE = "https://github.com/snonow";
 
 const T = {
   en: { title: "Projects", repos: "Pinned on GitHub", profile: "github.com/snonow" },
@@ -26,16 +27,23 @@ const Projects = ({ locale = "en" }) => {
   const t = T[locale] ?? T.en;
   const [active, setActive] = useState(null);
 
+  // Lock page scroll behind the expanded-card overlay.
+  useEffect(() => {
+    if (!active) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = prev;
+    };
+  }, [active]);
+
   const resumeProjects = resume[locale]?.projects ?? [];
   const repos = [...(projectsData.projects ?? [])].sort((a, b) => richness(b) - richness(a));
 
   return (
     <section className="mb-24">
       <Reveal>
-        <h2 className="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-3">
-          <span className="w-1.5 h-7 bg-blue-900 rounded-sm" />
-          {t.title}
-        </h2>
+        <SectionHeading>{t.title}</SectionHeading>
       </Reveal>
 
       {/* Résumé projects — richest, with detailed bullets */}
@@ -45,7 +53,9 @@ const Projects = ({ locale = "en" }) => {
             <Reveal key={p.id} delay={i * 0.05}>
               <article className="bg-white border border-slate-200 rounded-xl p-6 hover:border-blue-300 transition h-full">
                 <div className="flex flex-wrap items-baseline justify-between gap-x-4 mb-1">
-                  <h3 className="font-semibold text-slate-900">{p.title}</h3>
+                  <h3 className="font-semibold text-slate-900">
+                    <ExternalTextLink href={p.url}>{p.title}</ExternalTextLink>
+                  </h3>
                   <time className="text-xs text-slate-500 font-medium">{p.dates}</time>
                 </div>
                 <p className="italic text-sm text-slate-600 mb-3">
@@ -80,7 +90,7 @@ const Projects = ({ locale = "en" }) => {
               {t.repos}
             </h3>
             <a
-              href={GITHUB_PROFILE}
+              href={GITHUB_PROFILE_URL}
               target="_blank"
               rel="noreferrer"
               className="text-xs text-slate-400 hover:text-blue-700 bg-white border px-3 py-1 rounded-full transition"
@@ -94,7 +104,6 @@ const Projects = ({ locale = "en" }) => {
               <ProjectExpandableCard
                 key={project.name}
                 project={project}
-                isActive={active?.name === project.name}
                 onOpen={() => setActive(project)}
                 onClose={() => setActive(null)}
               />
