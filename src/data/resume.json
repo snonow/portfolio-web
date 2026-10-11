@@ -53,7 +53,7 @@
         "bullets": [
           {
             "id": "pwc-migration",
-            "text": "Migrated a manually-built production data platform to a locked-down enterprise Azure tenant, describing its 60+ resources in Terraform with zero state drift",
+            "text": "Migrated a manually-built production data platform to a locked-down enterprise Azure tenant, describing its 60+ resources in Terraform",
             "tags": [
               "cloud",
               "iac"
@@ -61,7 +61,7 @@
           },
           {
             "id": "pwc-adf",
-            "text": "Standardised the DEV/UAT/PROD deployment pipelines as versioned Azure DevOps YAML, with the firm's security controls and post-deployment smoke tests",
+            "text": "Made releases safe and repeatable: every change now follows the same automated, security-checked path from test to production (Azure DevOps)",
             "tags": [
               "cloud",
               "cicd"
@@ -69,7 +69,7 @@
           },
           {
             "id": "pwc-network",
-            "text": "Restored application and Data Factory connectivity after the cut-over (VNet integration, private endpoints, database access rights) and cut telemetry costs by over 10×",
+            "text": "Brought the platform's apps and data flows back online after the move (secure private networking), and cut its monitoring costs by over 10×",
             "tags": [
               "cloud",
               "network"
@@ -387,7 +387,7 @@
         "bullets": [
           {
             "id": "pwc-migration",
-            "text": "Migration d'une plateforme data de production, construite à la main, vers un tenant Azure d'entreprise verrouillé, en décrivant ses 60+ ressources en Terraform sans dérive d'état",
+            "text": "Migration d'une plateforme data de production, construite à la main, vers un tenant Azure d'entreprise verrouillé, en décrivant ses 60+ ressources en Terraform",
             "tags": [
               "cloud",
               "iac"
@@ -395,7 +395,7 @@
           },
           {
             "id": "pwc-adf",
-            "text": "Normalisation des pipelines de déploiement DEV/UAT/PROD en YAML Azure DevOps versionné, avec les contrôles de sécurité du cabinet et des tests de fumée après déploiement",
+            "text": "Fiabilisation des mises en production : chaque changement suit désormais le même circuit automatisé et contrôlé, du test à la production (Azure DevOps)",
             "tags": [
               "cloud",
               "cicd"
@@ -403,7 +403,7 @@
           },
           {
             "id": "pwc-network",
-            "text": "Rétablissement des flux applicatifs et Data Factory après la bascule (intégration VNet, points de terminaison privés, droits de la base) et division par plus de 10 des coûts de télémétrie",
+            "text": "Remise en service des applications et flux de données après la bascule (réseau privé sécurisé), et division par plus de 10 des coûts de supervision",
             "tags": [
               "cloud",
               "network"
