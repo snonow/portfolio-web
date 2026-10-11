@@ -106,7 +106,8 @@ const jsonLd = (locale) => {
       name: `${r.identity.fullName} — ${r.identity.subtitle}`,
       inLanguage: locale,
       isPartOf: { "@id": `${SITE}/#website` },
-      dateModified: resume._lastUpdated,
+      // Google wants a full ISO 8601 datetime here; a bare date is flagged invalid.
+      dateModified: `${resume._lastUpdated}T00:00:00+00:00`,
       mainEntity: { "@id": `${SITE}/#person` },
     },
     person,
