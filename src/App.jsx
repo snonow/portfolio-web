@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Hero from "./sections/Hero";
 import Experience from "./sections/Experience";
 import Education from "./sections/Education";
@@ -37,9 +36,12 @@ const T = {
   },
 };
 
-const App = () => {
-  const [locale, setLocale] = useState("en");
+// Locale is fixed per page: / is English, /fr/ is French (both prerendered).
+const LOCALE_PATHS = { en: "/", fr: "/fr/" };
+
+const App = ({ locale = "en" }) => {
   const t = T[locale] ?? T.en;
+  const other = locale === "en" ? "fr" : "en";
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800">
@@ -54,13 +56,15 @@ const App = () => {
                 </a>
               ))}
             </div>
-            <button
-              onClick={() => setLocale((l) => (l === "en" ? "fr" : "en"))}
+            <a
+              href={LOCALE_PATHS[other]}
+              hrefLang={other}
+              lang={other}
               className="text-xs font-semibold px-2.5 py-1 rounded-full border border-slate-200 text-slate-600 hover:border-blue-300 hover:text-blue-800 transition"
-              aria-label="Switch language"
+              aria-label={other === "fr" ? "Version française" : "English version"}
             >
-              {locale === "en" ? "FR" : "EN"}
-            </button>
+              {other.toUpperCase()}
+            </a>
           </div>
         </nav>
       </header>

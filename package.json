@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "prebuild": "node scripts/build-resume.mjs",
-    "build": "vite build",
+    "build": "vite build && vite build --ssr src/entry-server.jsx --outDir dist-ssr && node scripts/prerender.mjs",
     "build:resume": "node scripts/build-resume.mjs",
     "predev": "node scripts/build-resume.mjs",
     "lint": "eslint .",

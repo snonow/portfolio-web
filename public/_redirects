@@ -3,4 +3,4 @@
 /resume/cv_fr.pdf /resume/Arno-Wilhelm-CV-FR.pdf 301
 /papers/hybrid-mlops-smes-2025.pdf /papers/Hybrid-MLOps-for-SMEs-2025.pdf 301
 
-/* /index.html 200
+# No SPA catch-all: pages are prerendered, unknown paths get dist/404.html with a 404.
