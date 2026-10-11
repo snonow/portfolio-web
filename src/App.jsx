@@ -23,6 +23,7 @@ const T = {
       { id: "github",     label: "GitHub" },
     ],
     lastUpdated: "Last updated",
+    legal: "Legal notice & privacy",
   },
   fr: {
     nav: [
@@ -33,15 +34,31 @@ const T = {
       { id: "github",     label: "GitHub" },
     ],
     lastUpdated: "Mis à jour le",
+    legal: "Mentions légales & confidentialité",
+  },
+  ja: {
+    nav: [
+      { id: "experience", label: "職務経歴" },
+      { id: "projects",   label: "プロジェクト" },
+      { id: "education",  label: "学歴" },
+      { id: "skills",     label: "スキル" },
+      { id: "github",     label: "GitHub" },
+    ],
+    lastUpdated: "最終更新",
+    legal: "法的情報・プライバシー",
   },
 };
 
 // Locale is fixed per page: / is English, /fr/ is French (both prerendered).
-const LOCALE_PATHS = { en: "/", fr: "/fr/" };
+const LOCALE_PATHS = { en: "/", fr: "/fr/", ja: "/ja/" };
+const LOCALE_LINKS = {
+  en: { label: "EN", aria: "English version" },
+  fr: { label: "FR", aria: "Version française" },
+  ja: { label: "日本語", aria: "日本語版" },
+};
 
 const App = ({ locale = "en" }) => {
   const t = T[locale] ?? T.en;
-  const other = locale === "en" ? "fr" : "en";
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800">
@@ -56,15 +73,22 @@ const App = ({ locale = "en" }) => {
                 </a>
               ))}
             </div>
-            <a
-              href={LOCALE_PATHS[other]}
-              hrefLang={other}
-              lang={other}
-              className="text-xs font-semibold px-2.5 py-1 rounded-full border border-slate-200 text-slate-600 hover:border-blue-300 hover:text-blue-800 transition"
-              aria-label={other === "fr" ? "Version française" : "English version"}
-            >
-              {other.toUpperCase()}
-            </a>
+            <div className="flex items-center gap-1.5">
+              {Object.keys(LOCALE_PATHS).filter((l) => l !== locale).map((l) => (
+                <a
+                  key={l}
+                  href={LOCALE_PATHS[l]}
+                  // Remembered by functions/index.js so "/" stops auto-redirecting.
+                  onClick={() => { document.cookie = `lang=${l}; path=/; max-age=31536000; samesite=lax`; }}
+                  hrefLang={l}
+                  lang={l}
+                  className="text-xs font-semibold px-2.5 py-1 rounded-full border border-slate-200 text-slate-600 hover:border-blue-300 hover:text-blue-800 transition"
+                  aria-label={LOCALE_LINKS[l].aria}
+                >
+                  {LOCALE_LINKS[l].label}
+                </a>
+              ))}
+            </div>
           </div>
         </nav>
       </header>
@@ -92,7 +116,10 @@ const App = ({ locale = "en" }) => {
               <Mail size={22} />
             </a>
           </div>
-          <p className="text-sm">© {new Date().getFullYear()} Arno Wilhelm</p>
+          <p className="text-sm">
+            © {new Date().getFullYear()} Arno Wilhelm ·{" "}
+            <a href={locale === "fr" ? "/legal/#fr" : "/legal/"} className="underline hover:text-slate-200">{t.legal}</a>
+          </p>
           {resume._lastUpdated && (
             <p className="text-xs mt-1 text-slate-600">
               {t.lastUpdated} {resume._lastUpdated}

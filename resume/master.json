@@ -4,7 +4,7 @@
     "fullName": "Arno Wilhelm",
     "subtitle": {
       "en": "Data & Cloud Engineer",
-      "fr": "Ingénieur Data & Cloud"
+      "fr": "Ingénieur Data & Cloud", "ja": "データ＆クラウドエンジニア"
     },
     "photo": "profile.jpg",
     "links": {
@@ -21,85 +21,85 @@
     {
       "id": "pwc-de-2026",
       "url": "https://www.pwc.lu/",
-      "company": { "en": "PwC Luxembourg", "fr": "PwC Luxembourg" },
-      "role": { "en": "Data Engineer (Permanent)", "fr": "Data Engineer (CDI)" },
-      "dates": { "en": "Sep. 2026 – Present", "fr": "Sep. 2026 – Présent" },
-      "location": { "en": "Luxembourg", "fr": "Luxembourg" },
+      "company": { "en": "PwC Luxembourg", "fr": "PwC Luxembourg", "ja": "PwCルクセンブルク" },
+      "role": { "en": "Data Engineer (Permanent)", "fr": "Data Engineer (CDI)", "ja": "データエンジニア（正社員）" },
+      "dates": { "en": "Sep. 2026 – Present", "fr": "Sep. 2026 – Présent", "ja": "2026年9月 – 現在" },
+      "location": { "en": "Luxembourg", "fr": "Luxembourg", "ja": "ルクセンブルク" },
       "tags": ["data", "cloud", "current"],
       "bullets": [
         { "id": "pwc-de-platform", "text": {
           "en": "Build and maintain the Azure infrastructure of the team's data and AI platforms (data collection, internal RAG services) with Terraform and Azure DevOps CI/CD",
-          "fr": "Construction et maintien de l'infrastructure Azure des plateformes data et IA de l'équipe (collecte de données, services RAG internes) en Terraform et CI/CD Azure DevOps"
+          "fr": "Construction et maintien de l'infrastructure Azure des plateformes data et IA de l'équipe (collecte de données, services RAG internes) en Terraform et CI/CD Azure DevOps", "ja": "チームのデータ・AI基盤（データ収集、社内RAGサービス）のAzureインフラを、TerraformとAzure DevOps CI/CDで構築・運用"
         }, "tags": ["cloud", "iac"] },
         { "id": "pwc-de-dotnet", "text": {
           "en": "Support the team's application projects, mostly .NET 6/8, on hosting, deployment and runtime issues",
-          "fr": "Support des projets applicatifs de l'équipe, majoritairement en .NET 6/8, sur l'hébergement, le déploiement et l'exploitation"
+          "fr": "Support des projets applicatifs de l'équipe, majoritairement en .NET 6/8, sur l'hébergement, le déploiement et l'exploitation", "ja": "チームのアプリケーション開発（主に.NET 6/8）を、ホスティング・デプロイ・運用の面から支援"
         }, "tags": ["cloud", "dotnet"] }
       ]
     },
     {
       "id": "pwc-2026",
       "url": "https://www.pwc.lu/",
-      "company": { "en": "PwC Luxembourg", "fr": "PwC Luxembourg" },
-      "role": { "en": "Cloud Infrastructure Intern – Data Science Team", "fr": "Stagiaire Infrastructure Cloud – Équipe Data Science" },
-      "dates": { "en": "Feb. 2026 – Aug. 2026", "fr": "Fév. 2026 – Août 2026" },
-      "location": { "en": "Luxembourg", "fr": "Luxembourg" },
+      "company": { "en": "PwC Luxembourg", "fr": "PwC Luxembourg", "ja": "PwCルクセンブルク" },
+      "role": { "en": "Cloud Infrastructure Intern – Data Science Team", "fr": "Stagiaire Infrastructure Cloud – Équipe Data Science", "ja": "クラウドインフラ インターン – データサイエンスチーム" },
+      "dates": { "en": "Feb. 2026 – Aug. 2026", "fr": "Fév. 2026 – Août 2026", "ja": "2026年2月 – 2026年8月" },
+      "location": { "en": "Luxembourg", "fr": "Luxembourg", "ja": "ルクセンブルク" },
       "tags": ["cloud", "ai"],
       "bullets": [
         { "id": "pwc-migration", "text": {
           "en": "Migrated a manually-built production data platform to a locked-down enterprise Azure tenant, describing its 60+ resources in Terraform",
-          "fr": "Migration d'une plateforme data de production, construite à la main, vers un tenant Azure d'entreprise verrouillé, en décrivant ses 60+ ressources en Terraform"
+          "fr": "Migration d'une plateforme data de production, construite à la main, vers un tenant Azure d'entreprise verrouillé, en décrivant ses 60+ ressources en Terraform", "ja": "手作業で構築された本番データ基盤を、セキュリティ要件の厳しいエンタープライズAzureテナントへ移行し、60以上のリソースをTerraformでコード化"
         }, "tags": ["cloud", "iac"] },
         { "id": "pwc-adf", "text": {
           "en": "Made releases safe and repeatable: every change now follows the same automated, security-checked path from test to production (Azure DevOps)",
-          "fr": "Fiabilisation des mises en production : chaque changement suit désormais le même circuit automatisé et contrôlé, du test à la production (Azure DevOps)"
+          "fr": "Fiabilisation des mises en production : chaque changement suit désormais le même circuit automatisé et contrôlé, du test à la production (Azure DevOps)", "ja": "すべての変更がテストから本番まで同じ自動化・セキュリティチェック済みの経路を通る仕組みを整備し、リリースを安全かつ再現可能に（Azure DevOps）"
         }, "tags": ["cloud", "cicd"] },
         { "id": "pwc-network", "text": {
           "en": "Brought the platform's apps and data flows back online after the move (secure private networking)",
-          "fr": "Remise en service des applications et flux de données après la bascule (réseau privé sécurisé)"
+          "fr": "Remise en service des applications et flux de données après la bascule (réseau privé sécurisé)", "ja": "移行後、プラットフォームのアプリケーションとデータフローを復旧（セキュアなプライベートネットワーク）"
         }, "tags": ["cloud", "network"] },
         { "id": "pwc-rag", "text": {
           "en": "Designed and deployed the Azure infrastructure (Terraform) of an internal RAG / agentic-AI services hub, and integrated its back-end and front-end",
-          "fr": "Conception et déploiement de l'infrastructure Azure (Terraform) d'un hub interne de services RAG / IA agentique, et intégration de son back-end et front-end"
+          "fr": "Conception et déploiement de l'infrastructure Azure (Terraform) d'un hub interne de services RAG / IA agentique, et intégration de son back-end et front-end", "ja": "社内RAG／エージェント型AIサービス基盤のAzureインフラ（Terraform）を設計・構築し、バックエンドとフロントエンドを統合"
         }, "tags": ["ai", "llm"] }
       ]
     },
     {
       "id": "kagawa-mlops",
       "url": "https://www.kagawa-u.ac.jp/en/",
-      "company": { "en": "Kagawa University – Machine Learning Laboratory", "fr": "Université de Kagawa – Laboratoire ML" },
-      "role": { "en": "MLOps Technician Intern", "fr": "Stagiaire Technicien MLOps" },
-      "dates": { "en": "Feb. 2025 – Apr. 2025", "fr": "Fév. 2025 – Avr. 2025" },
-      "location": { "en": "Takamatsu, Japan", "fr": "Takamatsu, Japon" },
+      "company": { "en": "Kagawa University – Machine Learning Laboratory", "fr": "Université de Kagawa – Laboratoire ML", "ja": "香川大学 機械学習研究室" },
+      "role": { "en": "MLOps Technician Intern", "fr": "Stagiaire Technicien MLOps", "ja": "MLOps技術インターン" },
+      "dates": { "en": "Feb. 2025 – Apr. 2025", "fr": "Fév. 2025 – Avr. 2025", "ja": "2025年2月 – 2025年4月" },
+      "location": { "en": "Takamatsu, Japan", "fr": "Takamatsu, Japon", "ja": "日本・高松市" },
       "tags": ["ml", "cloud", "research"],
       "bullets": [
-        { "id": "kagawa-paper", "text": { "en": "Co-authored a published research paper on hybrid MLOps practices for SMEs",                                                                            "fr": "Co-rédaction d'un papier de recherche publié sur les pratiques MLOps hybrides pour les PME" }, "link": { "href": "/papers/Hybrid-MLOps-for-SMEs-2025.pdf", "catalog": "https://jglobal.jst.go.jp/en/detail?JGLOBAL_ID=202602277665523641", "ndl": "https://ndlsearch.ndl.go.jp/books/R000000004-I034425513" }, "tags": ["research"] },
-        { "id": "kagawa-cicd",  "text": { "en": "Built a hybrid CI/CD pipeline (GitLab, Docker) and ETL workflows to train ML models in the cloud", "fr": "Mise en place d'une chaîne CI/CD hybride (GitLab, Docker) et de workflows ETL pour entraîner des modèles ML dans le cloud" }, "tags": ["cloud", "ml"] }
+        { "id": "kagawa-paper", "text": { "en": "Co-authored a published research paper on hybrid MLOps practices for SMEs",                                                                            "fr": "Co-rédaction d'un papier de recherche publié sur les pratiques MLOps hybrides pour les PME", "ja": "中小企業向けハイブリッドMLOpsに関する論文を共著で発表" }, "link": { "href": "/papers/Hybrid-MLOps-for-SMEs-2025.pdf", "catalog": "https://jglobal.jst.go.jp/en/detail?JGLOBAL_ID=202602277665523641", "ndl": "https://ndlsearch.ndl.go.jp/books/R000000004-I034425513" }, "tags": ["research"] },
+        { "id": "kagawa-cicd",  "text": { "en": "Built a hybrid CI/CD pipeline (GitLab, Docker) and ETL workflows to train ML models in the cloud", "fr": "Mise en place d'une chaîne CI/CD hybride (GitLab, Docker) et de workflows ETL pour entraîner des modèles ML dans le cloud", "ja": "クラウド上でMLモデルを学習するためのハイブリッドCI/CDパイプライン（GitLab、Docker）とETLワークフローを構築" }, "tags": ["cloud", "ml"] }
       ]
     },
     {
       "id": "junior-pac",
       "url": "https://www.linkedin.com/company/junior-pac/",
-      "company": { "en": "Junior Enterprise (Junior PAC)", "fr": "Junior Entreprise (Junior PAC)" },
-      "role": { "en": "Association President", "fr": "Président d'Association" },
-      "dates": { "en": "Sep. 2024 – Present", "fr": "Sep. 2024 – Présent" },
-      "location": { "en": "Annecy, France", "fr": "Annecy, France" },
+      "company": { "en": "Junior Enterprise (Junior PAC)", "fr": "Junior Entreprise (Junior PAC)", "ja": "ジュニア・エンタープライズ（Junior PAC）" },
+      "role": { "en": "Association President", "fr": "Président d'Association", "ja": "代表（学生コンサルティング団体）" },
+      "dates": { "en": "Sep. 2024 – Present", "fr": "Sep. 2024 – Présent", "ja": "2024年9月 – 現在" },
+      "location": { "en": "Annecy, France", "fr": "Annecy, France", "ja": "フランス・アヌシー" },
       "tags": ["leadership", "current"],
       "bullets": [
-        { "id": "jpac-team",   "text": { "en": "Lead a 6-engineer team in a student-run consulting association (Junior-Entreprise)",                          "fr": "Encadrement d'une équipe de 6 ingénieurs au sein d'une Junior-Entreprise (conseil)" },                          "tags": ["leadership"] },
-        { "id": "jpac-client", "text": { "en": "Manage client relationships, run meetings, and oversee Data & Software consulting projects",       "fr": "Gestion de la relation client, animation de réunions et pilotage de projets de conseil (Data & Logiciel)" }, "tags": ["leadership", "client"] }
+        { "id": "jpac-team",   "text": { "en": "Lead a 6-engineer team in a student-run consulting association (Junior-Entreprise)",                          "fr": "Encadrement d'une équipe de 6 ingénieurs au sein d'une Junior-Entreprise (conseil)", "ja": "学生が運営するコンサルティング団体で、エンジニア6名のチームを統率" },                          "tags": ["leadership"] },
+        { "id": "jpac-client", "text": { "en": "Manage client relationships, run meetings, and oversee Data & Software consulting projects",       "fr": "Gestion de la relation client, animation de réunions et pilotage de projets de conseil (Data & Logiciel)", "ja": "顧客対応、会議の進行、データ・ソフトウェア分野のコンサルティング案件の管理を担当" }, "tags": ["leadership", "client"] }
       ]
     },
     {
       "id": "edf",
       "style": "compact",
       "url": "https://www.edf.fr/centrale-nucleaire-saint-alban",
-      "company": { "en": "EDF – Saint-Alban Nuclear Power Plant", "fr": "EDF – Centrale Nucléaire Saint-Alban" },
-      "role": { "en": "Intern", "fr": "Stagiaire" },
-      "dates": { "en": "Aug. 2024", "fr": "Août 2024" },
+      "company": { "en": "EDF – Saint-Alban Nuclear Power Plant", "fr": "EDF – Centrale Nucléaire Saint-Alban", "ja": "EDF サン・タルバン原子力発電所" },
+      "role": { "en": "Intern", "fr": "Stagiaire", "ja": "インターン" },
+      "dates": { "en": "Aug. 2024", "fr": "Août 2024", "ja": "2024年8月" },
       "tags": ["industry"],
       "bullets": [
-        { "id": "edf-1", "text": { "en": "Technical inspections of safety equipment (SCBA) and maintenance of regulatory documentation", "fr": "Inspections techniques d'équipements de sécurité (SCBA) et maintien de la documentation réglementaire" }, "tags": [] }
+        { "id": "edf-1", "text": { "en": "Technical inspections of safety equipment (SCBA) and maintenance of regulatory documentation", "fr": "Inspections techniques d'équipements de sécurité (SCBA) et maintien de la documentation réglementaire", "ja": "安全装備（自給式呼吸器）の技術点検と規制関連文書の管理" }, "tags": [] }
       ]
     }
   ],
@@ -109,18 +109,18 @@
       "id": "fudami",
       "webOnly": true,
       "url": "https://fudami.net",
-      "title": { "en": "Fudami — Japanese Learning Platform", "fr": "Fudami — Plateforme d'Apprentissage du Japonais" },
-      "org": { "en": "Personal product — solo design & build", "fr": "Produit personnel — conception & développement solo" },
-      "dates": { "en": "Jun. 2026 – Present", "fr": "Juin 2026 – Présent" },
+      "title": { "en": "Fudami — Japanese Learning Platform", "fr": "Fudami — Plateforme d'Apprentissage du Japonais", "ja": "Fudami — 日本語学習プラットフォーム" },
+      "org": { "en": "Personal product — solo design & build", "fr": "Produit personnel — conception & développement solo", "ja": "個人開発 — 設計から開発まで単独で担当" },
+      "dates": { "en": "Jun. 2026 – Present", "fr": "Juin 2026 – Présent", "ja": "2026年6月 – 現在" },
       "tags": ["ai", "mobile", "cloud", "current"],
       "bullets": [
         { "id": "fudami-platform", "text": {
           "en": "Designing and building a spaced-repetition language-learning platform as a three-tier system: a cross-platform Expo/React Native app (iOS, Android, Web), a Python content pipeline, and a Cloudflare serverless backend (Workers, D1, R2)",
-          "fr": "Conception et développement d'une plateforme d'apprentissage des langues par répétition espacée, en trois tiers : application Expo/React Native multiplateforme (iOS, Android, Web), pipeline de contenu Python et backend serverless Cloudflare (Workers, D1, R2)"
+          "fr": "Conception et développement d'une plateforme d'apprentissage des langues par répétition espacée, en trois tiers : application Expo/React Native multiplateforme (iOS, Android, Web), pipeline de contenu Python et backend serverless Cloudflare (Workers, D1, R2)", "ja": "間隔反復による語学学習プラットフォームを3層構成で設計・開発：Expo／React Nativeのクロスプラットフォームアプリ（iOS・Android・Web）、Pythonのコンテンツパイプライン、Cloudflareのサーバーレスバックエンド（Workers、D1、R2）"
         }, "tags": ["mobile", "cloud"] },
         { "id": "fudami-engine", "text": {
           "en": "Implemented an FSRS-based spaced-repetition engine with server-authoritative progress tracking and offline-capable on-device reviews",
-          "fr": "Implémentation d'un moteur de répétition espacée basé sur FSRS, avec suivi de progression côté serveur et révisions hors-ligne sur l'appareil"
+          "fr": "Implémentation d'un moteur de répétition espacée basé sur FSRS, avec suivi de progression côté serveur et révisions hors-ligne sur l'appareil", "ja": "FSRSベースの間隔反復エンジンを実装。学習進捗はサーバー側で一元管理し、オフラインでも端末上で復習が可能"
         }, "tags": ["ai", "data"] }
       ]
     },
@@ -128,32 +128,32 @@
       "id": "fudami-jisho",
       "webOnly": true,
       "url": "https://jisho.fudami.net",
-      "title": { "en": "Fudami Jisho — Self-hosted Japanese Dictionary", "fr": "Fudami Jisho — Dictionnaire de Japonais Auto-hébergé" },
-      "org": { "en": "Personal product — solo design & build", "fr": "Produit personnel — conception & développement solo" },
-      "dates": { "en": "Aug. 2026 – Present", "fr": "Août 2026 – Présent" },
+      "title": { "en": "Fudami Jisho — Self-hosted Japanese Dictionary", "fr": "Fudami Jisho — Dictionnaire de Japonais Auto-hébergé", "ja": "Fudami Jisho — セルフホスト型日本語辞書" },
+      "org": { "en": "Personal product — solo design & build", "fr": "Produit personnel — conception & développement solo", "ja": "個人開発 — 設計から開発まで単独で担当" },
+      "dates": { "en": "Aug. 2026 – Present", "fr": "Août 2026 – Présent", "ja": "2026年8月 – 現在" },
       "tags": ["data", "cloud", "current"],
       "bullets": [
         { "id": "fudami-jisho-search", "text": {
           "en": "Built a self-hosted Japanese dictionary over 180,000+ JMdict entries and KANJIDIC2 with sub-5 ms full-text search, pitch-accent curves, and stroke-order animations",
-          "fr": "Développement d'un dictionnaire de japonais auto-hébergé sur plus de 180 000 entrées JMdict et KANJIDIC2, avec recherche plein texte en moins de 5 ms, courbes d'accent tonal et animations de l'ordre des traits"
+          "fr": "Développement d'un dictionnaire de japonais auto-hébergé sur plus de 180 000 entrées JMdict et KANJIDIC2, avec recherche plein texte en moins de 5 ms, courbes d'accent tonal et animations de l'ordre des traits", "ja": "JMdict（18万語以上）とKANJIDIC2を基に、5ミリ秒未満の全文検索、アクセント曲線、筆順アニメーションを備えた日本語辞書を開発"
         }, "tags": ["data"] },
         { "id": "fudami-jisho-ops", "text": {
           "en": "Deployed it on a home server behind a Cloudflare Tunnel with a pull-based, CI-gated release pipeline, and linked it to the learner's memory model to colour words by i+1 difficulty",
-          "fr": "Déploiement sur un serveur personnel derrière un Cloudflare Tunnel avec un pipeline de livraison par tirage conditionné à la CI, et lien avec le modèle de mémoire de l'apprenant pour colorer les mots selon la difficulté i+1"
+          "fr": "Déploiement sur un serveur personnel derrière un Cloudflare Tunnel avec un pipeline de livraison par tirage conditionné à la CI, et lien avec le modèle de mémoire de l'apprenant pour colorer les mots selon la difficulté i+1", "ja": "Cloudflare Tunnel経由で自宅サーバーに公開し、CIを通過した版のみを取り込むリリースパイプラインを構築。学習者の記憶モデルと連携し、単語をi+1の難易度で色分け"
         }, "tags": ["cloud"] }
       ]
     },
     {
       "id": "bfh-curation",
       "url": "https://www.bfh.ch/en/",
-      "title": { "en": "Data Curation Pipeline & Web Crawling Project", "fr": "Projet Pipeline de Curation de Données et Web Crawling" },
-      "org": { "en": "GenAI Laboratory – BFH", "fr": "Laboratoire GenAI – BFH" },
-      "dates": { "en": "Sep. 2025 – Feb. 2026", "fr": "Sep. 2025 – Fév. 2026" },
-      "location": { "en": "Bern, Switzerland", "fr": "Berne, Suisse" },
+      "title": { "en": "Data Curation Pipeline & Web Crawling Project", "fr": "Projet Pipeline de Curation de Données et Web Crawling", "ja": "データキュレーション・パイプラインとWebクローリング" },
+      "org": { "en": "GenAI Laboratory – BFH", "fr": "Laboratoire GenAI – BFH", "ja": "BFH 生成AI研究室" },
+      "dates": { "en": "Sep. 2025 – Feb. 2026", "fr": "Sep. 2025 – Fév. 2026", "ja": "2025年9月 – 2026年2月" },
+      "location": { "en": "Bern, Switzerland", "fr": "Berne, Suisse", "ja": "スイス・ベルン" },
       "tags": ["ml", "ai", "data", "current"],
       "bullets": [
-        { "id": "bfh-llm",   "text": { "en": "Developed an automated system (Python, MongoDB) integrating LLM-calibrated heuristic filtering to extract health-related data from 5 Swiss media sources", "fr": "Développement d'un système automatisé (Python, MongoDB) intégrant un filtrage heuristique calibré par LLM pour isoler des données santé issues de 5 médias suisses" }, "tags": ["ai", "llm"] },
-        { "id": "bfh-corpus","text": { "en": "Processed and cleaned over 900,000 URLs to build a structured corpus for Topic Modeling",                                                                   "fr": "Traitement et nettoyage de plus de 900 000 URLs pour constituer un corpus structuré dédié au Topic Modeling" },                                                  "tags": ["data"] }
+        { "id": "bfh-llm",   "text": { "en": "Developed an automated system (Python, MongoDB) integrating LLM-calibrated heuristic filtering to extract health-related data from 5 Swiss media sources", "fr": "Développement d'un système automatisé (Python, MongoDB) intégrant un filtrage heuristique calibré par LLM pour isoler des données santé issues de 5 médias suisses", "ja": "LLMで調整したヒューリスティックフィルタにより、スイスの5つのメディアから健康関連データを抽出する自動システムを開発（Python、MongoDB）" }, "tags": ["ai", "llm"] },
+        { "id": "bfh-corpus","text": { "en": "Processed and cleaned over 900,000 URLs to build a structured corpus for Topic Modeling",                                                                   "fr": "Traitement et nettoyage de plus de 900 000 URLs pour constituer un corpus structuré dédié au Topic Modeling", "ja": "90万件以上のURLを処理・クレンジングし、トピックモデリング用の構造化コーパスを構築" },                                                  "tags": ["data"] }
       ]
     }
   ],
@@ -162,67 +162,91 @@
     {
       "id": "polytech-annecy",
       "url": "https://www.polytech.univ-smb.fr/",
-      "school": { "en": "Polytech Annecy", "fr": "Polytech Annecy" },
-      "degree": { "en": "Master of Engineering in CS & Data Analytics", "fr": "Diplôme d'Ingénieur Informatique & Data Analytics" },
-      "details": { "en": "Specialization: Computer Science, Data & Applications", "fr": "Spécialité : Informatique Données Usages" },
-      "dates": { "en": "Sep. 2023 – Sep. 2026", "fr": "Sep. 2023 – Sep. 2026" },
-      "location": { "en": "Annecy, France", "fr": "Annecy, France" },
+      "school": { "en": "Polytech Annecy", "fr": "Polytech Annecy", "ja": "ポリテック・アヌシー（サヴォワ・モンブラン大学）" },
+      "degree": { "en": "Master of Engineering in CS & Data Analytics", "fr": "Diplôme d'Ingénieur Informatique & Data Analytics", "ja": "ディプロム・ダンジェニウール（情報科学・データ分析／修士相当）" },
+      "details": { "en": "Specialization: Computer Science, Data & Applications", "fr": "Spécialité : Informatique Données Usages", "ja": "専攻：情報科学・データ・応用" },
+      "dates": { "en": "Sep. 2023 – Sep. 2026", "fr": "Sep. 2023 – Sep. 2026", "ja": "2023年9月 – 2026年9月" },
+      "location": { "en": "Annecy, France", "fr": "Annecy, France", "ja": "フランス・アヌシー" },
       "tags": ["core"]
     },
     {
       "id": "bfh",
       "url": "https://www.bfh.ch/en/",
-      "school": { "en": "Bern University of Applied Sciences (BFH)", "fr": "Haute École Spécialisée Bernoise (BFH)" },
-      "degree": { "en": "MSc Engineering (Exchange)", "fr": "MSc Ingénierie (Échange)" },
-      "details": { "en": "Transformers, Self-Supervised Learning, Cloud Systems", "fr": "Transformers, Self-Supervised Learning, Cloud Systems" },
-      "dates": { "en": "Sep. 2025 – Feb. 2026", "fr": "Sep. 2025 – Fév. 2026" },
-      "location": { "en": "Bern, Switzerland", "fr": "Berne, Suisse" },
+      "school": { "en": "Bern University of Applied Sciences (BFH)", "fr": "Haute École Spécialisée Bernoise (BFH)", "ja": "ベルン応用科学大学（BFH）" },
+      "degree": { "en": "MSc Engineering (Exchange)", "fr": "MSc Ingénierie (Échange)", "ja": "工学修士課程（交換留学）" },
+      "details": { "en": "Transformers, Self-Supervised Learning, Cloud Systems", "fr": "Transformers, Self-Supervised Learning, Cloud Systems", "ja": "Transformer、自己教師あり学習、クラウドシステム" },
+      "dates": { "en": "Sep. 2025 – Feb. 2026", "fr": "Sep. 2025 – Fév. 2026", "ja": "2025年9月 – 2026年2月" },
+      "location": { "en": "Bern, Switzerland", "fr": "Berne, Suisse", "ja": "スイス・ベルン" },
       "tags": ["exchange", "ml", "cloud"]
     },
     {
       "id": "kagawa",
       "url": "https://www.kagawa-u.ac.jp/en/",
-      "school": { "en": "Kagawa University", "fr": "Université de Kagawa" },
-      "degree": { "en": "Master's in Data Science (Exchange)", "fr": "Master Data Science (Échange)" },
-      "details": { "en": "Blockchain, Cryptography, Mathematics & Data Science", "fr": "Blockchain, Cryptographie, Mathématiques & Data Science" },
-      "dates": { "en": "Apr. 2025 – Aug. 2025", "fr": "Avr. 2025 – Août 2025" },
-      "location": { "en": "Takamatsu, Japan", "fr": "Takamatsu, Japon" },
+      "school": { "en": "Kagawa University", "fr": "Université de Kagawa", "ja": "香川大学" },
+      "degree": { "en": "Master's in Data Science (Exchange)", "fr": "Master Data Science (Échange)", "ja": "データサイエンス修士課程（交換留学）" },
+      "details": { "en": "Blockchain, Cryptography, Mathematics & Data Science", "fr": "Blockchain, Cryptographie, Mathématiques & Data Science", "ja": "ブロックチェーン、暗号理論、数学、データサイエンス" },
+      "dates": { "en": "Apr. 2025 – Aug. 2025", "fr": "Avr. 2025 – Août 2025", "ja": "2025年4月 – 2025年8月" },
+      "location": { "en": "Takamatsu, Japan", "fr": "Takamatsu, Japon", "ja": "日本・高松市" },
       "tags": ["exchange"]
     },
     {
       "id": "cpge",
       "style": "compact",
       "url": "https://lyc-gellee.monbureaunumerique.fr/",
-      "school": { "en": "Lycée Claude Gellé", "fr": "Lycée Claude Gellé" },
-      "degree": { "en": "Classe Préparatoire aux Grandes Écoles (MP)", "fr": "Classe Préparatoire aux Grandes Écoles (MP)" },
-      "dates": { "en": "Sep. 2021 – Sep. 2023", "fr": "Sep. 2021 – Sep. 2023" },
-      "tags": []
-    },
-    {
-      "id": "bac",
-      "style": "compact",
-      "url": "https://www.lamalgrange.net/",
-      "school": { "en": "Lycée La Malgrange", "fr": "Lycée La Malgrange" },
-      "degree": { "en": "Baccalauréat with Honours (Maths, Physics, CS)", "fr": "Baccalauréat avec mention (Maths, Physique, Info)" },
-      "dates": { "en": "Sep. 2018 – Sep. 2021", "fr": "Sep. 2018 – Sep. 2021" },
+      "school": { "en": "Lycée Claude Gellé", "fr": "Lycée Claude Gellé", "ja": "リセ・クロード・ジェレ" },
+      "degree": { "en": "Classe Préparatoire aux Grandes Écoles (MP)", "fr": "Classe Préparatoire aux Grandes Écoles (MP)", "ja": "グランゼコール準備級（数学・物理 MP）" },
+      "dates": { "en": "Sep. 2021 – Sep. 2023", "fr": "Sep. 2021 – Sep. 2023", "ja": "2021年9月 – 2023年9月" },
       "tags": []
     }
   ],
 
   "skills": [
-    { "category": { "en": "Cloud & DevOps:", "fr": "Cloud & DevOps :" },"items": { "en": "Azure (Data Factory, Functions, SQL, Cosmos DB, VNet & Private Endpoints), Terraform (IaC), Azure DevOps CI/CD (YAML), Docker, AWS", "fr": "Azure (Data Factory, Functions, SQL, Cosmos DB, VNet & Private Endpoints), Terraform (IaC), Azure DevOps CI/CD (YAML), Docker, AWS" } },
-    { "category": { "en": "Programming:",    "fr": "Programmation :" }, "items": { "en": "Python (advanced – since 2021), SQL (PostgreSQL, MySQL), C# / .NET (6, 8), Java",         "fr": "Python (avancé - depuis 2021), SQL (PostgreSQL, MySQL), C# / .NET (6, 8), Java" } },
-    { "category": { "en": "Data & ML:",      "fr": "Data & ML :" },     "items": { "en": "PyTorch, TensorFlow, MLOps (CI/CD, monitoring), ETL pipelines",                    "fr": "PyTorch, TensorFlow, MLOps (CI/CD, monitoring), pipelines ETL" } },
-    { "category": { "en": "Visualization:",  "fr": "Visualisation :" }, "items": { "en": "Power BI, Tableau, Python visualization libraries",                                 "fr": "Power BI, Tableau, librairies de visualisation Python" } },
-    { "category": { "en": "Languages:",      "fr": "Langues :" },       "items": { "en": "French (Native), English (Fluent – TOEIC 920/990), Japanese (N3/B1)",             "fr": "Français (Natif), Anglais (Courant – TOEIC 920/990), Japonais (N3/B1)" } },
-    { "category": { "en": "Interests:",      "fr": "Passions :" },      "items": { "en": "Endurance sports (running, cycling, skiing) | Japanese culture & language",       "fr": "Sports d'endurance (course, cyclisme, ski) | Culture & langue japonaises" } }
+    { "category": { "en": "Cloud & DevOps:", "fr": "Cloud & DevOps :", "ja": "クラウド・DevOps：" }, "items": { "en": "Microsoft Azure, Terraform, CI/CD (Azure DevOps YAML), Docker, Ansible, Linux, Git", "fr": "Microsoft Azure, Terraform, CI/CD (Azure DevOps YAML), Docker, Ansible, Linux, Git", "ja": "Microsoft Azure, Terraform, CI/CD（Azure DevOps YAML）, Docker, Ansible, Linux, Git" } },
+    { "category": { "en": "Data:",           "fr": "Data :", "ja": "データ：" },           "items": { "en": "Python (advanced), SQL, ETL pipelines, Neo4j, Power BI, Tableau",               "fr": "Python (avancé), SQL, pipelines ETL, Neo4j, Power BI, Tableau", "ja": "Python（上級）, SQL, ETLパイプライン, Neo4j, Power BI, Tableau" } },
+    { "category": { "en": "Dev:",            "fr": "Dev :", "ja": "開発：" },            "items": { "en": "C# / .NET, FastAPI, TypeScript / React Native",                                 "fr": "C# / .NET, FastAPI, TypeScript / React Native", "ja": "C# / .NET, FastAPI, TypeScript / React Native" } },
+    { "category": { "en": "AI & ML:",        "fr": "IA & ML :", "ja": "AI・ML：" },        "items": { "en": "Claude Code, GitHub Copilot, local RAG on a home server, MLOps (co-authored paper)", "fr": "Claude Code, GitHub Copilot, RAG local sur serveur perso, MLOps (article co-écrit)", "ja": "Claude Code, GitHub Copilot, 自宅サーバーでのローカルRAG構築, MLOps（論文共著）" } },
+    { "category": { "en": "Languages:",      "fr": "Langues :", "ja": "語学：" },        "items": { "en": "French (native), English (C1, TOEIC 920), Japanese (~N3)",                     "fr": "Français (natif), Anglais (C1, TOEIC 920), Japonais (~N3)", "ja": "フランス語（ネイティブ）, 英語（C1・TOEIC 920点）, 日本語（N3程度）" } },
+    { "category": { "en": "Interests:",      "fr": "Passions :", "ja": "趣味：" },       "items": { "en": "Endurance sports (running, cycling, skiing) | Language learning",              "fr": "Sports d'endurance (course, cyclisme, ski) | Apprentissage des langues", "ja": "持久系スポーツ（ランニング・自転車・スキー） | 語学学習" } }
   ],
 
+  "shokumu": {
+    "$comment": "Japanese 職務経歴書 only (resume/templates/shokumu.tex.tmpl). Not shipped to the website.",
+    "name": "アルノ・ヴィルヘルム（Arno Wilhelm）",
+    "summary": "PwCルクセンブルクのデータサイエンスチームにて、データエンジニア（正社員）として、データ・AI基盤のAzureインフラをTerraformとAzure DevOpsで構築・運用しています。2026年2月からのインターンシップでは、手作業で構築・運用されてきた本番データ基盤を、セキュリティ要件の厳しいエンタープライズAzureテナントへ移行し、60以上のリソースをコード化（IaC）しました。香川大学でのMLOps研究（論文共著）をはじめ、フランス・スイス・ルクセンブルク・日本で学び働いてきた経験があり、日本語・英語・フランス語でのコミュニケーションが可能です。",
+    "companies": {
+      "PwC Luxembourg": "事業内容：監査・税務・アドバイザリー（PwCグローバルネットワークのルクセンブルク法人）",
+      "Kagawa University – Machine Learning Laboratory": "国立大学法人 香川大学（香川県高松市）",
+      "Junior Enterprise (Junior PAC)": "ポリテック・アヌシーの学生が運営する非営利コンサルティング団体",
+      "EDF – Saint-Alban Nuclear Power Plant": "フランス電力公社（EDF）の原子力発電所"
+    },
+    "strengths": [
+      "Terraformによる既存の本番環境のコード化（IaC）と、エンタープライズテナントへの移行",
+      "Azure DevOpsによるCI/CDパイプラインの標準化（環境別デプロイ、セキュリティチェック、デプロイ後のテスト）",
+      "Azureのネットワーク（VNet統合、プライベートエンドポイント）とアクセス権限まわりの設計・切り分け",
+      "インフラ・ネットワーク・セキュリティなど他チームと連携し、申請や調整を進めるコミュニケーション力",
+      "多国籍チームでの英語・フランス語による業務経験と、日本での研究経験"
+    ],
+    "selfPR": [
+      {
+        "title": "属人化をなくす仕組みづくり",
+        "text": "インターンシップでは、ポータル上の手作業で管理され、一部のメンバーしか全体を把握していなかった本番基盤を、コードとドキュメントに置き換えました。誰が担当しても同じ手順で安全にデプロイできる状態をつくることを常に意識しています。"
+      },
+      {
+        "title": "自ら学び、動くものにする",
+        "text": "日本語学習を続ける中で、学習アプリ「Fudami」と日本語辞書「Fudami Jisho」を個人で設計・開発・運用しています。新しい技術は、実際に使われるサービスとして形にすることで身につけています。"
+      },
+      {
+        "title": "多文化環境での協働",
+        "text": "フランス、スイス、ルクセンブルク、日本で学び働いてきました。言語や文化の異なる相手とも、相手の前提を確かめながら丁寧に合意をつくることを大切にしています。"
+      }
+    ]
+  },
+
   "sectionTitles": {
-    "education":  { "en": "Education",               "fr": "Formation" },
-    "experience": { "en": "Professional Experience", "fr": "Expérience Professionnelle" },
-    "projects":   { "en": "Projects",                "fr": "Projets" },
-    "skills":     { "en": "Skills",                  "fr": "Compétences" }
+    "education":  { "en": "Education",               "fr": "Formation", "ja": "学歴" },
+    "experience": { "en": "Professional Experience", "fr": "Expérience Professionnelle", "ja": "職務経歴" },
+    "projects":   { "en": "Projects",                "fr": "Projets", "ja": "プロジェクト" },
+    "skills":     { "en": "Skills",                  "fr": "Compétences", "ja": "スキル" }
   },
 
   "sectionIcons": {

@@ -1,0 +1,6 @@
+{
+  "name": "ja-shokumu",
+  "locale": "ja",
+  "template": "shokumu",
+  "output": "cv_ja_shokumu.tex"
+}

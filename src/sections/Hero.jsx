@@ -19,6 +19,7 @@ const T = {
         {" "}Now a Data Engineer at PwC Luxembourg, after completing my engineering degree at Polytech Annecy.
       </>
     ),
+    location: "Luxembourg",
   },
   fr: {
     tagline: (
@@ -29,6 +30,18 @@ const T = {
         {" "}Désormais Data Engineer chez PwC Luxembourg, après mon diplôme d&apos;ingénieur à Polytech Annecy.
       </>
     ),
+    location: "Luxembourg",
+  },
+  ja: {
+    tagline: (
+      <>
+        <span className="text-slate-800 font-medium">クラウドインフラのコード化（IaC）</span>、
+        <span className="text-slate-800 font-medium">信頼性の高いデータパイプライン</span>、
+        <span className="text-slate-800 font-medium">統制の取れたAI活用ワークフロー</span>を構築しています。
+        ポリテック・アヌシーで工学の学位を取得後、現在はPwCルクセンブルクのデータエンジニアとして勤務しています。
+      </>
+    ),
+    location: "ルクセンブルク",
   },
 };
 
@@ -128,7 +141,7 @@ const Hero = ({ locale = "en" }) => {
             transition={{ duration: 0.5, delay: 0.28 }}
             className="flex flex-wrap items-center gap-3"
           >
-            <DownloadCV />
+            <DownloadCV locale={locale} />
 
             <a
               href={GITHUB_PROFILE_URL}
@@ -148,7 +161,7 @@ const Hero = ({ locale = "en" }) => {
             </a>
 
             <span className="inline-flex items-center gap-1.5 text-sm text-slate-500 pl-1">
-              <MapPin size={14} /> Luxembourg
+              <MapPin size={14} /> {t.location}
             </span>
           </motion.div>
         </div>

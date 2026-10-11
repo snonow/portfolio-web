@@ -16,7 +16,7 @@ const webDataPath = join(root, "src", "data", "resume.json");
 const publicResumeDir = join(root, "public", "resume");
 
 const escapeTex = (s) =>
-  typeof s === "string" ? s.replace(/([&%#$_])/g, "\\$1") : s;
+  typeof s === "string" ? s.replace(/([&%#$_])/g, "\\$1").replace(/~/g, "\\textasciitilde{}") : s;
 
 const pick = (field, locale) =>
   escapeTex(field && typeof field === "object" && locale in field ? field[locale] : field);
@@ -86,6 +86,74 @@ const SECTION_RENDERERS = {
   skills:     (m, l) => renderSkills(m.skills, l),
 };
 
+// ---- 職務経歴書 (Japanese CV): different structure from the one-page CV ----
+
+const ja = (field) => pick(field, "ja");
+
+// "2026年2月 – 2026年8月" → ["2026年2月", "2026年8月"]
+const splitDates = (d) => ja(d).split(/\s*[–-]\s*/);
+
+const renderShokumu = (master) => {
+  const sk = master.shokumu;
+  const out = [];
+  const items = (list) => list.map((t) => `・${escapeTex(t)}`).join("\\newline ");
+
+  out.push(`\\jsec{職務要約}\n${escapeTex(sk.summary)}`);
+
+  // Consecutive roles at the same company share one block.
+  const groups = [];
+  for (const x of master.experience) {
+    const last = groups.at(-1);
+    if (last && last.company.en === x.company.en) last.roles.push(x);
+    else groups.push({ company: x.company, roles: [x] });
+  }
+  const blocks = groups.map(({ company, roles }) => {
+    const start = splitDates(roles.at(-1).dates)[0];
+    const end = splitDates(roles[0].dates).at(-1);
+    const period = start === end ? start : `${start} – ${end}`;
+    const rows = roles.map((r) => {
+      const [from, to] = splitDates(r.dates);
+      const when = to ? `${from}\\newline 〜${to}` : from;
+      return `${when} & \\textbf{${ja(r.role)}}\\newline ${items(r.bullets.map((b) => b.text.ja))} \\\\ \\hline`;
+    });
+    const note = sk.companies[company.en];
+    return `\\jcompany{${ja(company)}}{${period}}
+${note ? `\\jnote{${escapeTex(note)}}` : ""}
+\\begin{tabularx}{\\linewidth}{|>{\\small}p{24mm}|>{\\small}X|}
+\\hline
+\\rowcolor{black!6}期間 & 業務内容 \\\\ \\hline
+${rows.join("\n")}
+\\end{tabularx}`;
+  });
+  out.push(`\\jsec{職務経歴}\n${blocks.join("\n\n")}`);
+
+  out.push(`\\jsec{個人開発・研究プロジェクト}
+${master.projects.map((p) => `\\jcompany{${ja(p.title)}}{${ja(p.dates)}}\n\\jnote{${[ja(p.org), ja(p.location)].filter(Boolean).join("・")}}\n{\\small ${items(p.bullets.map((b) => b.text.ja))}}\\par`).join("\n")}`);
+
+  out.push(`\\jsec{活かせる経験・知識・技術}\n${items(sk.strengths)}`);
+
+  const langs = master.skills.find((x) => x.category.en.startsWith("Languages"));
+  const tech = master.skills.filter((x) => !/^(Languages|Interests)/.test(x.category.en));
+  out.push(`\\jsec{テクニカルスキル}
+\\begin{tabularx}{\\linewidth}{|>{\\small\\bfseries}p{30mm}|>{\\small}X|}
+\\hline
+${tech.map((x) => `${ja(x.category).replace(/[:：]\s*$/, "")} & ${ja(x.items).replace(/, /g, "、")} \\\\ \\hline`).join("\n")}
+\\end{tabularx}`);
+
+  out.push(`\\jsec{語学}\n${ja(langs.items).replace(/, /g, "、")}`);
+
+  out.push(`\\jsec{学歴}
+\\begin{tabularx}{\\linewidth}{|>{\\small}p{40mm}|>{\\small}X|}
+\\hline
+${master.education.map((e) => `${ja(e.dates)} & ${ja(e.school)}\\newline ${ja(e.degree)} \\\\ \\hline`).join("\n")}
+\\end{tabularx}`);
+
+  out.push(`\\jsec{自己PR}
+${sk.selfPR.map((x) => `{\\bfseries ${escapeTex(x.title)}}\\par ${escapeTex(x.text)}\\par\\vspace{4pt}`).join("\n")}`);
+
+  return out.join("\n\n");
+};
+
 const renderBody = (master, variant) => {
   const locale = variant.locale;
   const sections = master.sectionOrder ?? ["education", "experience", "projects", "skills"];
@@ -110,7 +178,16 @@ const buildVariant = async (master, variant) => {
     IDENTITY_FULLNAME: master.identity.fullName,
     IDENTITY_SUBTITLE: subtitle,
     // Shown as the tab/window title when the PDF is opened in a viewer.
-    PDF_TITLE: `${master.identity.fullName} — CV (${variant.locale === "fr" ? "Français" : "English"})`,
+    PDF_TITLE: variant.locale === "ja"
+      ? `${master.identity.fullName} — 職務経歴書`
+      : `${master.identity.fullName} — CV (${variant.locale === "fr" ? "Français" : "English"})`,
+    // 職務経歴書 only
+    AS_OF: `${getLastUpdated().replace(/^(\d+)-0?(\d+)-0?(\d+)$/, "$1年$2月$3日")}現在`,
+    NAME_JA: escapeTex(master.shokumu.name),
+    CONTACT: [master.identity.links.email, master.identity.links.website]
+      .filter((l) => l?.href)
+      .map((l) => `\\href{${l.href}}{${escapeTex(l.text)}}`)
+      .join("\\quad "),
     LINK_LINKEDIN_HREF: master.identity.links.linkedin.href,
     LINK_LINKEDIN_TEXT: master.identity.links.linkedin.text,
     LINK_GITHUB_HREF:   master.identity.links.github.href,
@@ -121,7 +198,7 @@ const buildVariant = async (master, variant) => {
     LINK_WEBSITE_TEXT:  master.identity.links.website?.text ?? "",
     LINK_PHONE_HREF:    master.identity.links.phone?.href ?? "",
     LINK_PHONE_TEXT:    master.identity.links.phone?.text ?? "",
-    BODY:               renderBody(master, variant),
+    BODY:               variant.template === "shokumu" ? renderShokumu(master) : renderBody(master, variant),
   };
 
   const out = tmpl.replace(/\{\{(\w+)\}\}/g, (_, k) => {
@@ -137,7 +214,7 @@ const buildVariant = async (master, variant) => {
 const localizeForWeb = (obj, locale) => {
   if (Array.isArray(obj)) return obj.map((v) => localizeForWeb(v, locale));
   if (obj && typeof obj === "object") {
-    if ("en" in obj && "fr" in obj && Object.keys(obj).length <= 3) return obj[locale];
+    if ("en" in obj && "fr" in obj && Object.keys(obj).length <= 3) return obj[locale] ?? obj.en;
     const out = {};
     for (const [k, v] of Object.entries(obj)) out[k] = localizeForWeb(v, locale);
     return out;
@@ -147,7 +224,7 @@ const localizeForWeb = (obj, locale) => {
 
 const stripPrivate = (master) => {
   // Web bundle is public; strip contact PII (phone/email/href links).
-  const { identity, ...rest } = master;
+  const { identity, shokumu: _jaCvOnly, ...rest } = master;
   const { links, photo, ...identityPublic } = identity;
   return { ...rest, identity: identityPublic };
 };
@@ -182,6 +259,7 @@ const buildWebJson = async (master) => {
     _lastUpdated: lastUpdated,
     en: stripMetaKeys(localizeForWeb(safe, "en")),
     fr: stripMetaKeys(localizeForWeb(safe, "fr")),
+    ja: stripMetaKeys(localizeForWeb(safe, "ja")),
   };
   await mkdir(dirname(webDataPath), { recursive: true });
   await writeFile(webDataPath, JSON.stringify(payload, null, 2), "utf8");

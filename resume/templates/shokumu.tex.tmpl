@@ -1,0 +1,57 @@
+%-------------------------------------
+% 職務経歴書 (Japanese CV) — generated from resume/master.json
+% Do not edit by hand; edit master.json (ja fields + "shokumu") and run
+% `npm run build:resume`. Compile with XeLaTeX (Harano Aji fonts, TeX Live).
+%-------------------------------------
+
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[top=14mm,bottom=14mm,left=17mm,right=17mm]{geometry}
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\setmainfont{HaranoAjiGothic-Regular.otf}[BoldFont=HaranoAjiGothic-Bold.otf]
+\setCJKmainfont{HaranoAjiGothic-Regular.otf}[BoldFont=HaranoAjiGothic-Bold.otf]
+\usepackage{xcolor}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage[xetex]{hyperref}
+
+\definecolor{accent}{HTML}{0D47A1}
+\definecolor{rule}{HTML}{B0BEC5}
+\definecolor{links}{HTML}{1565C0}
+\hypersetup{colorlinks=true,urlcolor=links,pdftitle={{{PDF_TITLE}}},pdfauthor={{{IDENTITY_FULLNAME}}}}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2pt}
+\linespread{1.08}
+\renewcommand{\arraystretch}{1.12}
+\setlength{\tabcolsep}{6pt}
+\arrayrulecolor{rule}
+
+% ■ Section heading with a rule underneath
+\newcommand{\jsec}[1]{%
+  \par\vspace{6pt}%
+  {\large\bfseries\color{accent}■\,#1}\par\vspace{1pt}%
+  {\color{accent}\hrule height 0.6pt}\vspace{5pt}%
+}
+% ◆ Company line: name on the left, period on the right
+\newcommand{\jcompany}[2]{\par\vspace{4pt}{\bfseries ◆\,#1}\hfill{\small #2}\par}
+\newcommand{\jnote}[1]{{\small\color{black!65}#1}\par\vspace{2pt}}
+
+\begin{document}
+
+\begin{center}
+  {\LARGE\bfseries 職務経歴書}
+\end{center}
+\vspace{-4pt}
+\begin{flushright}
+  {\small {{AS_OF}}}\\
+  氏名\quad {{NAME_JA}}\\
+  {\small {{CONTACT}}}
+\end{flushright}
+
+{{BODY}}
+
+\end{document}

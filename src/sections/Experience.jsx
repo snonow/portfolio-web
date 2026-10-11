@@ -7,6 +7,7 @@ import ExternalTextLink from "../components/ExternalTextLink";
 const T = {
   en: { title: "Professional Experience" },
   fr: { title: "Expérience Professionnelle" },
+  ja: { title: "職務経歴" },
 };
 
 const Experience = ({ locale = "en" }) => {

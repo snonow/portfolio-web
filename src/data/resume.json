@@ -309,41 +309,32 @@
         "degree": "Classe Préparatoire aux Grandes Écoles (MP)",
         "dates": "Sep. 2021 – Sep. 2023",
         "tags": []
-      },
-      {
-        "id": "bac",
-        "style": "compact",
-        "url": "https://www.lamalgrange.net/",
-        "school": "Lycée La Malgrange",
-        "degree": "Baccalauréat with Honours (Maths, Physics, CS)",
-        "dates": "Sep. 2018 – Sep. 2021",
-        "tags": []
       }
     ],
     "skills": [
       {
         "category": "Cloud & DevOps:",
-        "items": "Azure (Data Factory, Functions, SQL, Cosmos DB, VNet & Private Endpoints), Terraform (IaC), Azure DevOps CI/CD (YAML), Docker, AWS"
+        "items": "Microsoft Azure, Terraform, CI/CD (Azure DevOps YAML), Docker, Ansible, Linux, Git"
       },
       {
-        "category": "Programming:",
-        "items": "Python (advanced – since 2021), SQL (PostgreSQL, MySQL), C# / .NET (6, 8), Java"
+        "category": "Data:",
+        "items": "Python (advanced), SQL, ETL pipelines, Neo4j, Power BI, Tableau"
       },
       {
-        "category": "Data & ML:",
-        "items": "PyTorch, TensorFlow, MLOps (CI/CD, monitoring), ETL pipelines"
+        "category": "Dev:",
+        "items": "C# / .NET, FastAPI, TypeScript / React Native"
       },
       {
-        "category": "Visualization:",
-        "items": "Power BI, Tableau, Python visualization libraries"
+        "category": "AI & ML:",
+        "items": "Claude Code, GitHub Copilot, local RAG on a home server, MLOps (co-authored paper)"
       },
       {
         "category": "Languages:",
-        "items": "French (Native), English (Fluent – TOEIC 920/990), Japanese (N3/B1)"
+        "items": "French (native), English (C1, TOEIC 920), Japanese (~N3)"
       },
       {
         "category": "Interests:",
-        "items": "Endurance sports (running, cycling, skiing) | Japanese culture & language"
+        "items": "Endurance sports (running, cycling, skiing) | Language learning"
       }
     ],
     "sectionTitles": {
@@ -672,41 +663,32 @@
         "degree": "Classe Préparatoire aux Grandes Écoles (MP)",
         "dates": "Sep. 2021 – Sep. 2023",
         "tags": []
-      },
-      {
-        "id": "bac",
-        "style": "compact",
-        "url": "https://www.lamalgrange.net/",
-        "school": "Lycée La Malgrange",
-        "degree": "Baccalauréat avec mention (Maths, Physique, Info)",
-        "dates": "Sep. 2018 – Sep. 2021",
-        "tags": []
       }
     ],
     "skills": [
       {
         "category": "Cloud & DevOps :",
-        "items": "Azure (Data Factory, Functions, SQL, Cosmos DB, VNet & Private Endpoints), Terraform (IaC), Azure DevOps CI/CD (YAML), Docker, AWS"
+        "items": "Microsoft Azure, Terraform, CI/CD (Azure DevOps YAML), Docker, Ansible, Linux, Git"
       },
       {
-        "category": "Programmation :",
-        "items": "Python (avancé - depuis 2021), SQL (PostgreSQL, MySQL), C# / .NET (6, 8), Java"
+        "category": "Data :",
+        "items": "Python (avancé), SQL, pipelines ETL, Neo4j, Power BI, Tableau"
       },
       {
-        "category": "Data & ML :",
-        "items": "PyTorch, TensorFlow, MLOps (CI/CD, monitoring), pipelines ETL"
+        "category": "Dev :",
+        "items": "C# / .NET, FastAPI, TypeScript / React Native"
       },
       {
-        "category": "Visualisation :",
-        "items": "Power BI, Tableau, librairies de visualisation Python"
+        "category": "IA & ML :",
+        "items": "Claude Code, GitHub Copilot, RAG local sur serveur perso, MLOps (article co-écrit)"
       },
       {
         "category": "Langues :",
-        "items": "Français (Natif), Anglais (Courant – TOEIC 920/990), Japonais (N3/B1)"
+        "items": "Français (natif), Anglais (C1, TOEIC 920), Japonais (~N3)"
       },
       {
         "category": "Passions :",
-        "items": "Sports d'endurance (course, cyclisme, ski) | Culture & langue japonaises"
+        "items": "Sports d'endurance (course, cyclisme, ski) | Apprentissage des langues"
       }
     ],
     "sectionTitles": {
@@ -724,6 +706,360 @@
     "identity": {
       "fullName": "Arno Wilhelm",
       "subtitle": "Ingénieur Data & Cloud"
+    }
+  },
+  "ja": {
+    "sectionOrder": [
+      "experience",
+      "projects",
+      "education",
+      "skills"
+    ],
+    "experience": [
+      {
+        "id": "pwc-de-2026",
+        "url": "https://www.pwc.lu/",
+        "company": "PwCルクセンブルク",
+        "role": "データエンジニア（正社員）",
+        "dates": "2026年9月 – 現在",
+        "location": "ルクセンブルク",
+        "tags": [
+          "data",
+          "cloud",
+          "current"
+        ],
+        "bullets": [
+          {
+            "id": "pwc-de-platform",
+            "text": "チームのデータ・AI基盤（データ収集、社内RAGサービス）のAzureインフラを、TerraformとAzure DevOps CI/CDで構築・運用",
+            "tags": [
+              "cloud",
+              "iac"
+            ]
+          },
+          {
+            "id": "pwc-de-dotnet",
+            "text": "チームのアプリケーション開発（主に.NET 6/8）を、ホスティング・デプロイ・運用の面から支援",
+            "tags": [
+              "cloud",
+              "dotnet"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pwc-2026",
+        "url": "https://www.pwc.lu/",
+        "company": "PwCルクセンブルク",
+        "role": "クラウドインフラ インターン – データサイエンスチーム",
+        "dates": "2026年2月 – 2026年8月",
+        "location": "ルクセンブルク",
+        "tags": [
+          "cloud",
+          "ai"
+        ],
+        "bullets": [
+          {
+            "id": "pwc-migration",
+            "text": "手作業で構築された本番データ基盤を、セキュリティ要件の厳しいエンタープライズAzureテナントへ移行し、60以上のリソースをTerraformでコード化",
+            "tags": [
+              "cloud",
+              "iac"
+            ]
+          },
+          {
+            "id": "pwc-adf",
+            "text": "すべての変更がテストから本番まで同じ自動化・セキュリティチェック済みの経路を通る仕組みを整備し、リリースを安全かつ再現可能に（Azure DevOps）",
+            "tags": [
+              "cloud",
+              "cicd"
+            ]
+          },
+          {
+            "id": "pwc-network",
+            "text": "移行後、プラットフォームのアプリケーションとデータフローを復旧（セキュアなプライベートネットワーク）",
+            "tags": [
+              "cloud",
+              "network"
+            ]
+          },
+          {
+            "id": "pwc-rag",
+            "text": "社内RAG／エージェント型AIサービス基盤のAzureインフラ（Terraform）を設計・構築し、バックエンドとフロントエンドを統合",
+            "tags": [
+              "ai",
+              "llm"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "kagawa-mlops",
+        "url": "https://www.kagawa-u.ac.jp/en/",
+        "company": "香川大学 機械学習研究室",
+        "role": "MLOps技術インターン",
+        "dates": "2025年2月 – 2025年4月",
+        "location": "日本・高松市",
+        "tags": [
+          "ml",
+          "cloud",
+          "research"
+        ],
+        "bullets": [
+          {
+            "id": "kagawa-paper",
+            "text": "中小企業向けハイブリッドMLOpsに関する論文を共著で発表",
+            "link": {
+              "href": "/papers/Hybrid-MLOps-for-SMEs-2025.pdf",
+              "catalog": "https://jglobal.jst.go.jp/en/detail?JGLOBAL_ID=202602277665523641",
+              "ndl": "https://ndlsearch.ndl.go.jp/books/R000000004-I034425513"
+            },
+            "tags": [
+              "research"
+            ]
+          },
+          {
+            "id": "kagawa-cicd",
+            "text": "クラウド上でMLモデルを学習するためのハイブリッドCI/CDパイプライン（GitLab、Docker）とETLワークフローを構築",
+            "tags": [
+              "cloud",
+              "ml"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "junior-pac",
+        "url": "https://www.linkedin.com/company/junior-pac/",
+        "company": "ジュニア・エンタープライズ（Junior PAC）",
+        "role": "代表（学生コンサルティング団体）",
+        "dates": "2024年9月 – 現在",
+        "location": "フランス・アヌシー",
+        "tags": [
+          "leadership",
+          "current"
+        ],
+        "bullets": [
+          {
+            "id": "jpac-team",
+            "text": "学生が運営するコンサルティング団体で、エンジニア6名のチームを統率",
+            "tags": [
+              "leadership"
+            ]
+          },
+          {
+            "id": "jpac-client",
+            "text": "顧客対応、会議の進行、データ・ソフトウェア分野のコンサルティング案件の管理を担当",
+            "tags": [
+              "leadership",
+              "client"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "edf",
+        "style": "compact",
+        "url": "https://www.edf.fr/centrale-nucleaire-saint-alban",
+        "company": "EDF サン・タルバン原子力発電所",
+        "role": "インターン",
+        "dates": "2024年8月",
+        "tags": [
+          "industry"
+        ],
+        "bullets": [
+          {
+            "id": "edf-1",
+            "text": "安全装備（自給式呼吸器）の技術点検と規制関連文書の管理",
+            "tags": []
+          }
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "id": "fudami",
+        "webOnly": true,
+        "url": "https://fudami.net",
+        "title": "Fudami — 日本語学習プラットフォーム",
+        "org": "個人開発 — 設計から開発まで単独で担当",
+        "dates": "2026年6月 – 現在",
+        "tags": [
+          "ai",
+          "mobile",
+          "cloud",
+          "current"
+        ],
+        "bullets": [
+          {
+            "id": "fudami-platform",
+            "text": "間隔反復による語学学習プラットフォームを3層構成で設計・開発：Expo／React Nativeのクロスプラットフォームアプリ（iOS・Android・Web）、Pythonのコンテンツパイプライン、Cloudflareのサーバーレスバックエンド（Workers、D1、R2）",
+            "tags": [
+              "mobile",
+              "cloud"
+            ]
+          },
+          {
+            "id": "fudami-engine",
+            "text": "FSRSベースの間隔反復エンジンを実装。学習進捗はサーバー側で一元管理し、オフラインでも端末上で復習が可能",
+            "tags": [
+              "ai",
+              "data"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "fudami-jisho",
+        "webOnly": true,
+        "url": "https://jisho.fudami.net",
+        "title": "Fudami Jisho — セルフホスト型日本語辞書",
+        "org": "個人開発 — 設計から開発まで単独で担当",
+        "dates": "2026年8月 – 現在",
+        "tags": [
+          "data",
+          "cloud",
+          "current"
+        ],
+        "bullets": [
+          {
+            "id": "fudami-jisho-search",
+            "text": "JMdict（18万語以上）とKANJIDIC2を基に、5ミリ秒未満の全文検索、アクセント曲線、筆順アニメーションを備えた日本語辞書を開発",
+            "tags": [
+              "data"
+            ]
+          },
+          {
+            "id": "fudami-jisho-ops",
+            "text": "Cloudflare Tunnel経由で自宅サーバーに公開し、CIを通過した版のみを取り込むリリースパイプラインを構築。学習者の記憶モデルと連携し、単語をi+1の難易度で色分け",
+            "tags": [
+              "cloud"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bfh-curation",
+        "url": "https://www.bfh.ch/en/",
+        "title": "データキュレーション・パイプラインとWebクローリング",
+        "org": "BFH 生成AI研究室",
+        "dates": "2025年9月 – 2026年2月",
+        "location": "スイス・ベルン",
+        "tags": [
+          "ml",
+          "ai",
+          "data",
+          "current"
+        ],
+        "bullets": [
+          {
+            "id": "bfh-llm",
+            "text": "LLMで調整したヒューリスティックフィルタにより、スイスの5つのメディアから健康関連データを抽出する自動システムを開発（Python、MongoDB）",
+            "tags": [
+              "ai",
+              "llm"
+            ]
+          },
+          {
+            "id": "bfh-corpus",
+            "text": "90万件以上のURLを処理・クレンジングし、トピックモデリング用の構造化コーパスを構築",
+            "tags": [
+              "data"
+            ]
+          }
+        ]
+      }
+    ],
+    "education": [
+      {
+        "id": "polytech-annecy",
+        "url": "https://www.polytech.univ-smb.fr/",
+        "school": "ポリテック・アヌシー（サヴォワ・モンブラン大学）",
+        "degree": "ディプロム・ダンジェニウール（情報科学・データ分析／修士相当）",
+        "details": "専攻：情報科学・データ・応用",
+        "dates": "2023年9月 – 2026年9月",
+        "location": "フランス・アヌシー",
+        "tags": [
+          "core"
+        ]
+      },
+      {
+        "id": "bfh",
+        "url": "https://www.bfh.ch/en/",
+        "school": "ベルン応用科学大学（BFH）",
+        "degree": "工学修士課程（交換留学）",
+        "details": "Transformer、自己教師あり学習、クラウドシステム",
+        "dates": "2025年9月 – 2026年2月",
+        "location": "スイス・ベルン",
+        "tags": [
+          "exchange",
+          "ml",
+          "cloud"
+        ]
+      },
+      {
+        "id": "kagawa",
+        "url": "https://www.kagawa-u.ac.jp/en/",
+        "school": "香川大学",
+        "degree": "データサイエンス修士課程（交換留学）",
+        "details": "ブロックチェーン、暗号理論、数学、データサイエンス",
+        "dates": "2025年4月 – 2025年8月",
+        "location": "日本・高松市",
+        "tags": [
+          "exchange"
+        ]
+      },
+      {
+        "id": "cpge",
+        "style": "compact",
+        "url": "https://lyc-gellee.monbureaunumerique.fr/",
+        "school": "リセ・クロード・ジェレ",
+        "degree": "グランゼコール準備級（数学・物理 MP）",
+        "dates": "2021年9月 – 2023年9月",
+        "tags": []
+      }
+    ],
+    "skills": [
+      {
+        "category": "クラウド・DevOps：",
+        "items": "Microsoft Azure, Terraform, CI/CD（Azure DevOps YAML）, Docker, Ansible, Linux, Git"
+      },
+      {
+        "category": "データ：",
+        "items": "Python（上級）, SQL, ETLパイプライン, Neo4j, Power BI, Tableau"
+      },
+      {
+        "category": "開発：",
+        "items": "C# / .NET, FastAPI, TypeScript / React Native"
+      },
+      {
+        "category": "AI・ML：",
+        "items": "Claude Code, GitHub Copilot, 自宅サーバーでのローカルRAG構築, MLOps（論文共著）"
+      },
+      {
+        "category": "語学：",
+        "items": "フランス語（ネイティブ）, 英語（C1・TOEIC 920点）, 日本語（N3程度）"
+      },
+      {
+        "category": "趣味：",
+        "items": "持久系スポーツ（ランニング・自転車・スキー） | 語学学習"
+      }
+    ],
+    "sectionTitles": {
+      "education": "学歴",
+      "experience": "職務経歴",
+      "projects": "プロジェクト",
+      "skills": "スキル"
+    },
+    "sectionIcons": {
+      "education": "\\faGraduationCap",
+      "experience": "\\faPieChart",
+      "projects": "\\faFlask",
+      "skills": "\\faGears"
+    },
+    "identity": {
+      "fullName": "Arno Wilhelm",
+      "subtitle": "データ＆クラウドエンジニア"
     }
   }
 }

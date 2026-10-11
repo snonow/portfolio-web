@@ -6,9 +6,12 @@ const BASE = import.meta.env.BASE_URL;
 const FILES = [
   { label: "English (PDF)", href: `${BASE}resume/Arno-Wilhelm-CV-EN.pdf` },
   { label: "Français (PDF)", href: `${BASE}resume/Arno-Wilhelm-CV-FR.pdf` },
+  { label: "日本語・職務経歴書 (PDF)", href: `${BASE}resume/Arno-Wilhelm-Shokumu-Keirekisho-JA.pdf` },
 ];
 
-const DownloadCV = () => {
+const LABEL = { en: "Download CV", fr: "Télécharger le CV", ja: "CVをダウンロード" };
+
+const DownloadCV = ({ locale = "en" }) => {
   const [open, setOpen] = useState(false);
   const ref = useRef(null);
 
@@ -30,7 +33,7 @@ const DownloadCV = () => {
         aria-expanded={open}
       >
         <Download size={16} />
-        Download CV
+        {LABEL[locale] ?? LABEL.en}
         <ChevronDown size={14} className={`transition-transform ${open ? "rotate-180" : ""}`} />
       </button>
 
