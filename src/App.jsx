@@ -23,6 +23,7 @@ const T = {
       { id: "github",     label: "GitHub" },
     ],
     lastUpdated: "Last updated",
+    legal: "Legal notice & privacy",
   },
   fr: {
     nav: [
@@ -33,6 +34,7 @@ const T = {
       { id: "github",     label: "GitHub" },
     ],
     lastUpdated: "Mis à jour le",
+    legal: "Mentions légales & confidentialité",
   },
 };
 
@@ -58,6 +60,8 @@ const App = ({ locale = "en" }) => {
             </div>
             <a
               href={LOCALE_PATHS[other]}
+              // Remembered by functions/index.js so "/" stops auto-redirecting.
+              onClick={() => { document.cookie = `lang=${other}; path=/; max-age=31536000; samesite=lax`; }}
               hrefLang={other}
               lang={other}
               className="text-xs font-semibold px-2.5 py-1 rounded-full border border-slate-200 text-slate-600 hover:border-blue-300 hover:text-blue-800 transition"
@@ -92,7 +96,10 @@ const App = ({ locale = "en" }) => {
               <Mail size={22} />
             </a>
           </div>
-          <p className="text-sm">© {new Date().getFullYear()} Arno Wilhelm</p>
+          <p className="text-sm">
+            © {new Date().getFullYear()} Arno Wilhelm ·{" "}
+            <a href={locale === "fr" ? "/legal/#fr" : "/legal/"} className="underline hover:text-slate-200">{t.legal}</a>
+          </p>
           {resume._lastUpdated && (
             <p className="text-xs mt-1 text-slate-600">
               {t.lastUpdated} {resume._lastUpdated}

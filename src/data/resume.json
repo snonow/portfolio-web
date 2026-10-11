@@ -309,41 +309,32 @@
         "degree": "Classe Préparatoire aux Grandes Écoles (MP)",
         "dates": "Sep. 2021 – Sep. 2023",
         "tags": []
-      },
-      {
-        "id": "bac",
-        "style": "compact",
-        "url": "https://www.lamalgrange.net/",
-        "school": "Lycée La Malgrange",
-        "degree": "Baccalauréat with Honours (Maths, Physics, CS)",
-        "dates": "Sep. 2018 – Sep. 2021",
-        "tags": []
       }
     ],
     "skills": [
       {
         "category": "Cloud & DevOps:",
-        "items": "Azure (Data Factory, Functions, SQL, Cosmos DB, VNet & Private Endpoints), Terraform (IaC), Azure DevOps CI/CD (YAML), Docker, AWS"
+        "items": "Microsoft Azure, Terraform, CI/CD (Azure DevOps YAML), Docker, Ansible, Linux, Git"
       },
       {
-        "category": "Programming:",
-        "items": "Python (advanced – since 2021), SQL (PostgreSQL, MySQL), C# / .NET (6, 8), Java"
+        "category": "Data:",
+        "items": "Python (advanced), SQL, ETL pipelines, Neo4j, Power BI, Tableau"
       },
       {
-        "category": "Data & ML:",
-        "items": "PyTorch, TensorFlow, MLOps (CI/CD, monitoring), ETL pipelines"
+        "category": "Dev:",
+        "items": "C# / .NET, FastAPI, TypeScript / React Native"
       },
       {
-        "category": "Visualization:",
-        "items": "Power BI, Tableau, Python visualization libraries"
+        "category": "AI & ML:",
+        "items": "Claude Code, GitHub Copilot, local RAG on a home server, MLOps (co-authored paper)"
       },
       {
         "category": "Languages:",
-        "items": "French (Native), English (Fluent – TOEIC 920/990), Japanese (N3/B1)"
+        "items": "French (native), English (C1, TOEIC 920), Japanese (~N3)"
       },
       {
         "category": "Interests:",
-        "items": "Endurance sports (running, cycling, skiing) | Japanese culture & language"
+        "items": "Endurance sports (running, cycling, skiing) | Language learning"
       }
     ],
     "sectionTitles": {
@@ -672,41 +663,32 @@
         "degree": "Classe Préparatoire aux Grandes Écoles (MP)",
         "dates": "Sep. 2021 – Sep. 2023",
         "tags": []
-      },
-      {
-        "id": "bac",
-        "style": "compact",
-        "url": "https://www.lamalgrange.net/",
-        "school": "Lycée La Malgrange",
-        "degree": "Baccalauréat avec mention (Maths, Physique, Info)",
-        "dates": "Sep. 2018 – Sep. 2021",
-        "tags": []
       }
     ],
     "skills": [
       {
         "category": "Cloud & DevOps :",
-        "items": "Azure (Data Factory, Functions, SQL, Cosmos DB, VNet & Private Endpoints), Terraform (IaC), Azure DevOps CI/CD (YAML), Docker, AWS"
+        "items": "Microsoft Azure, Terraform, CI/CD (Azure DevOps YAML), Docker, Ansible, Linux, Git"
       },
       {
-        "category": "Programmation :",
-        "items": "Python (avancé - depuis 2021), SQL (PostgreSQL, MySQL), C# / .NET (6, 8), Java"
+        "category": "Data :",
+        "items": "Python (avancé), SQL, pipelines ETL, Neo4j, Power BI, Tableau"
       },
       {
-        "category": "Data & ML :",
-        "items": "PyTorch, TensorFlow, MLOps (CI/CD, monitoring), pipelines ETL"
+        "category": "Dev :",
+        "items": "C# / .NET, FastAPI, TypeScript / React Native"
       },
       {
-        "category": "Visualisation :",
-        "items": "Power BI, Tableau, librairies de visualisation Python"
+        "category": "IA & ML :",
+        "items": "Claude Code, GitHub Copilot, RAG local sur serveur perso, MLOps (article co-écrit)"
       },
       {
         "category": "Langues :",
-        "items": "Français (Natif), Anglais (Courant – TOEIC 920/990), Japonais (N3/B1)"
+        "items": "Français (natif), Anglais (C1, TOEIC 920), Japonais (~N3)"
       },
       {
         "category": "Passions :",
-        "items": "Sports d'endurance (course, cyclisme, ski) | Culture & langue japonaises"
+        "items": "Sports d'endurance (course, cyclisme, ski) | Apprentissage des langues"
       }
     ],
     "sectionTitles": {
