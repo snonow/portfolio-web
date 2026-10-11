@@ -64,6 +64,8 @@ const Avatar = ({ variant, alt }) => {
           src={`${BASE}profile.jpg`}
           alt={alt}
           className="w-full h-full object-cover"
+          width={640}
+          height={640}
           loading="eager"
         />
       </div>

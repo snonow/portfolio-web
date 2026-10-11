@@ -1,4 +1,6 @@
+# Everyone is welcome, AI crawlers included.
 User-agent: *
 Allow: /
 
 Sitemap: https://arno-wilhelm.dev/sitemap.xml
+# Full résumé as Markdown for LLMs: https://arno-wilhelm.dev/llms.txt
