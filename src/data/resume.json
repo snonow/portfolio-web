@@ -1,5 +1,5 @@
 {
-  "_lastUpdated": "2026-10-09",
+  "_lastUpdated": "2026-10-11",
   "en": {
     "sectionOrder": [
       "experience",
@@ -23,10 +23,18 @@
         "bullets": [
           {
             "id": "pwc-de-platform",
-            "text": "Hired after my internship to carry on the data platform's infrastructure: production cut-over of the migrated stack, Terraform and CI/CD on Azure",
+            "text": "Build and maintain the Azure infrastructure of the team's data and AI platforms (data collection, internal RAG services) with Terraform and Azure DevOps CI/CD",
             "tags": [
               "cloud",
               "iac"
+            ]
+          },
+          {
+            "id": "pwc-de-dotnet",
+            "text": "Support the team's application projects, mostly .NET 6/8, on hosting, deployment and runtime issues",
+            "tags": [
+              "cloud",
+              "dotnet"
             ]
           }
         ]
@@ -69,7 +77,7 @@
           },
           {
             "id": "pwc-rag",
-            "text": "Deployed the infrastructure for an internal RAG / agentic-AI tool and integrated its back-end and front-end",
+            "text": "Designed and deployed the Azure infrastructure (Terraform) of an internal RAG / agentic-AI services hub, and integrated its back-end and front-end",
             "tags": [
               "ai",
               "llm"
@@ -319,7 +327,7 @@
       },
       {
         "category": "Programming:",
-        "items": "Python (advanced – since 2021), SQL (PostgreSQL, MySQL), Java, C#, .NET"
+        "items": "Python (advanced – since 2021), SQL (PostgreSQL, MySQL), C# / .NET (6, 8), Java"
       },
       {
         "category": "Data & ML:",
@@ -378,10 +386,18 @@
         "bullets": [
           {
             "id": "pwc-de-platform",
-            "text": "Embauché à l'issue du stage pour poursuivre l'infrastructure de la plateforme data : bascule en production de la stack migrée, Terraform et CI/CD sur Azure",
+            "text": "Construction et maintien de l'infrastructure Azure des plateformes data et IA de l'équipe (collecte de données, services RAG internes) en Terraform et CI/CD Azure DevOps",
             "tags": [
               "cloud",
               "iac"
+            ]
+          },
+          {
+            "id": "pwc-de-dotnet",
+            "text": "Support des projets applicatifs de l'équipe, majoritairement en .NET 6/8, sur l'hébergement, le déploiement et l'exploitation",
+            "tags": [
+              "cloud",
+              "dotnet"
             ]
           }
         ]
@@ -424,7 +440,7 @@
           },
           {
             "id": "pwc-rag",
-            "text": "Déploiement de l'infrastructure d'un outil interne de RAG / IA agentique et intégration de son back-end et front-end",
+            "text": "Conception et déploiement de l'infrastructure Azure (Terraform) d'un hub interne de services RAG / IA agentique, et intégration de son back-end et front-end",
             "tags": [
               "ai",
               "llm"
@@ -674,7 +690,7 @@
       },
       {
         "category": "Programmation :",
-        "items": "Python (avancé - depuis 2021), SQL (PostgreSQL, MySQL), Java, C#, .NET"
+        "items": "Python (avancé - depuis 2021), SQL (PostgreSQL, MySQL), C# / .NET (6, 8), Java"
       },
       {
         "category": "Data & ML :",
