@@ -102,6 +102,25 @@
       ]
     },
     {
+      "id": "fudami-jisho",
+      "webOnly": true,
+      "url": "https://jisho.fudami.net",
+      "title": { "en": "Fudami Jisho — Self-hosted Japanese Dictionary", "fr": "Fudami Jisho — Dictionnaire de Japonais Auto-hébergé" },
+      "org": { "en": "Personal product — solo design & build", "fr": "Produit personnel — conception & développement solo" },
+      "dates": { "en": "Aug. 2026 – Present", "fr": "Août 2026 – Présent" },
+      "tags": ["data", "cloud", "current"],
+      "bullets": [
+        { "id": "fudami-jisho-search", "text": {
+          "en": "Built a self-hosted Japanese dictionary over 180,000+ JMdict entries and KANJIDIC2 with sub-5 ms full-text search, pitch-accent curves, and stroke-order animations",
+          "fr": "Développement d'un dictionnaire de japonais auto-hébergé sur plus de 180 000 entrées JMdict et KANJIDIC2, avec recherche plein texte en moins de 5 ms, courbes d'accent tonal et animations de l'ordre des traits"
+        }, "tags": ["data"] },
+        { "id": "fudami-jisho-ops", "text": {
+          "en": "Deployed it on a home server behind a Cloudflare Tunnel with a pull-based, CI-gated release pipeline, and linked it to the learner's memory model to colour words by i+1 difficulty",
+          "fr": "Déploiement sur un serveur personnel derrière un Cloudflare Tunnel avec un pipeline de livraison par tirage conditionné à la CI, et lien avec le modèle de mémoire de l'apprenant pour colorer les mots selon la difficulté i+1"
+        }, "tags": ["cloud"] }
+      ]
+    },
+    {
       "id": "bfh-curation",
       "url": "https://www.bfh.ch/en/",
       "title": { "en": "Data Curation Pipeline & Web Crawling Project", "fr": "Projet Pipeline de Curation de Données et Web Crawling" },
