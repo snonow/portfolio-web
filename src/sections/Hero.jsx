@@ -90,7 +90,7 @@ const Hero = ({ locale = "en" }) => {
             transition={{ duration: 0.4 }}
             className="inline-block mb-5 px-3 py-1.5 text-[11px] font-semibold tracking-[0.12em] uppercase bg-blue-100 text-blue-900 rounded-full"
           >
-            Data · MLOps · Business Intelligence
+            Data · Cloud · Infrastructure as Code
           </motion.span>
 
           <motion.h1
@@ -146,7 +146,7 @@ const Hero = ({ locale = "en" }) => {
             </a>
 
             <span className="inline-flex items-center gap-1.5 text-sm text-slate-500 pl-1">
-              <MapPin size={14} /> Based in France · open to Europe-wide remote
+              <MapPin size={14} /> Luxembourg
             </span>
           </motion.div>
         </div>
