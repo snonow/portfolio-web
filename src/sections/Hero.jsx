@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
 import { SiGithub, SiLinkedin } from "react-icons/si";
 
@@ -8,6 +7,13 @@ import { GITHUB_PROFILE_URL } from "../data/github";
 import { LINKEDIN_URL } from "../data/links";
 
 const BASE = import.meta.env.BASE_URL;
+
+// 20px blurred preview, inlined so the circle is never empty while the photo
+// loads. Regenerate when public/profile*.{jpg,avif,webp} change.
+const PROFILE_LQIP =
+  "data:image/webp;base64,UklGRtAAAABXRUJQVlA4IMQAAADwBACdASoUABQAPtFgqU+oJSOiKAgBABoJQBdmUAA0vd31N8cYWpn9rPXBZH2Cv8gA/lbzu9bgvi9M98gFyI9/N7G6la5DF2rwW2d0Q4ot32Njw7guwgbN+J3u9v63jpt1zPOAUBERXBIT2re8UBv3qJHraItMFwisvJxO3AcV1wD11a7XUPXErZ2Tx+yqreTn8aIFt8iPxS+Q5WFVFFbsAfQ7bPe6uUyVj4z2Th8SJQOwTllYXfy8xuydGetefSJQgAAA";
+const PROFILE_SIZES = "(min-width: 768px) 208px, 112px";
+const profileSrcSet = (ext) => `${BASE}profile-224.${ext} 224w, ${BASE}profile-416.${ext} 416w`;
 
 const T = {
   en: {
@@ -52,37 +58,42 @@ const AVATAR = {
     wrapper: "md:hidden relative w-28 h-28 mb-7",
     glow: "absolute -inset-2 rounded-full bg-gradient-to-br from-blue-200/60 via-indigo-200/40 to-transparent blur-lg",
     frame: "relative w-28 h-28 rounded-full overflow-hidden border-4 border-white shadow-xl ring-1 ring-slate-200",
-    transition: { duration: 0.5, ease: "easeOut" },
+    delay: "0ms",
   },
   desktop: {
     wrapper: "hidden md:block relative",
     glow: "absolute -inset-3 rounded-full bg-gradient-to-br from-blue-200/60 via-indigo-200/40 to-transparent blur-xl",
     frame: "relative w-52 h-52 rounded-full overflow-hidden border-4 border-white shadow-xl ring-1 ring-slate-200",
-    transition: { duration: 0.6, delay: 0.1, ease: "easeOut" },
+    delay: "100ms",
   },
 };
 
+// Entrance animations are CSS (index.css), not framer-motion: they run as soon
+// as the prerendered HTML paints instead of waiting for the JS bundle.
 const Avatar = ({ variant, alt }) => {
   const v = AVATAR[variant];
   return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.92 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={v.transition}
-      className={v.wrapper}
-    >
+    <div className={`${v.wrapper} pop-in`} style={{ animationDelay: v.delay }}>
       <div className={v.glow} />
-      <div className={v.frame}>
-        <img
-          src={`${BASE}profile.jpg`}
-          alt={alt}
-          className="w-full h-full object-cover"
-          width={640}
-          height={640}
-          loading="eager"
-        />
+      <div
+        className={v.frame}
+        style={{ backgroundImage: `url(${PROFILE_LQIP})`, backgroundSize: "cover" }}
+      >
+        <picture>
+          <source type="image/avif" srcSet={profileSrcSet("avif")} sizes={PROFILE_SIZES} />
+          <source type="image/webp" srcSet={profileSrcSet("webp")} sizes={PROFILE_SIZES} />
+          <img
+            src={`${BASE}profile.jpg`}
+            alt={alt}
+            className="w-full h-full object-cover"
+            width={416}
+            height={416}
+            loading="eager"
+            fetchPriority="high"
+          />
+        </picture>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
@@ -99,47 +110,37 @@ const Hero = ({ locale = "en" }) => {
           {/* Mobile-only avatar — brings the desktop photo treatment to phones */}
           <Avatar variant="mobile" alt={`${fullName} — ${subtitle}`} />
 
-          <motion.span
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            className="inline-block mb-5 px-3 py-1.5 text-[11px] font-semibold tracking-[0.12em] uppercase bg-blue-100 text-blue-900 rounded-full"
+          <span
+            className="inline-block mb-5 px-3 py-1.5 text-[11px] font-semibold tracking-[0.12em] uppercase bg-blue-100 text-blue-900 rounded-full fade-up"
+            style={{ animationDelay: "0ms" }}
           >
             Data · Cloud · Infrastructure as Code
-          </motion.span>
+          </span>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.05 }}
-            className="text-5xl md:text-7xl font-extrabold tracking-tight text-slate-900 mb-5 leading-[0.95]"
+          <h1
+            className="text-5xl md:text-7xl font-extrabold tracking-tight text-slate-900 mb-5 leading-[0.95] fade-up"
+            style={{ animationDelay: "50ms" }}
           >
             {fullName}
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.12 }}
-            className="text-xl md:text-2xl text-slate-700 max-w-3xl leading-relaxed mb-3"
+          <p
+            className="text-xl md:text-2xl text-slate-700 max-w-3xl leading-relaxed mb-3 fade-up"
+            style={{ animationDelay: "120ms" }}
           >
             {subtitle}
-          </motion.p>
+          </p>
 
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-base md:text-lg text-slate-500 max-w-3xl leading-relaxed mb-8"
+          <p
+            className="text-base md:text-lg text-slate-500 max-w-3xl leading-relaxed mb-8 fade-up"
+            style={{ animationDelay: "200ms" }}
           >
             {t.tagline}
-          </motion.p>
+          </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.28 }}
-            className="flex flex-wrap items-center gap-3"
+          <div
+            className="flex flex-wrap items-center gap-3 fade-up"
+            style={{ animationDelay: "280ms" }}
           >
             <DownloadCV locale={locale} />
 
@@ -163,7 +164,7 @@ const Hero = ({ locale = "en" }) => {
             <span className="inline-flex items-center gap-1.5 text-sm text-slate-500 pl-1">
               <MapPin size={14} /> {t.location}
             </span>
-          </motion.div>
+          </div>
         </div>
 
         <Avatar variant="desktop" alt={`${fullName} — ${subtitle}`} />
