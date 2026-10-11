@@ -52,11 +52,11 @@ const Projects = ({ locale = "en" }) => {
           {resumeProjects.map((p, i) => (
             <Reveal key={p.id} delay={i * 0.05}>
               <article className="bg-white border border-slate-200 rounded-xl p-6 hover:border-blue-300 transition h-full">
-                <div className="flex flex-wrap items-baseline justify-between gap-x-4 mb-1">
-                  <h3 className="font-semibold text-slate-900">
+                <div className="flex items-baseline justify-between gap-x-4 mb-1">
+                  <h3 className="font-semibold text-slate-900 min-w-0">
                     <ExternalTextLink href={p.url}>{p.title}</ExternalTextLink>
                   </h3>
-                  <time className="text-xs text-slate-500 font-medium">{p.dates}</time>
+                  <time className="text-xs text-slate-500 font-medium shrink-0 whitespace-nowrap">{p.dates}</time>
                 </div>
                 <p className="italic text-sm text-slate-600 mb-3">
                   {[p.org, p.location].filter(Boolean).join(" · ")}

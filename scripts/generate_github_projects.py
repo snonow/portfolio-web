@@ -11,6 +11,8 @@ RAW_BASE = "https://raw.githubusercontent.com"
 # Badge services produce status chips, not screenshots — keep them out of the gallery.
 BADGE_HOSTS = ("img.shields.io", "badgen.net", "badge.fury.io", "codecov.io")
 MAX_IMAGES = 6
+# Pinned on GitHub but not shown on the site.
+EXCLUDED_REPOS = {"INFO641-Messagerie"}
 HEADERS = {
     "Authorization": f"Bearer {os.environ['GITHUB_TOKEN']}",
     "Accept": "application/vnd.github+json",
@@ -116,6 +118,8 @@ def main():
 
     for r in pinned:
         name = r["name"]
+        if name in EXCLUDED_REPOS:
+            continue
         branch = (r.get("defaultBranchRef") or {}).get("name") or "main"
         projects.append({
             "name": name,

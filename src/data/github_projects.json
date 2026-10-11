@@ -74,23 +74,6 @@
       ],
       "readme_images": [],
       "releases": []
-    },
-    {
-      "name": "INFO641-Messagerie",
-      "description": "Projet Java en INFO641 afin de cr\u00e9er une messagerie instantan\u00e9e.",
-      "url": "https://github.com/snonow/INFO641-Messagerie",
-      "stars": 0,
-      "language": "Java",
-      "topics": [],
-      "readme_images": [
-        "https://raw.githubusercontent.com/snonow/INFO641-Messagerie/main/img-readme-rapport/Welcome.png",
-        "https://raw.githubusercontent.com/snonow/INFO641-Messagerie/main/img-readme-rapport/Inscription.png",
-        "https://raw.githubusercontent.com/snonow/INFO641-Messagerie/main/img-readme-rapport/Login.png",
-        "https://raw.githubusercontent.com/snonow/INFO641-Messagerie/main/img-readme-rapport/Connect%C3%A9.png",
-        "https://raw.githubusercontent.com/snonow/INFO641-Messagerie/main/img-readme-rapport/Connexion_concierge.png",
-        "https://raw.githubusercontent.com/snonow/INFO641-Messagerie/main/img-readme-rapport/Messages_envoy%C3%A9s_recu.png"
-      ],
-      "releases": []
     }
   ]
 }
