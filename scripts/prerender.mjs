@@ -197,6 +197,8 @@ const notFound = staticPage({
 
 // Facts this page states — keep true if the site changes (new third-party
 // script, analytics, form, cookie…), otherwise the notice becomes wrong.
+// Cloudflare Web Analytics is enabled in the Pages project settings, not in
+// this repo: drop its paragraph if it is ever switched off.
 const legal = staticPage({
   title: "Legal notice & privacy · Mentions légales · 法的情報 — Arno Wilhelm",
   extraStyle: "main{max-width:46rem;margin:0 auto;padding:3rem 1.25rem}h2{margin-top:2.5rem}section+section{border-top:1px solid #e2e8f0;margin-top:3rem}",
@@ -212,7 +214,8 @@ const legal = staticPage({
         <p>Texts, photos and documents on this site are © Arno Wilhelm. Do not reuse them without permission. Project names and logos belong to their owners.</p>
         <h2>Personal data</h2>
         <ul>
-          <li><strong>No tracking.</strong> No analytics, advertising, social widgets, account or contact form.</li>
+          <li><strong>No tracking.</strong> No advertising, tracking cookies, social widgets, account or contact form.</li>
+          <li><strong>Audience measurement.</strong> Cloudflare Web Analytics counts visits, pages viewed, referrers, countries, device types and page load times. It sets no cookie, does not fingerprint visitors and only reports aggregate figures; its script is loaded from <code>static.cloudflareinsights.com</code>. Legal basis: legitimate interest (GDPR art. 6(1)(f)) in knowing how the site is used and how fast it loads.</li>
           <li><strong>One functional cookie.</strong> <code>lang</code> is set only when you click the language switch, stores <code>en</code>, <code>fr</code> or <code>ja</code> for 12 months, and is used solely to show the site in that language. Being strictly necessary for a feature you ask for, it does not require consent.</li>
           <li><strong>Hosting logs.</strong> To deliver and protect the site, Cloudflare processes technical data such as your IP address, browser user agent and the requested URL (<a href="https://www.cloudflare.com/privacypolicy/">Cloudflare privacy policy</a>). Cloudflare is certified under the EU-US Data Privacy Framework. Legal basis: legitimate interest (GDPR art. 6(1)(f)) in operating a secure website.</li>
           <li><strong>GitHub.</strong> Project screenshots are loaded from <code>raw.githubusercontent.com</code>, and live GitHub statistics may be fetched from <code>api.github.com</code>. These requests reveal your IP address to GitHub (<a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">GitHub privacy statement</a>).</li>
@@ -229,7 +232,8 @@ const legal = staticPage({
         <p>Les textes, photos et documents de ce site sont © Arno Wilhelm. Toute réutilisation nécessite une autorisation. Les noms et logos de projets appartiennent à leurs propriétaires.</p>
         <h2>Données personnelles</h2>
         <ul>
-          <li><strong>Aucun suivi.</strong> Pas de mesure d'audience, de publicité, de widget social, de compte ni de formulaire.</li>
+          <li><strong>Aucun pistage.</strong> Pas de publicité, de cookie traceur, de widget social, de compte ni de formulaire.</li>
+          <li><strong>Mesure d'audience.</strong> Cloudflare Web Analytics compte les visites, pages vues, sites d'origine, pays, types d'appareil et temps de chargement. Il ne dépose aucun cookie, ne crée pas d'empreinte des visiteurs et ne fournit que des statistiques agrégées ; son script est chargé depuis <code>static.cloudflareinsights.com</code>. Base légale : intérêt légitime (art. 6.1.f RGPD) à connaître l'usage du site et ses performances.</li>
           <li><strong>Un cookie fonctionnel.</strong> <code>lang</code> n'est déposé que si vous cliquez sur le sélecteur de langue ; il stocke <code>en</code>, <code>fr</code> ou <code>ja</code> pendant 12 mois et sert uniquement à afficher le site dans cette langue. Strictement nécessaire à une fonction que vous demandez, il n'exige pas de consentement.</li>
           <li><strong>Journaux d'hébergement.</strong> Pour servir et protéger le site, Cloudflare traite des données techniques comme votre adresse IP, le user agent du navigateur et l'URL demandée (<a href="https://www.cloudflare.com/fr-fr/privacypolicy/">politique de confidentialité de Cloudflare</a>). Cloudflare est certifié au titre du Data Privacy Framework UE–États-Unis. Base légale : intérêt légitime (art. 6.1.f RGPD) à exploiter un site sécurisé.</li>
           <li><strong>GitHub.</strong> Les captures des projets sont chargées depuis <code>raw.githubusercontent.com</code> et les statistiques GitHub en direct peuvent l'être depuis <code>api.github.com</code>. Ces requêtes transmettent votre adresse IP à GitHub (<a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">déclaration de confidentialité de GitHub</a>).</li>
@@ -246,7 +250,8 @@ const legal = staticPage({
         <p>本サイトの文章・写真・資料の著作権はアルノ・ヴィルヘルムに帰属します。無断での転用はご遠慮ください。各プロジェクト名・ロゴはそれぞれの権利者に帰属します。</p>
         <h2>個人情報</h2>
         <ul>
-          <li><strong>トラッキングなし。</strong>アクセス解析、広告、ソーシャルウィジェット、アカウント、問い合わせフォームはありません。</li>
+          <li><strong>トラッキングなし。</strong>広告、トラッキングCookie、ソーシャルウィジェット、アカウント、問い合わせフォームはありません。</li>
+          <li><strong>アクセス解析。</strong>Cloudflare Web Analyticsにより、訪問数、閲覧ページ、参照元、国、端末の種類、ページの読み込み時間を集計しています。Cookieは使用せず、訪問者のフィンガープリントも取得せず、集計値のみを提供します。スクリプトは <code>static.cloudflareinsights.com</code> から読み込まれます。法的根拠：サイトの利用状況と表示速度を把握するという正当な利益（GDPR第6条1項(f)）。</li>
           <li><strong>機能Cookieは1件のみ。</strong><code>lang</code> は言語切替をクリックした場合にのみ設定され、<code>en</code>・<code>fr</code>・<code>ja</code> のいずれかを12か月間保存し、その言語でサイトを表示するためだけに使われます。ご自身が求めた機能に厳密に必要なものであるため、同意は不要です。</li>
           <li><strong>ホスティングのログ。</strong>サイトの配信と保護のため、CloudflareがIPアドレス、ブラウザのユーザーエージェント、リクエストされたURLなどの技術データを処理します（<a href="https://www.cloudflare.com/ja-jp/privacypolicy/">Cloudflareのプライバシーポリシー</a>）。CloudflareはEU-米国データプライバシーフレームワークの認証を受けています。法的根拠：安全なウェブサイト運営という正当な利益（GDPR第6条1項(f)）。</li>
           <li><strong>GitHub。</strong>プロジェクトの画像は <code>raw.githubusercontent.com</code> から、GitHubの統計は <code>api.github.com</code> から読み込まれる場合があり、その際にIPアドレスがGitHubに送信されます（<a href="https://docs.github.com/ja/site-policy/privacy-policies/github-general-privacy-statement">GitHubのプライバシーステートメント</a>）。</li>
