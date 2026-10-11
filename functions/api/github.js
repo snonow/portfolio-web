@@ -7,8 +7,8 @@
 // to the profile owner and can read them (fine-grained PAT, all repositories,
 // "Contents: read" + "Metadata: read"). Only aggregate counts are returned.
 //
-// Setup: add a read-only GitHub token as the `GITHUB_TOKEN` environment variable
-// in the Cloudflare Pages project (Settings → Environment variables). A classic
+// Setup: add a read-only GitHub token as the `STATS_TOKEN` secret
+// in the Cloudflare Pages project (Settings → Variables and Secrets). A classic
 // PAT with no scopes (or fine-grained, public read) is enough for public data.
 // Without it, this returns { available: false } and the front-end falls back to
 // the unauthenticated REST API for the basics.
@@ -56,7 +56,9 @@ const json = (body, status = 200, maxAge = 3600) =>
   });
 
 export const onRequestGet = async ({ env }) => {
-  const token = env.GITHUB_TOKEN;
+  // STATS_TOKEN: same name as the Actions secret (GitHub forbids GITHUB_*
+  // there). GITHUB_TOKEN still accepted for existing Pages setups.
+  const token = env.STATS_TOKEN ?? env.GITHUB_TOKEN;
   if (!token) return json({ available: false, reason: "no-token" });
 
   let payload;
