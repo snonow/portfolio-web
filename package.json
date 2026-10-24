@@ -10,6 +10,7 @@
     "build:resume": "node scripts/build-resume.mjs",
     "predev": "node scripts/build-resume.mjs",
     "lint": "eslint .",
+    "test": "node --test test/*.test.js",
     "preview": "vite preview"
   },
   "dependencies": {
